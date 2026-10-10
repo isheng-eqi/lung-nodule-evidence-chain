@@ -1,0 +1,152 @@
+{
+  "domain_id": "medical-lung-nodule",
+  "domain_name": "肺结节规范处置",
+  "corpus_chars": 19309,
+  "vocab_size": 10,
+  "relation_count": 5,
+  "relations": [
+    {
+      "relation": "recommends",
+      "dom": "条款",
+      "rng": "处置动作",
+      "zh": "推荐处置"
+    },
+    {
+      "relation": "requiresExamination",
+      "dom": "条款",
+      "rng": "检查手段",
+      "zh": "需要检查"
+    },
+    {
+      "relation": "appliesTo",
+      "dom": "条款",
+      "rng": "肺结节",
+      "zh": "适用于"
+    },
+    {
+      "relation": "hasRiskFactor",
+      "dom": "条款",
+      "rng": "危险因素",
+      "zh": "涉及危险因素"
+    },
+    {
+      "relation": "recommendsFollowUp",
+      "dom": "条款",
+      "rng": "CT随访",
+      "zh": "推荐随访"
+    }
+  ],
+  "wiring_coverage": 1.0,
+  "wired_and_present": [
+    {
+      "class": "CT随访",
+      "parent": "处置动作",
+      "in_relation_branch": true,
+      "matched_names": [
+        "CT随访",
+        "随访"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "PET-CT",
+      "parent": "检查手段",
+      "in_relation_branch": true,
+      "matched_names": [
+        "PET-CT"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "吸烟史",
+      "parent": "危险因素",
+      "in_relation_branch": true,
+      "matched_names": [
+        "吸烟史",
+        "吸烟"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "外科手术根治性切除",
+      "parent": "处置动作",
+      "in_relation_branch": true,
+      "matched_names": [
+        "外科手术根治性切除",
+        "手术切除",
+        "外科手术"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "实性肺结节",
+      "parent": "肺结节",
+      "in_relation_branch": true,
+      "matched_names": [
+        "实性肺结节",
+        "实性结节"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "小结节",
+      "parent": "肺结节",
+      "in_relation_branch": true,
+      "matched_names": [
+        "小结节"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "微小结节",
+      "parent": "肺结节",
+      "in_relation_branch": true,
+      "matched_names": [
+        "微小结节"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "混杂性磨玻璃结节",
+      "parent": "肺结节",
+      "in_relation_branch": true,
+      "matched_names": [
+        "mGGN",
+        "部分实性结节"
+      ],
+      "matched_by": "alias:mGGN"
+    },
+    {
+      "class": "纯磨玻璃结节",
+      "parent": "肺结节",
+      "in_relation_branch": true,
+      "matched_names": [
+        "纯磨玻璃结节",
+        "pGGN",
+        "磨玻璃结节"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "薄层CT",
+      "parent": "检查手段",
+      "in_relation_branch": true,
+      "matched_names": [
+        "薄层CT",
+        "薄层高分辨CT"
+      ],
+      "matched_by": "exact"
+    }
+  ],
+  "wired_but_absent": [],
+  "unwired_but_present": [],
+  "unwired_and_absent": [],
+  "ontology_redundancy_candidates": [],
+  "findings": {
+    "unwired_but_present_count": 0,
+    "ontology_redundancy_count": 0,
+    "verdict": "0 个类目**在语料中出现但未接到抽取关系上** （这是覆盖率偏低的根因，代码不会报错）；0 个类目**在本份语料中完全不存在** （本体设计冗余候选）。"
+  },
+  "generated_at": "2026-10-10T15:14:50+08:00",
+  "purpose": "找出「本体定义了但抽取不到」的类目，区分「未接线」与「本体冗余」两种原因"
+}

@@ -1,0 +1,32 @@
+{
+  "report": {
+    "doc_name": "consensus.txt",
+    "doc_chars": 19309,
+    "elapsed_sec": 0.004,
+    "clauses_found": 18,
+    "triples_total": 110,
+    "triples_aligned": 110,
+    "triples_pending": 0,
+    "data_triples": 36,
+    "classes_seed": 52,
+    "classes_added": 0,
+    "manual_review_items": 0,
+    "alignment_rate": 1.0,
+    "unaligned_rate": 0.0,
+    "manual_intervention_rate": 0.0,
+    "review_seconds": 0.0
+  },
+  "manual_baseline": {
+    "manual_seconds": 10865.5,
+    "manual_hours": 3.02,
+    "assumption": "人工 90 秒/三元组 + 通读 1200 字/分钟"
+  },
+  "efficiency": {
+    "semi_auto_seconds": 0.0,
+    "semi_auto_hours": 0.0,
+    "manual_seconds": 10865.5,
+    "manual_hours": 3.02,
+    "note": "本方法总成本 = 机器抽取 + 人工审核；对比纯人工全量抽取"
+  },
+  "note_on_speedup": "已移除 speedup / labor_saving_pct：机器执行时间与人的工作时间量纲不可比，直接相除会得出误导性数字。人工基线见 manual_baseline。"
+}

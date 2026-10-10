@@ -1,0 +1,48 @@
+{
+  "agent_id": "2",
+  "name": "肺结节处置助手",
+  "tools": [
+    {
+      "tool_id": 18,
+      "name": "knowledge_base_search",
+      "type": "Local"
+    },
+    {
+      "tool_id": 35,
+      "name": "kg_consult_decision",
+      "type": "MCP"
+    },
+    {
+      "tool_id": 36,
+      "name": "kg_lookup_concept",
+      "type": "MCP"
+    },
+    {
+      "tool_id": 37,
+      "name": "kg_get_clause",
+      "type": "MCP"
+    },
+    {
+      "tool_id": 38,
+      "name": "kg_find_clauses_by_nodule",
+      "type": "MCP"
+    },
+    {
+      "tool_id": 39,
+      "name": "kg_get_ontology_summary",
+      "type": "MCP"
+    },
+    {
+      "tool_id": 40,
+      "name": "kg_list_clauses",
+      "type": "MCP"
+    },
+    {
+      "tool_id": 41,
+      "name": "kg_analyze_report_image",
+      "type": "MCP"
+    }
+  ],
+  "sub_agents": [],
+  "note": "本文件为平台注册状态的记录。tool_id 35-40 为第 44 轮挂载，tool_id 41（多模态图片识别）为后续新增。"
+}

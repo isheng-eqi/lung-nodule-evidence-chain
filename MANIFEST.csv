@@ -1,0 +1,131 @@
+relative_path,size_bytes,size_human,sha256,purpose
+.gitignore,559,559 B,09c820a3098f252d6c9fed49f092d448eb15c2356ccc17d43beef61eb32087a7,
+00_提交包说明.md,21857,21.3 KB,373534a2c3ceb15620aadb9bea474481153cfe0cac87fe866d38c408da739382,提交包总说明：目录结构、官方要求对照、诚实声明
+01_开发设计文档/Skill骨架跨行业复用验证.md,9495,9.3 KB,e2f3ea902707bb9f73f5c898885b3d608b45ffea8cc85db9bf4b141d1f286321,
+01_开发设计文档/图文类资产处理验证记录.md,11292,11.0 KB,f7183ca4a83188bee816a2f23b158cc431ec13828b9dd123ae093ecfbc6990e4,VLM 识别链路验证（图文类资产）
+01_开发设计文档/外部复核指南.md,7656,7.5 KB,7e0883abcc1c97be8e69c7b106abe4a445bd6b614c91a0ef469fed910fcd1041,
+01_开发设计文档/对照实验_裸模型vs本系统.md,10449,10.2 KB,f6217dea36cf8d94711802a65d386b4343239ed620e728435342452e14e846ea,
+01_开发设计文档/开发设计文档_final.docx,1305366,1.2 MB,8afb91ddf9ed303106c68895856e4bd9e4bb8b236eb7cbff1a0054dea68e93e7,★ 初赛主文档（Word）
+01_开发设计文档/开发设计文档_源文件.md,170753,166.8 KB,0bfed5d7272625f9e0e10c3dc8453c831e289560fa129b500fc6b31c95de02c2,主文档的 Markdown 源文件（便于修改后重新生成）
+01_开发设计文档/待排查_智能体未调用kg工具.md,6910,6.7 KB,e1ab00aaecf8f1ee4379da3079682d2e63132f8a60b6dfcbe6553281e63fc7ca,
+01_开发设计文档/拒答追问机制验证记录.md,9169,9.0 KB,84939bd092100d5e9d3594df249344435cd1b70d7f9c771716157b5aea544325,三层拒答机制的界面验证
+01_开发设计文档/本体完备性审计与成长实验.md,11846,11.6 KB,ccd44e6c9f8b1ffe9d1dc01567aef28d85f306b7338b1d4af1ac0982b791b7ff,
+01_开发设计文档/消融实验_检索与图谱的必要性.md,9971,9.7 KB,fa49a577f70ab5c7e022bf201f0697195f48391ac1a53be59eb10a11686ca953,
+01_开发设计文档/界面截图/01_智能体配置页.png,139559,136.3 KB,ad6f000df8c5786c52ea1c05481896b8e71053ed774e0fc9ffccedcc6d8de3d5,
+01_开发设计文档/界面截图/02_工具与技能_MCP挂载.png,104447,102.0 KB,9398e81a913e28b5a40915e3731b048cbf65ae0213d4398dfd8e15a652270716,
+01_开发设计文档/界面截图/02_工具与技能_完整配置.png,124344,121.4 KB,2bba57567cd43b14d5d4b210ab2ab613a1925d6a7c10bc5dbd2b8f19b4cfeb0c,
+01_开发设计文档/界面截图/03_调试问答_完整证据.png,191254,186.8 KB,2e78dd25b59ffdb50df02e7941cee4b8677631b2d1bb6bc3c260b35c1a6df56c,
+01_开发设计文档/界面截图/04_调试问答_回答开头.png,187023,182.6 KB,94388bc4e9fad1f98e1a55edc8c4e1fc112c7828c5ff54ce06f2c4d10cfc188f,
+01_开发设计文档/界面截图/05_拒答追问_交互表单.png,203863,199.1 KB,bdf4517e6fd450f9d447fbd9b1ffe14da869d5104628c50caa1dcc8c61666fc3,
+01_开发设计文档/界面截图/06_拒答追问_填写表单.png,204103,199.3 KB,ad0245c5f2480b721c1f16fb3a523960f525498763c89c21f1e4124ea8243abd,
+01_开发设计文档/界面截图/07_补充信息后作答.png,243580,237.9 KB,11da96f5dc77b16f86bbb21998ac3e60c61923ad219b70e23ba225a615a7191f,
+01_开发设计文档/界面操作证据.md,8348,8.2 KB,cc02fc505636f0f9447c245498be4d50b4e99abd89e88079fca2fdab0ce54122,8 张界面截图的清单与逐张说明
+01_开发设计文档/真实脱敏数据集评测.md,8177,8.0 KB,5388cbdecec806e901da81eeaa4e400a2d5f469126216109f98f23d12c0a70e6,
+01_开发设计文档/端到端运行验证记录.md,10639,10.4 KB,5844165cc5dfa064d80ae2eca631ee15eec5223236c0dd7f7e4c535f1e8b1766,检索-推理双驱动的完整证据（工具调用序列）
+01_开发设计文档/评测集金标准核对表.md,10826,10.6 KB,3675ad3a9e448308d143cf993642024ba82366cf028f2b4ec8af4776186fbf28,
+01_开发设计文档/调用关系图.json,974,974 B,9e34ce11b4280fd38942cac6f34b23e7b7755cff69fc8079a2edea78c70249d9,平台导出的调用关系原始数据
+01_开发设计文档/调用关系图.md,11162,10.9 KB,c3a4878b246ad28729136ae08bdd2b934a8dbeddd1014aade78b3222b613bde3,★ 官方要求的调用关系图
+01_开发设计文档/跨文档推理的实现与验证.md,9321,9.1 KB,e75af3b8266bc093e69e2221e89aa48d3c7893b7832f8160fd8985d1280ef18c,
+01_开发设计文档/运行态知识边界.md,10145,9.9 KB,4e1449fca80cdd5260adcf1bad6a7da379f51782cfa10ef9048b0d2659a85809,
+02_代码与本体/eval/ablation_rag_vs_kg.py,11699,11.4 KB,f8d84cc7dea76f40ca23b6c553d5f69b61b0f700bb067099a39b201f29dc8b6a,
+02_代码与本体/eval/ablation_summary.py,9828,9.6 KB,341f277f0c29acdf19268b00488c83dd6fd48ced695b80a8daf018154a0dae2a,
+02_代码与本体/eval/agent_eval_runner.py,13477,13.2 KB,0ff32100e8c4a22e795787662a967317e188efcb8a72d04ae5d0a7bd18c3f374,
+02_代码与本体/eval/agent_eval_strict.py,11870,11.6 KB,6a1c9a34bcf3f69616fc870677f5b5d6a11548893a7776efd8eea1335a41bb2a,
+02_代码与本体/eval/build_evalset.py,22777,22.2 KB,cb34d47e339f8ca613d53b1e87a8ca6e88e536bbd28633f6b8199578646b4b0d,自测评测集生成器（68 条 / 六类）
+02_代码与本体/eval/compare_raw_vs_system.py,10162,9.9 KB,542ac3c582ddb08ec97f9580e04c25bbc4b588c4a344f51484461ba3779272c6,
+02_代码与本体/eval/eval_runner.py,9911,9.7 KB,1f53d11a570eca97cbb6496ca627e964e6b4fc53d90da77eb764144159a1ee03,自测评测执行器
+02_代码与本体/eval/medrep_bench_eval.py,10864,10.6 KB,891d71a63e31519a89d3994ffd9eabdb7188734b73dc4035f336b39e38cabbfa,
+02_代码与本体/kg-service/asset_activation_path.py,22977,22.4 KB,9f4193c6ba1947c1222d58fe3da38575712bee0d0bc0a233f9913e85ae6cdebe,
+02_代码与本体/kg-service/asset_identifier.py,21643,21.1 KB,e1f4d258a84fe0d55559e3cc93095bd0eacac2c3b6a18628013a7b5988ceb670,六维数据资产标识
+02_代码与本体/kg-service/build_clause_table.py,17362,17.0 KB,eb5b4e760963d7f86294d8588e6f9d0e07cf71ae861ccfa2c211cf3e54ab814c,条款结构化表格生成
+02_代码与本体/kg-service/clean_corpus.py,11479,11.2 KB,e3d756a13cb9f5efd867bf50bd9da4aceb630735961ec9160bf1d34db2674c3f,语料清洗器（括号配对 JSON 剥离）
+02_代码与本体/kg-service/imaging_pipeline.py,14438,14.1 KB,4264f4f9788baf4afea02e5d23ac36a8c8ca146e206af27553236a7177a3d947,图文类资产处理流水线（VLM → 推理）
+02_代码与本体/kg-service/kg_reasoning_service.py,20752,20.3 KB,07fce9e2e4902cfd0baf65b73a89054a4d1fdb1801055d6b3d557119f74f4ca7,知识图谱推理服务（三元组 + 多跳）
+02_代码与本体/kg-service/migration_cost.py,12880,12.6 KB,416750da679bf53505a442b0fab6854f221ed99a1ba5e70a61b226fc5a44d6b3,
+02_代码与本体/kg-service/ontology_builder.py,36746,35.9 KB,a79f976c2c7f20a7f6310fa33d9cace2840b506ca58d680fa10d79997915f22e,★ 本体半自动化构建算法（三层流水线）
+02_代码与本体/kg-service/ontology_coverage_audit.py,7377,7.2 KB,8fc87f8b0f6a1b5370cdf919ceacd706daef2b182a346521773fa42c00a6ec16,
+02_代码与本体/kg-service/ontology_export.py,12999,12.7 KB,3fe2aed438a858d11fabfda00ba8e7ceec13adc59e5afce40c7558215f8d4d5f,OWL/TTL 导出器
+02_代码与本体/kg-service/ontology_growth_experiment.py,12524,12.2 KB,bac1397a7b4376dc9cc1953f06017d380abad1e54901b888126c0d95f3a43f6b,
+02_代码与本体/kg-service/ontology_wiring_audit.py,7794,7.6 KB,fdfc1bb3067745c89e8e49181ca9ac2277d399b3d2b76d890bcb8b9e18e5fe1f,
+02_代码与本体/kg-service/workflow_template.py,58021,56.7 KB,714d0e271eece95736d639549859f1eeaae18587ad14c985546da8a2db2491f8,★ 可复用工作流模板（含迁移验证）
+02_代码与本体/mcp-server/README.md,9894,9.7 KB,4dd7cae156cd31e296ff8250a9aaaa740ea5a0ec188ee4e923aa84cab7cae73e,
+02_代码与本体/mcp-server/kg_mcp_server.py,62371,60.9 KB,60ec1db8b0abcf2c634d283300590ad62298acbe97861b7cbb1ae6200b9ae6c4,★ 自研 MCP Server（工具数见下）
+02_代码与本体/mcp-server/mcp-ctl.sh,4203,4.1 KB,5deca66e4841a0f11aa86159c00eeacd32d847b501b9d0013aaef4562b8942ca,MCP 服务启停与自检
+02_代码与本体/mcp-server/mcp_client_test.py,1417,1.4 KB,77f00c8adbfb442d5581233d764d2a6c277aa29221b466e750fc3089bd04957b,
+02_代码与本体/ontology/generated/lung_nodule_ontology_pipeline.ttl,20224,19.8 KB,93b43d6ad60814f806dc5b35ce509d0f7d058c8b0ffbe84138808ec304dbadf2,OWL 本体（流水线版，可从构建流程重现）
+02_代码与本体/ontology/lung_nodule_ontology.ttl,36634,35.8 KB,728dd77b14e8f061cf27463b968912a3d73fdb2fe6836c22521de07f34034f34,★ OWL 本体（增强版，57 类）
+02_代码与本体/ontology/lung_nodule_ontology_v13_62classes.ttl,22396,21.9 KB,2a946651eaf30aeda10d9c6e65488191fcac06c0fa2e3419a95d8dab7119be07,
+02_代码与本体/scripts/batch_e2e.sh,3070,3.0 KB,deff3b073906853a00b787e921f3e3feac11747ead6ffd9421ed4b8a0a04fff4,8 场景批量验证脚本
+02_代码与本体/scripts/e2e_call.sh,2073,2.0 KB,00eb00c848d63e15f7c25ffea23c10f14b4f65b65fb47cb5bcfb4f67e58bd296,单次端到端调用脚本
+02_代码与本体/skill/lung-nodule-decision/SKILL.md,7509,7.3 KB,bf72ff729e9a2924d208f18b860731546e1defd4946a922aaf867d95731cd5aa,★ Skill 定义（三层编排）
+02_代码与本体/skill/lung-nodule-decision/config/schema.yaml,1821,1.8 KB,2a6c721f1d2afe864fdd0100c59ecb0a6b86dca75049b6d1ca8572f59b4e4000,Skill 参数配置（7 个参数）
+02_代码与本体/skill/skill_template.py,19774,19.3 KB,1d4f3c10353a9d4c2fdbf3739d65d3ab76c04b8628ee70999c5318c508b2bce4,
+02_代码与本体/tools/build_consequence.py,4208,4.1 KB,845d97f2d642ae46a414188f73f4608a42171f6f221961a12d09b07009bb72f4,
+02_代码与本体/tools/build_defense_ppt.py,41385,40.4 KB,a1bab91b45830379641e14841319ea88467d3fb51ba2001704c8a4cfd0609a00,中文答辩 PPT 生成器
+02_代码与本体/tools/build_defense_ppt_en.py,42535,41.5 KB,5d55d490002a228167184ab2809cad4a949eed1ddb7291e5ba76cfd595d55733,英文答辩 PPT 生成器
+02_代码与本体/tools/build_net_gain.py,4030,3.9 KB,9e2da6ea49850ca9f2fa83ef3446e61f200f9021c1cdfa7ecb29402397c87236,
+02_代码与本体/tools/check_package.py,9641,9.4 KB,fb7ac3972a6f9eb778b58254eec35e782cce7dbafad4dfc1c1ae1175aec01d48,提交包一致性检查器
+02_代码与本体/tools/consistency_scan.py,11420,11.2 KB,6b0c8a3058e13942a611fc5162f90ca2b1475a7322b7a6d4356c43ddfbd311dc,
+02_代码与本体/tools/ingest_knowledge_base.py,7007,6.8 KB,a4c0096cbf51ec0620d849227d5c79c1bffeefb876299aa6dc3027691e8d2e05,
+02_代码与本体/tools/inject_metrics.py,8910,8.7 KB,4289faef46adc39cc67257ce62a6e786570744035addfef5ad1e72f10ce89f9a,
+02_代码与本体/tools/md2docx.py,10366,10.1 KB,15831de2b5a4a01e32aa2313fe7e4c418641a832a14c962fa7e4b1e2581fa015,Markdown → Word 转换器
+02_代码与本体/tools/parse_agent_response.py,9033,8.8 KB,54ddd3857f11c793c8ce91296f5183bd022ff988199e548e4640615df1277054,智能体响应解析器
+02_代码与本体/tools/verify_evidence.py,5176,5.1 KB,4ae7be472d551fd871ebab6e497ea51d0a209152ce1c95821b18e1074e39fc6a,
+03_验证与数据/clauses_table.csv,6567,6.4 KB,5c0e22c8f66bb51ea490c2835137ead994cfdd758aaee44840bcf124322af1c5,条款结构化表格（18 × 14）
+03_验证与数据/clauses_table.md,7508,7.3 KB,bff15980e86be762c6359a4b290c3d4c4341f6a741c24b5f6c0b991ae78fceb3,
+03_验证与数据/coverage_audit.json,15381,15.0 KB,1c65a19233ef25eae6113a92ce0f9791f9762f3f320db20ba6e06fbd1bf5d5b8,
+03_验证与数据/coverage_audit_v13.json,12510,12.2 KB,7cba0afe9545f8708374e4cfba1d1244e85d7aeec13711efce40d1624d742e0a,
+03_验证与数据/growth_report.json,5428,5.3 KB,e0d27e30f1cb162095b6892407f068f4e983a39947f2a4a2e48ada5ba7cfb0dc,
+03_验证与数据/skill_migration_report.json,1736,1.7 KB,673cdd67722e99b1517e75f3857316fb502a3c22cff487989a382daf53fbe7fd,
+03_验证与数据/四份文档构建报告.json,1383,1.4 KB,ebffea081e5e1522456924b9d5a85bf32588a27c3b24b524eb54b7a8444838cc,
+03_验证与数据/图文识别结果.json,5535,5.4 KB,6c2b58ba22df45fa6febc4895f4e85c7e8b93f8135647392102fd347a9e3bcb2,VLM 识别 + 推理 + 资产标识的完整结果
+03_验证与数据/多行业迁移验证报告.json,7683,7.5 KB,ca9c00f575a4bb9c9201e1c9ec04b2dd9ea9d675ba61214491913e3c3288c337,★ 多行业迁移验证（医疗 + 金融）
+03_验证与数据/对照实验_裸模型原始输出.json,15087,14.7 KB,7361dca11be58e194ff0385caa4cbdce7d90a7b87c1077672dd646d12c55459a,
+03_验证与数据/影像报告样例.png,144973,141.6 KB,b9620f6e3b0cb65afa5691943239b918e20510a49bdcddd5c8bc452336176f09,图文类资产样例（按标准格式构造）
+03_验证与数据/智能体层端到端评测.json,223312,218.1 KB,5c589fde7dab0e76ff2aba71edfcef7eef492104ca3e3439e1093cddeee5879c,
+03_验证与数据/智能体层端到端评测_严格判据.json,22495,22.0 KB,cc2402d3c40778e3d3277778504124232d2441e11a49368d2da5432d8a67562e,
+03_验证与数据/智能体层端到端评测_重复采样.json,30947,30.2 KB,e84ba46b002179711663aa0473cf885013869ecb0d5395f79be6b9bec6f632e4,
+03_验证与数据/本体接线审计_医疗.json,3632,3.5 KB,397dfb0587f2398bdc473140f3ebc76a3aaadac515f06df47dffa7365a9cd426,
+03_验证与数据/本体接线审计_金融.json,4954,4.8 KB,7adf9eb808d1a0b33b4af58c042432f2ce7f6c2fcf96c936f12faf321aef6a91,
+03_验证与数据/本体构建质量报告.json,1007,1007 B,8defa6d3241a297c9bd07325a93b494eb3b715431071d357291f415ae5b31348,本体构建的量化指标
+03_验证与数据/消融实验_RAG基线原始输出.json,8317,8.1 KB,487ac946718d27c5257aea02c315af3f18719813df42e1d5beb0d288cbf708d2,
+03_验证与数据/消融实验_三配置对照.json,10103,9.9 KB,cf61480ba83df96129e85c9fc159d2233414a6bec9ecf6af74a1dfd93db07575,
+03_验证与数据/消融实验_净收益量化.json,1819,1.8 KB,cf819a2cda4c0c8eef37cbab7a507de46266a047e87572d2d2d5d0c15b92b8df,
+03_验证与数据/消融实验_后果对照.json,4017,3.9 KB,664b6983e42a83d07700eba42ebb6a00e7bd47ae03886222cc44c25f91b05830,
+03_验证与数据/真实脱敏数据集评测_MedRepBench.json,9589,9.4 KB,898c522d33173bf5fd995bd56764f08a3fa04a8556f7a864580db3258fb86ef5,
+03_验证与数据/知识库入库报告.json,1529,1.5 KB,04cdfa94113ed1350c0e1423b44a72182c1f964118f5f37d6c02773cfc2c388e,
+03_验证与数据/端到端批量验证记录.md,37105,36.2 KB,236bdb486d6621eefcf93b0c489219fe6329990c045b31afb1bb39928243739a,8 场景批量验证记录
+03_验证与数据/端到端问答记录.json,6204,6.1 KB,d2f25631b52738a707ebfac3c767767add373f980bb3d8eb467309ddc6dfae37,
+03_验证与数据/端到端问答记录.md,4295,4.2 KB,cac707442087dc662200acbf8debdc5c8b38341d8215ff9ab32e755ab79bae95,
+03_验证与数据/结构化指标/S1.json,5813,5.7 KB,164bf3afa5277590c92e7bbfc87a30ed1a7bd58cb84305300bd8bee0249e2cfe,
+03_验证与数据/结构化指标/S2.json,5498,5.4 KB,25d62b67779ab940cdb4a7c3e8d66080c9c0aa43c14ae11e1f735ef553273a6c,
+03_验证与数据/结构化指标/S3.json,4026,3.9 KB,32682038c58bec89655fe1cc93f1a4f92dedf8e5313995bbcad474440e1a574c,
+03_验证与数据/结构化指标/S4.json,3828,3.7 KB,70accd67f1b7541ed2ff049ccee1d6d524b6c51ae24c4858d254c2bdf781108d,
+03_验证与数据/结构化指标/S5.json,7287,7.1 KB,7add0acb7106a9378a87d085bd1f8036c863ec6b20db143c3fcc4ee32ce03a0c,
+03_验证与数据/结构化指标/S6.json,1968,1.9 KB,81c89a660530a10b059fde5e5cecab7e9d7c1d676b2380e5c0a7ceca61214397,
+03_验证与数据/结构化指标/S7.json,2350,2.3 KB,242d6fca87196189b2204f8b54a03449939de54ad99f83646e9e0928a6dde14f,
+03_验证与数据/结构化指标/S8.json,7132,7.0 KB,ae8e18a0e2e9273cddf217b721b8ffae03203141f966fdb053eba821976a15db,
+03_验证与数据/自测报告_58条.json,40972,40.0 KB,10ec6500f7c1ce6c0927186202738363ef615c1d1409516b789f4d565b4b31e8,
+03_验证与数据/自测评测集_58条.json,32084,31.3 KB,19e43e3e60f932359384211a33ce02b41afb50fb331b0357f3957f48d7b608e6,
+03_验证与数据/资产标识注册表.json,13284,13.0 KB,3631f96b6832876f604ca82305f8f9156e3e84a8a5d42fac7a963e9bfe931591,三种模态的数据资产清单
+03_验证与数据/资产激活路径台账.json,17532,17.1 KB,2848cf4980e84f9f28203636218f6d798604fd906b4ba8c51c3cf9c110064e87,
+03_验证与数据/迁移成本量化报告.json,7414,7.2 KB,5933fddb68607e417f8d1061b2ede48e5507b15d5a4d950f0dc1ea6e2ed54752,
+04_参考资料/原文_2024共识_全文.txt,49899,48.7 KB,398d44017edb2f46b600de59c44e15b21ea54208fd6d949160261c1db5fd7493,
+04_参考资料/原文_固定资产贷款管理办法2024_清洗后.txt,21810,21.3 KB,ab5cfb4f03b9b73f1ea4397525453973df217c3a4df12e8f2dc9d36a107e9f77,
+04_参考资料/原文_特种设备安全法_清洗后.txt,48327,47.2 KB,b80abbcc4cf4b34bedc2db1a257e385be13ed3eb61163247e1cc47b10207d1f4,
+04_参考资料/参考资料清单.md,3847,3.8 KB,f1b47dc58a4484ca0387c726e695ca74645ffa7f7438d9aea630d3777aa17bdf,
+04_参考资料/筛查指南2023_结构化版.txt,21036,20.5 KB,6a605999a08e56f5aa9cf5bdb5d7b5e434fb7673b3e9d0fecf4c0e4d32eaaed4,
+04_参考资料/筛查指南2025_全文.txt,25085,24.5 KB,5218b24686a60abe92f77dd364e49a3c0f33469d93e17f622aceb625583db917,
+04_参考资料/语料_2024共识_清洗后.txt,49640,48.5 KB,7b66aa3719ea71595f3d7467607b33f71d988a71dd5d2c80c438a729d8ae7a92,
+04_参考资料/语料_2025共识_清洗后.txt,31624,30.9 KB,ab16d801f389a1862f4a4b9666c912ca0cbafbf27e3297fa69183956a69dac85,
+04_参考资料/语料_筛查指南2023_清洗后.txt,21019,20.5 KB,8b793dc90108750b95cabaa59e5a9099f418f6f20ec898e1582d9fd4db47237b,
+04_参考资料/语料_筛查指南2025_清洗后.txt,24978,24.4 KB,c74d49e7d69e8be1f1d3cbe88a5e631e3c5527b5913de7b6fdf90bc99091b800,
+05_答辩材料/DefenseDeck_EN.pptx,98169,95.9 KB,be540cbc4880f3581141a8cc062f27b07f3ca2ff696db7fb984dd45953e5033e,英文答辩 PPT（20 页）
+05_答辩材料/English_Defense_Speaking_Notes.md,23984,23.4 KB,8d8f44c54e7ba187f12e215de51ad42971a909680621bbdb8f2eeba032e956c3,英文口语稿 + 10 个预设问答
+05_答辩材料/国赛答辩PPT.pptx,101930,99.5 KB,2df0cbfeaf66e72077aceb656ce17ccbb40dbd3621582e973b70897b284fe1c8,中文答辩 PPT（20 页）
+05_答辩材料/国赛答辩框架.md,29067,28.4 KB,877045dca1e1a3a527b3d221a540bd9c0c6bf9cc5d9442f68c6f778fc08fca20,答辩框架 + 10 个预设问答
+05_答辩材料/附加分调研_真实脱敏数据集.md,8351,8.2 KB,d742281761d167daabb7b82fc436fc7098f6394fcc24b32fac6ea1059c5db5ab,真实脱敏数据集调研结论
+LICENSE,11901,11.6 KB,7e97de26c7172936380deb3dcd3aa5a06fe5004ac3f9ceaddc62b0ea2bfb73d5,
+README.md,6082,5.9 KB,fe22d24c3c7b5589e07ede0102fc220b56913d7ff0f7e96e8f2d22d0dca7fa3d,
+THIRD_PARTY_NOTICES.md,5134,5.0 KB,0774ec6eb819712574bf75d49fb1e0ca2cfbcc76e44c80d2f422bb05b81344d6,
+一键复现指南.md,9287,9.1 KB,e570d4e971cbbce4c43c7fc06a12003b118a89821351a210611eefe46f3f1c17,

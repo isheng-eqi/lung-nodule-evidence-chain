@@ -1,0 +1,594 @@
+{
+  "ontology_classes": 62,
+  "method": "候选术语由高频后缀规则发现（不依赖本体）；对齐判定用 builder.align()。这是术语层覆盖度的近似，不是语义完备性证明。",
+  "min_count": 2,
+  "documents": [
+    {
+      "document": "2024共识",
+      "doc_chars": 19109,
+      "candidates": 83,
+      "covered": 66,
+      "gaps": 17,
+      "term_coverage_rate": 0.7952,
+      "gap_samples": [
+        {
+          "term": "治中国专家共识",
+          "freq": 11
+        },
+        {
+          "term": "节的个体化评估",
+          "freq": 3
+        },
+        {
+          "term": "和鉴别诊断",
+          "freq": 3
+        },
+        {
+          "term": "早期诊断和治疗",
+          "freq": 2
+        },
+        {
+          "term": "延误诊断和治疗",
+          "freq": 2
+        },
+        {
+          "term": "而无需即刻治疗",
+          "freq": 2
+        },
+        {
+          "term": "或者消融",
+          "freq": 2
+        },
+        {
+          "term": "助诊断系统评估",
+          "freq": 2
+        },
+        {
+          "term": "规和个体化评估",
+          "freq": 2
+        },
+        {
+          "term": "辅助评估",
+          "freq": 2
+        },
+        {
+          "term": "复发和预后评估",
+          "freq": 2
+        },
+        {
+          "term": "网技术辅助评估",
+          "freq": 2
+        },
+        {
+          "term": "以避免延误诊断",
+          "freq": 2
+        },
+        {
+          "term": "术活检明确诊断",
+          "freq": 2
+        },
+        {
+          "term": "肺癌的辅助诊断",
+          "freq": 2
+        },
+        {
+          "term": "鳞癌的辅助诊断",
+          "freq": 2
+        },
+        {
+          "term": "年的人群",
+          "freq": 2
+        }
+      ],
+      "covered_samples": [
+        {
+          "term": "个月随访",
+          "freq": 7,
+          "mapped_to": "CT随访"
+        },
+        {
+          "term": "防治联盟肺结节",
+          "freq": 6,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "非手术活检",
+          "freq": 6,
+          "mapped_to": "非手术活检"
+        },
+        {
+          "term": "性不明原因结节",
+          "freq": 5,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "会发现的肺结节",
+          "freq": 4,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "的肺结节",
+          "freq": 4,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "实性肺结节",
+          "freq": 4,
+          "mapped_to": "实性肺结节"
+        },
+        {
+          "term": "难定性肺结节",
+          "freq": 4,
+          "mapped_to": "难定性肺结节"
+        },
+        {
+          "term": "恶性结节",
+          "freq": 4,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "影像辅助诊断",
+          "freq": 4,
+          "mapped_to": "影像辅助诊断"
+        },
+        {
+          "term": "对肺癌高危人群",
+          "freq": 4,
+          "mapped_to": "肺癌高危人群"
+        },
+        {
+          "term": "对肺结节",
+          "freq": 3,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "恶性肺结节",
+          "freq": 3,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "如果结节",
+          "freq": 3,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "验性抗生素治疗",
+          "freq": 3,
+          "mapped_to": "经验性抗菌治疗"
+        }
+      ]
+    },
+    {
+      "document": "2025共识",
+      "doc_chars": 12056,
+      "candidates": 30,
+      "covered": 24,
+      "gaps": 6,
+      "term_coverage_rate": 0.8,
+      "gap_samples": [
+        {
+          "term": "专家共识",
+          "freq": 6
+        },
+        {
+          "term": "本专家共识",
+          "freq": 4
+        },
+        {
+          "term": "工智能辅助诊断",
+          "freq": 3
+        },
+        {
+          "term": "良恶性鉴别诊断",
+          "freq": 2
+        },
+        {
+          "term": "岁以上人群",
+          "freq": 2
+        },
+        {
+          "term": "或垂直医学模型",
+          "freq": 2
+        }
+      ],
+      "covered_samples": [
+        {
+          "term": "肺癌筛查",
+          "freq": 11,
+          "mapped_to": "肺癌筛查"
+        },
+        {
+          "term": "肺结节健康管理",
+          "freq": 9,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "癌筛查及肺结节",
+          "freq": 8,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "健康管理",
+          "freq": 8,
+          "mapped_to": "处置动作"
+        },
+        {
+          "term": "难定性肺结节",
+          "freq": 5,
+          "mapped_to": "难定性肺结节"
+        },
+        {
+          "term": "查及肺结节管理",
+          "freq": 5,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "肺结节风险评估",
+          "freq": 3,
+          "mapped_to": "风险评估"
+        },
+        {
+          "term": "机会性筛查",
+          "freq": 3,
+          "mapped_to": "机会性筛查"
+        },
+        {
+          "term": "肺结节影像诊断",
+          "freq": 3,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "本共识推荐",
+          "freq": 3,
+          "mapped_to": "推荐意见"
+        },
+        {
+          "term": "癌筛查与肺结节",
+          "freq": 2,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "综合构建肺结节",
+          "freq": 2,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "确定个体化随访",
+          "freq": 2,
+          "mapped_to": "CT随访"
+        },
+        {
+          "term": "风险评估",
+          "freq": 2,
+          "mapped_to": "风险评估"
+        },
+        {
+          "term": "行业的肺癌筛查",
+          "freq": 2,
+          "mapped_to": "肺癌筛查"
+        }
+      ]
+    },
+    {
+      "document": "筛查2023",
+      "doc_chars": 8136,
+      "candidates": 27,
+      "covered": 25,
+      "gaps": 2,
+      "term_coverage_rate": 0.9259,
+      "gap_samples": [
+        {
+          "term": "当进入临床治疗",
+          "freq": 2
+        },
+        {
+          "term": "年版指南",
+          "freq": 2
+        }
+      ],
+      "covered_samples": [
+        {
+          "term": "肺癌筛查",
+          "freq": 14,
+          "mapped_to": "肺癌筛查"
+        },
+        {
+          "term": "多发结节",
+          "freq": 4,
+          "mapped_to": "多发性肺结节"
+        },
+        {
+          "term": "年度筛查",
+          "freq": 4,
+          "mapped_to": "年度筛查"
+        },
+        {
+          "term": "高危人群",
+          "freq": 4,
+          "mapped_to": "肺癌高危人群"
+        },
+        {
+          "term": "癌风险预测模型",
+          "freq": 4,
+          "mapped_to": "风险预测模型"
+        },
+        {
+          "term": "结节管理",
+          "freq": 4,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "或部分实性结节",
+          "freq": 3,
+          "mapped_to": "混杂性磨玻璃结节"
+        },
+        {
+          "term": "如果结节",
+          "freq": 3,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "合外科手术治疗",
+          "freq": 3,
+          "mapped_to": "外科手术根治性切除"
+        },
+        {
+          "term": "基线筛查",
+          "freq": 3,
+          "mapped_to": "基线筛查"
+        },
+        {
+          "term": "国农村肺癌筛查",
+          "freq": 3,
+          "mapped_to": "肺癌筛查"
+        },
+        {
+          "term": "筛查的高危人群",
+          "freq": 3,
+          "mapped_to": "肺癌高危人群"
+        },
+        {
+          "term": "筛查指南",
+          "freq": 3,
+          "mapped_to": "肺癌筛查"
+        },
+        {
+          "term": "筛查检出的结节",
+          "freq": 2,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "阳性结节",
+          "freq": 2,
+          "mapped_to": "肺结节"
+        }
+      ]
+    },
+    {
+      "document": "筛查2025",
+      "doc_chars": 9472,
+      "candidates": 33,
+      "covered": 28,
+      "gaps": 5,
+      "term_coverage_rate": 0.8485,
+      "gap_samples": [
+        {
+          "term": "可能的肺癌切除",
+          "freq": 3
+        },
+        {
+          "term": "年版指南",
+          "freq": 3
+        },
+        {
+          "term": "当进入临床治疗",
+          "freq": 2
+        },
+        {
+          "term": "流行病学特征",
+          "freq": 2
+        },
+        {
+          "term": "本次指南",
+          "freq": 2
+        }
+      ],
+      "covered_samples": [
+        {
+          "term": "肺癌筛查",
+          "freq": 9,
+          "mapped_to": "肺癌筛查"
+        },
+        {
+          "term": "年度筛查",
+          "freq": 5,
+          "mapped_to": "年度筛查"
+        },
+        {
+          "term": "筛查中实性结节",
+          "freq": 4,
+          "mapped_to": "实性肺结节"
+        },
+        {
+          "term": "或部分实性结节",
+          "freq": 4,
+          "mapped_to": "混杂性磨玻璃结节"
+        },
+        {
+          "term": "多发结节",
+          "freq": 4,
+          "mapped_to": "多发性肺结节"
+        },
+        {
+          "term": "肺癌筛查指南",
+          "freq": 4,
+          "mapped_to": "肺癌筛查"
+        },
+        {
+          "term": "如果结节",
+          "freq": 3,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "基线筛查",
+          "freq": 3,
+          "mapped_to": "基线筛查"
+        },
+        {
+          "term": "将基线筛查",
+          "freq": 3,
+          "mapped_to": "基线筛查"
+        },
+        {
+          "term": "高危人群",
+          "freq": 3,
+          "mapped_to": "肺癌高危人群"
+        },
+        {
+          "term": "癌风险预测模型",
+          "freq": 3,
+          "mapped_to": "风险预测模型"
+        },
+        {
+          "term": "筛查指南",
+          "freq": 3,
+          "mapped_to": "肺癌筛查"
+        },
+        {
+          "term": "结节管理",
+          "freq": 3,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "或非钙化性结节",
+          "freq": 2,
+          "mapped_to": "肺结节"
+        },
+        {
+          "term": "实性结节",
+          "freq": 2,
+          "mapped_to": "实性肺结节"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_candidates": 173,
+    "total_gaps": 30,
+    "overall_term_coverage": 0.8266,
+    "top_gaps": [
+      [
+        "治中国专家共识",
+        11
+      ],
+      [
+        "专家共识",
+        6
+      ],
+      [
+        "年版指南",
+        5
+      ],
+      [
+        "本专家共识",
+        4
+      ],
+      [
+        "当进入临床治疗",
+        4
+      ],
+      [
+        "节的个体化评估",
+        3
+      ],
+      [
+        "和鉴别诊断",
+        3
+      ],
+      [
+        "工智能辅助诊断",
+        3
+      ],
+      [
+        "可能的肺癌切除",
+        3
+      ],
+      [
+        "早期诊断和治疗",
+        2
+      ],
+      [
+        "延误诊断和治疗",
+        2
+      ],
+      [
+        "而无需即刻治疗",
+        2
+      ],
+      [
+        "或者消融",
+        2
+      ],
+      [
+        "助诊断系统评估",
+        2
+      ],
+      [
+        "规和个体化评估",
+        2
+      ],
+      [
+        "辅助评估",
+        2
+      ],
+      [
+        "复发和预后评估",
+        2
+      ],
+      [
+        "网技术辅助评估",
+        2
+      ],
+      [
+        "以避免延误诊断",
+        2
+      ],
+      [
+        "术活检明确诊断",
+        2
+      ],
+      [
+        "肺癌的辅助诊断",
+        2
+      ],
+      [
+        "鳞癌的辅助诊断",
+        2
+      ],
+      [
+        "年的人群",
+        2
+      ],
+      [
+        "良恶性鉴别诊断",
+        2
+      ],
+      [
+        "岁以上人群",
+        2
+      ],
+      [
+        "或垂直医学模型",
+        2
+      ],
+      [
+        "流行病学特征",
+        2
+      ],
+      [
+        "本次指南",
+        2
+      ]
+    ]
+  }
+}

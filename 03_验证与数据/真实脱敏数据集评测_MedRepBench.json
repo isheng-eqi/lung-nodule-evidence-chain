@@ -1,0 +1,416 @@
+{
+  "dataset": "MedRepBench (HuggingFace: MedRepBench/MedRepBench)",
+  "license": "CC-BY-NC-4.0",
+  "task": "objective_extraction —— 实验室检验项表格抽取",
+  "metric": "field-level recall（官方 evaluate_objective.py 口径）",
+  "seed": 20261010,
+  "vlm_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "field_recall": {
+    "item_name": {
+      "correct": 196,
+      "total": 223,
+      "recall": 0.8789
+    },
+    "item_value": {
+      "correct": 176,
+      "total": 223,
+      "recall": 0.7892
+    },
+    "item_unit": {
+      "correct": 188,
+      "total": 223,
+      "recall": 0.843
+    },
+    "item_range": {
+      "correct": 164,
+      "total": 223,
+      "recall": 0.7354
+    },
+    "is_abnormal": {
+      "correct": 183,
+      "total": 223,
+      "recall": 0.8206
+    }
+  },
+  "average_recall": 0.8135,
+  "results": [
+    {
+      "image": "b1643683062438396006.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "儿科",
+        "gender": "",
+        "age": 6
+      },
+      "ref_count": 12,
+      "pred_count": 12,
+      "matched": 12,
+      "field_correct": 48,
+      "field_total": 60
+    },
+    {
+      "image": "b1672491840094657523.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "妇科",
+        "gender": "女",
+        "age": 30.0
+      },
+      "ref_count": 9,
+      "pred_count": 9,
+      "matched": 9,
+      "field_correct": 44,
+      "field_total": 45
+    },
+    {
+      "image": "1000_b_image_1688582063121379329.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "感染科",
+        "gender": "女",
+        "age": ""
+      },
+      "ref_count": 8,
+      "pred_count": 8,
+      "matched": 8,
+      "field_correct": 39,
+      "field_total": 40
+    },
+    {
+      "image": "1000_b_image_1655489738047234048.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "",
+        "gender": "男",
+        "age": 5.0
+      },
+      "ref_count": 9,
+      "pred_count": 8,
+      "matched": 8,
+      "field_correct": 40,
+      "field_total": 40
+    },
+    {
+      "image": "1000_b_image_1674062536236441600.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "呼吸内科",
+        "gender": "",
+        "age": ""
+      },
+      "ref_count": 17,
+      "pred_count": 17,
+      "matched": 13,
+      "field_correct": 65,
+      "field_total": 65
+    },
+    {
+      "image": "b1629346502283807160.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "",
+        "gender": "男",
+        "age": 28
+      },
+      "ref_count": 5,
+      "pred_count": 5,
+      "matched": 5,
+      "field_correct": 20,
+      "field_total": 25
+    },
+    {
+      "image": "1000_b_image_1647471057196257280.png",
+      "ok": false,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "image": "b1657769557650311845.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "内分泌科",
+        "gender": "女",
+        "age": "39.083"
+      },
+      "ref_count": 5,
+      "pred_count": 5,
+      "matched": 3,
+      "field_correct": 15,
+      "field_total": 15
+    },
+    {
+      "image": "b1652411671308865755.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "男科",
+        "gender": "男",
+        "age": ""
+      },
+      "ref_count": 4,
+      "pred_count": 4,
+      "matched": 4,
+      "field_correct": 14,
+      "field_total": 20
+    },
+    {
+      "image": "1000_b_image_1684760126128058368.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "",
+        "gender": "",
+        "age": ""
+      },
+      "ref_count": 14,
+      "pred_count": 14,
+      "matched": 13,
+      "field_correct": 39,
+      "field_total": 65
+    },
+    {
+      "image": "b1652515834760961733.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "肝病科/消化内科",
+        "gender": "",
+        "age": ""
+      },
+      "ref_count": 13,
+      "pred_count": 13,
+      "matched": 12,
+      "field_correct": 60,
+      "field_total": 60
+    },
+    {
+      "image": "1000_b_image_1649347323283906560.jpg",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "血液科",
+        "gender": "男",
+        "age": 75.0
+      },
+      "ref_count": 7,
+      "pred_count": 7,
+      "matched": 7,
+      "field_correct": 35,
+      "field_total": 35
+    },
+    {
+      "image": "1000_b_image_1689979976599187456.jpg",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "血液内科",
+        "gender": "",
+        "age": ""
+      },
+      "ref_count": 18,
+      "pred_count": 18,
+      "matched": 15,
+      "field_correct": 72,
+      "field_total": 75
+    },
+    {
+      "image": "b1651230447545459328.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "妇产科",
+        "gender": "女",
+        "age": 34.12
+      },
+      "ref_count": 7,
+      "pred_count": 6,
+      "matched": 6,
+      "field_correct": 27,
+      "field_total": 30
+    },
+    {
+      "image": "b1656334353098654855.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "男科",
+        "gender": "男",
+        "age": ""
+      },
+      "ref_count": 27,
+      "pred_count": 27,
+      "matched": 24,
+      "field_correct": 118,
+      "field_total": 120
+    },
+    {
+      "image": "1000_b_image_1666050955821506560.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "呼吸与危重症",
+        "gender": "男",
+        "age": 43
+      },
+      "ref_count": 19,
+      "pred_count": 19,
+      "matched": 17,
+      "field_correct": 84,
+      "field_total": 85
+    },
+    {
+      "image": "1000_b_image_1658834992234082304.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "急诊科",
+        "gender": "女",
+        "age": 42
+      },
+      "ref_count": 3,
+      "pred_count": 3,
+      "matched": 1,
+      "field_correct": 5,
+      "field_total": 5
+    },
+    {
+      "image": "b1643031436071456212.png",
+      "ok": false,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "image": "b1637536909768567033.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "",
+        "gender": "",
+        "age": ""
+      },
+      "ref_count": 14,
+      "pred_count": 12,
+      "matched": 11,
+      "field_correct": 52,
+      "field_total": 55
+    },
+    {
+      "image": "b1650775303302182229.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "妇产科",
+        "gender": "女",
+        "age": ""
+      },
+      "ref_count": 5,
+      "pred_count": 6,
+      "matched": 5,
+      "field_correct": 25,
+      "field_total": 25
+    },
+    {
+      "image": "b1658896721937500415.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "神经内科",
+        "gender": "男",
+        "age": 55.0
+      },
+      "ref_count": 3,
+      "pred_count": 3,
+      "matched": 3,
+      "field_correct": 15,
+      "field_total": 15
+    },
+    {
+      "image": "b1675242859099765234.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "神经内科",
+        "gender": "男",
+        "age": "14.0"
+      },
+      "ref_count": 3,
+      "pred_count": 3,
+      "matched": 2,
+      "field_correct": 10,
+      "field_total": 10
+    },
+    {
+      "image": "b1632369289160423112.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "妇科",
+        "gender": "女",
+        "age": ""
+      },
+      "ref_count": 3,
+      "pred_count": 3,
+      "matched": 3,
+      "field_correct": 15,
+      "field_total": 15
+    },
+    {
+      "image": "1000_b_image_1696854853131120640.jpg",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "内分泌科",
+        "gender": "",
+        "age": ""
+      },
+      "ref_count": 5,
+      "pred_count": 5,
+      "matched": 4,
+      "field_correct": 20,
+      "field_total": 20
+    },
+    {
+      "image": "1000_b_image_1668624901143633920.png",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "体检科",
+        "gender": "女",
+        "age": 34.0
+      },
+      "ref_count": 8,
+      "pred_count": 8,
+      "matched": 6,
+      "field_correct": 29,
+      "field_total": 30
+    },
+    {
+      "image": "1000_b_image_1637710434515931136.jpg",
+      "ok": true,
+      "meta": {
+        "type": "Laboratory",
+        "department": "西老年病科",
+        "gender": "男",
+        "age": 62.0
+      },
+      "ref_count": 5,
+      "pred_count": 5,
+      "matched": 5,
+      "field_correct": 16,
+      "field_total": 25
+    }
+  ],
+  "scope_note": "★ 任务界定：MedRepBench 的客观抽取任务是「实验室检验项表格抽取」，与本项目核心的「肺结节影像报告 → 处置决策」任务不同。本评测证明的是**多模态链路识别层在真实脱敏报告上的字段抽取能力**，**不能**证明结节处置决策的正确性，也不替代结节场景的临床验证。",
+  "sample_size_attempted": 26,
+  "sample_size_completed": 24,
+  "sample_size_failed": 2,
+  "failed_images": [
+    "1000_b_image_1647471057196257280.png",
+    "b1643031436071456212.png"
+  ]
+}

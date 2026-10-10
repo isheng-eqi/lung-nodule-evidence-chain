@@ -1,0 +1,247 @@
+{
+  "scenarios": [
+    {
+      "id": "A001",
+      "question": "55岁男性，8mm混合磨玻璃结节，实性成分2mm，吸烟30年，该怎么随访？",
+      "gold_clause": "推荐意见14",
+      "case_type": "advice",
+      "config_a": {
+        "answer": "直径8.0mm、混杂性磨玻璃结节、55岁、吸烟30年 → 适用【推荐意见14】mGGN ≤8mm 随访（Ⅲ类推荐）；处置：CT随访、MDT多学科会诊、检查：循环染色体异常细胞检测、检查：薄层CT；分级诊疗：None。\nCT随访【推荐意见14】\nMDT多学科会诊【推荐意见14】\n检查：循环染色体异常细胞检测【推荐意见14】\n检查：薄层CT【推荐意见14】\n随访：3、6、12 和 24 个月【推荐意见14】\n禁忌：PET-CT 不推荐用于判断实性成分≤8mm 的混杂性病灶【推荐意见15】",
+        "coverage": "COVERED",
+        "clause": "推荐意见14",
+        "chain_len": 7,
+        "has_caveat_text": true,
+        "has_contraindications": true,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 244,
+          "clauses_cited": [
+            "14",
+            "15"
+          ],
+          "citation_count": 2,
+          "has_clause_citation": true,
+          "hit_gold": true,
+          "self_declared_insufficient": false,
+          "gave_advice": true
+        }
+      },
+      "config_c": {
+        "answer": "直径8.0mm、混杂性磨玻璃结节、55岁、吸烟30年 → 适用【推荐意见14】mGGN ≤8mm 随访（Ⅲ类推荐）；处置：CT随访、MDT多学科会诊、检查：循环染色体异常细胞检测、检查：薄层CT；分级诊疗：None。\nCT随访【推荐意见14】\nMDT多学科会诊【推荐意见14】\n检查：循环染色体异常细胞检测【推荐意见14】\n检查：薄层CT【推荐意见14】\n随访：3、6、12 和 24 个月【推荐意见14】",
+        "coverage": "COVERED",
+        "clause": "推荐意见14",
+        "chain_len": 7,
+        "has_caveat_text": false,
+        "has_contraindications": false,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 203,
+          "clauses_cited": [
+            "14"
+          ],
+          "citation_count": 1,
+          "has_clause_citation": true,
+          "hit_gold": true,
+          "self_declared_insufficient": false,
+          "gave_advice": true
+        }
+      }
+    },
+    {
+      "id": "A005",
+      "question": "62岁男性，15mm混杂性磨玻璃结节，实性成分6mm，有毛刺征，该如何处理？",
+      "gold_clause": "推荐意见15",
+      "case_type": "advice",
+      "config_a": {
+        "answer": "直径15.0mm、混杂性磨玻璃结节、62岁 → 适用【推荐意见15】mGGN >8mm 处置（Ⅲ类推荐）；处置：CT随访、经验性抗菌治疗、MDT多学科会诊、检查：循环染色体异常细胞检测；分级诊疗：None。\nCT随访【推荐意见15】\n经验性抗菌治疗【推荐意见15】\nMDT多学科会诊【推荐意见15】\n检查：循环染色体异常细胞检测【推荐意见15】\n随访：3 个月【推荐意见15】\n禁忌：PET-CT 不推荐用于判断实性成分≤8mm 的混杂性病灶【推荐意见15】",
+        "coverage": "COVERED",
+        "clause": "推荐意见15",
+        "chain_len": 8,
+        "has_caveat_text": true,
+        "has_contraindications": true,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 229,
+          "clauses_cited": [
+            "15"
+          ],
+          "citation_count": 1,
+          "has_clause_citation": true,
+          "hit_gold": true,
+          "self_declared_insufficient": false,
+          "gave_advice": true
+        }
+      },
+      "config_c": {
+        "answer": "直径15.0mm、混杂性磨玻璃结节、62岁 → 适用【推荐意见15】mGGN >8mm 处置（Ⅲ类推荐）；处置：CT随访、经验性抗菌治疗、MDT多学科会诊、检查：循环染色体异常细胞检测；分级诊疗：None。\nCT随访【推荐意见15】\n经验性抗菌治疗【推荐意见15】\nMDT多学科会诊【推荐意见15】\n检查：循环染色体异常细胞检测【推荐意见15】\n随访：3 个月【推荐意见15】",
+        "coverage": "COVERED",
+        "clause": "推荐意见15",
+        "chain_len": 8,
+        "has_caveat_text": false,
+        "has_contraindications": false,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 188,
+          "clauses_cited": [
+            "15"
+          ],
+          "citation_count": 1,
+          "has_clause_citation": true,
+          "hit_gold": true,
+          "self_declared_insufficient": false,
+          "gave_advice": true
+        }
+      }
+    },
+    {
+      "id": "A009",
+      "question": "48岁女性，6mm纯磨玻璃结节，无吸烟史，该如何处理？",
+      "gold_clause": "推荐意见13",
+      "case_type": "advice",
+      "config_a": {
+        "answer": "直径6.0mm、纯磨玻璃结节、48岁 → 适用【推荐意见13】pGGN 5~10mm 随访（Ⅲ类推荐）；处置：CT随访、MDT多学科会诊、检查：循环染色体异常细胞检测、检查：薄层CT；分级诊疗：None。\nCT随访【推荐意见13】\nMDT多学科会诊【推荐意见13】\n检查：循环染色体异常细胞检测【推荐意见13】\n检查：薄层CT【推荐意见13】\n随访：首次 3 个月，随后 6 个月【推荐意见13】",
+        "coverage": "COVERED",
+        "clause": "推荐意见13",
+        "chain_len": 6,
+        "has_caveat_text": false,
+        "has_contraindications": false,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 198,
+          "clauses_cited": [
+            "13"
+          ],
+          "citation_count": 1,
+          "has_clause_citation": true,
+          "hit_gold": true,
+          "self_declared_insufficient": false,
+          "gave_advice": true
+        }
+      },
+      "config_c": {
+        "answer": "直径6.0mm、纯磨玻璃结节、48岁 → 适用【推荐意见13】pGGN 5~10mm 随访（Ⅲ类推荐）；处置：CT随访、MDT多学科会诊、检查：循环染色体异常细胞检测、检查：薄层CT；分级诊疗：None。\nCT随访【推荐意见13】\nMDT多学科会诊【推荐意见13】\n检查：循环染色体异常细胞检测【推荐意见13】\n检查：薄层CT【推荐意见13】\n随访：首次 3 个月，随后 6 个月【推荐意见13】",
+        "coverage": "COVERED",
+        "clause": "推荐意见13",
+        "chain_len": 6,
+        "has_caveat_text": false,
+        "has_contraindications": false,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 198,
+          "clauses_cited": [
+            "13"
+          ],
+          "citation_count": 1,
+          "has_clause_citation": true,
+          "hit_gold": true,
+          "self_declared_insufficient": false,
+          "gave_advice": true
+        }
+      }
+    },
+    {
+      "id": "C001",
+      "question": "我有肺结节，该怎么办？",
+      "gold_clause": null,
+      "case_type": "refusal",
+      "config_a": {
+        "answer": "缺少结节直径信息，无法定位适用条款。请补充结节最大径。",
+        "coverage": "NOT_COVERED",
+        "clause": null,
+        "chain_len": 1,
+        "has_caveat_text": false,
+        "has_contraindications": false,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 27,
+          "clauses_cited": [],
+          "citation_count": 0,
+          "has_clause_citation": false,
+          "hit_gold": null,
+          "self_declared_insufficient": true,
+          "gave_advice": false
+        }
+      },
+      "config_c": {
+        "answer": "缺少结节直径信息，无法定位适用条款。请补充结节最大径。",
+        "coverage": "NOT_COVERED",
+        "clause": null,
+        "chain_len": 1,
+        "has_caveat_text": false,
+        "has_contraindications": false,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 27,
+          "clauses_cited": [],
+          "citation_count": 0,
+          "has_clause_citation": false,
+          "hit_gold": null,
+          "self_declared_insufficient": true,
+          "gave_advice": false
+        }
+      }
+    },
+    {
+      "id": "C002",
+      "question": "发现肺部有个影子，需要处理吗？",
+      "gold_clause": null,
+      "case_type": "refusal",
+      "config_a": {
+        "answer": "缺少结节直径信息，无法定位适用条款。请补充结节最大径。",
+        "coverage": "NOT_COVERED",
+        "clause": null,
+        "chain_len": 1,
+        "has_caveat_text": false,
+        "has_contraindications": false,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 27,
+          "clauses_cited": [],
+          "citation_count": 0,
+          "has_clause_citation": false,
+          "hit_gold": null,
+          "self_declared_insufficient": true,
+          "gave_advice": false
+        }
+      },
+      "config_c": {
+        "answer": "缺少结节直径信息，无法定位适用条款。请补充结节最大径。",
+        "coverage": "NOT_COVERED",
+        "clause": null,
+        "chain_len": 1,
+        "has_caveat_text": false,
+        "has_contraindications": false,
+        "has_referral": false,
+        "analysis": {
+          "answer_chars": 27,
+          "clauses_cited": [],
+          "citation_count": 0,
+          "has_clause_citation": false,
+          "hit_gold": null,
+          "self_declared_insufficient": true,
+          "gave_advice": false
+        }
+      }
+    }
+  ],
+  "configs": {
+    "A_dual": {
+      "hit_gold_rate": 1.0,
+      "citation_rate": 0.6,
+      "refusal_accuracy": 1.0,
+      "gave_advice_when_insufficient": 0
+    },
+    "B_rag_only": {
+      "hit_gold_rate": 0.6667,
+      "citation_rate": 1.0,
+      "refusal_accuracy": 0.5,
+      "gave_advice_when_insufficient": 2
+    },
+    "C_kg_only": {
+      "hit_gold_rate": 1.0,
+      "citation_rate": 0.6,
+      "refusal_accuracy": 1.0,
+      "gave_advice_when_insufficient": 0
+    }
+  }
+}

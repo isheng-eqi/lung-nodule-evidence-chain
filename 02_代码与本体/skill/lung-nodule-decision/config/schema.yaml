@@ -1,0 +1,52 @@
+# 肺结节规范处置决策技能 · 配置 Schema
+# 用于在 Nexent 平台上为该技能实例化参数。
+# 对应 ag_skill_info_t.config_schemas 字段。
+
+index_names:
+  type: array
+  required: false
+  description_en: "Knowledge base index names to search for guideline clauses"
+  description_zh: "用于检索指南条文的知识库索引名列表"
+
+top_k:
+  type: number
+  required: false
+  default: 3
+  description_en: "Maximum number of clause excerpts to retrieve"
+  description_zh: "条款原文检索返回的最大条数"
+
+search_mode:
+  type: string
+  required: false
+  default: "accurate"
+  enum: ["hybrid", "accurate", "semantic"]
+  description_en: "Retrieval mode. 'accurate' is recommended for guideline clauses with hard thresholds."
+  description_zh: "检索模式。指南类含硬阈值条款建议使用 accurate（关键词精确匹配）。"
+
+rerank:
+  type: boolean
+  required: false
+  default: true
+  description_en: "Enable reranking to improve clause retrieval precision"
+  description_zh: "是否启用重排以提升条款检索精度"
+
+rerank_model_name:
+  type: string
+  required: false
+  depends_on: rerank
+  description_en: "Rerank model name, e.g. BAAI/bge-reranker-v2-m3"
+  description_zh: "重排序模型名，例如 BAAI/bge-reranker-v2-m3"
+
+require_diameter:
+  type: boolean
+  required: false
+  default: true
+  description_en: "If true, the skill must ask back when nodule diameter is missing instead of giving advice"
+  description_zh: "为 true 时，结节直径缺失必须追问，不得直接给出建议"
+
+strict_traceability:
+  type: boolean
+  required: false
+  default: true
+  description_en: "If true, every recommendation must carry a clause number, otherwise refuse to answer"
+  description_zh: "为 true 时，每条建议必须携带条款编号，否则拒答"

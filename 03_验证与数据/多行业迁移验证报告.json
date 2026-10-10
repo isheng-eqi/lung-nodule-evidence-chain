@@ -1,0 +1,183 @@
+{
+  "template_version": "1.0",
+  "principle": "换领域不换骨架：只替换种子本体与领域语料，条款切分/受约束抽取/强制对齐/推理/溯源全链路复用",
+  "domains": [
+    {
+      "spec": {
+        "domain_id": "medical-lung-nodule",
+        "domain_name": "肺结节规范处置",
+        "industry": "医疗",
+        "classes": 14,
+        "relations": 5,
+        "inference_rules": 2,
+        "clause_pattern": "【推荐意见\\s*(\\d+)\\s*】"
+      },
+      "corpus": "原文_2024共识_全文.txt",
+      "corpus_type": "真实公开规范文档（随包，未清洗）",
+      "result": {
+        "domain_id": "medical-lung-nodule",
+        "domain_name": "肺结节规范处置",
+        "doc_name": "原文_2024共识_全文.txt",
+        "doc_chars": 19309,
+        "clauses_found": 18,
+        "triples_total": 64,
+        "triples_aligned": 64,
+        "match_by_exact": 37,
+        "match_by_alias": 34,
+        "concepts_matched": 12,
+        "concepts_in_vocab": 14,
+        "concept_hit_rate": 0.8571428571428571,
+        "concepts_never_matched": [
+          "处置动作",
+          "检查手段"
+        ],
+        "match_evidence_note": "【v1.3 口径修正】concept_hit_rate 的分母是**全部类目**、分子是**全部被命中的类目**，不做任何排除 —— v1.1/v1.2 曾把「无父类的根类」从分母剔除、并把已命中的类目从分子裁掉，方向是让数字好看，已废弃。alignment_rate 恒为 1.0（候选集来自本体自身，**非对齐证据**）。辅助口径 concept_hit_rate_leaves（仅叶类）供对照，**不作为主指标**。",
+        "data_items": 19,
+        "concepts_touched": 12,
+        "elapsed_sec": 0.0018,
+        "alignment_rate": 1.0
+      }
+    },
+    {
+      "spec": {
+        "domain_id": "finance-fixed-asset-loan",
+        "domain_name": "固定资产贷款审查",
+        "industry": "金融",
+        "classes": 25,
+        "relations": 7,
+        "inference_rules": 2,
+        "clause_pattern": "第([一二三四五六七八九十百零〇]+)条"
+      },
+      "corpus": "原文_固定资产贷款管理办法2024_清洗后.txt",
+      "corpus_type": "真实公开监管规范（随包，已清洗） —— 国家金融监督管理总局令 2024 年第 1 号；来源：中国政府网 https://www.gov.cn/zhengce/202402/content_6930735.htm",
+      "result": {
+        "domain_id": "finance-fixed-asset-loan",
+        "domain_name": "固定资产贷款审查",
+        "doc_name": "原文_固定资产贷款管理办法2024_清洗后.txt",
+        "doc_chars": 7554,
+        "clauses_found": 61,
+        "triples_total": 96,
+        "triples_aligned": 96,
+        "match_by_exact": 61,
+        "match_by_alias": 48,
+        "concepts_matched": 19,
+        "concepts_in_vocab": 25,
+        "concept_hit_rate": 0.76,
+        "concepts_never_matched": [
+          "信息披露",
+          "借款人",
+          "抵押",
+          "贷款人",
+          "贷款期限",
+          "资金监控"
+        ],
+        "match_evidence_note": "【v1.3 口径修正】concept_hit_rate 的分母是**全部类目**、分子是**全部被命中的类目**，不做任何排除 —— v1.1/v1.2 曾把「无父类的根类」从分母剔除、并把已命中的类目从分子裁掉，方向是让数字好看，已废弃。alignment_rate 恒为 1.0（候选集来自本体自身，**非对齐证据**）。辅助口径 concept_hit_rate_leaves（仅叶类）供对照，**不作为主指标**。",
+        "data_items": 0,
+        "concepts_touched": 19,
+        "elapsed_sec": 0.0054,
+        "alignment_rate": 1.0
+      }
+    },
+    {
+      "spec": {
+        "domain_id": "manufacturing-special-equipment",
+        "domain_name": "特种设备安全管理",
+        "industry": "制造",
+        "classes": 20,
+        "relations": 6,
+        "inference_rules": 2,
+        "clause_pattern": "第([一二三四五六七八九十百零〇]+)条"
+      },
+      "corpus": "原文_特种设备安全法_清洗后.txt",
+      "corpus_type": "真实公开法律（随包，已清洗） —— 《中华人民共和国特种设备安全法》（主席令第四号）；来源：中国政府网 https://www.gov.cn/zhengce/2013-06/30/content_2602288.htm",
+      "result": {
+        "domain_id": "manufacturing-special-equipment",
+        "domain_name": "特种设备安全管理",
+        "doc_name": "原文_特种设备安全法_清洗后.txt",
+        "doc_chars": 17139,
+        "clauses_found": 102,
+        "triples_total": 190,
+        "triples_aligned": 190,
+        "match_by_exact": 109,
+        "match_by_alias": 91,
+        "concepts_matched": 15,
+        "concepts_in_vocab": 20,
+        "concept_hit_rate": 0.75,
+        "concepts_never_matched": [
+          "使用单位",
+          "检验机构",
+          "生产单位",
+          "监管部门",
+          "经营单位"
+        ],
+        "match_evidence_note": "【v1.3 口径修正】concept_hit_rate 的分母是**全部类目**、分子是**全部被命中的类目**，不做任何排除 —— v1.1/v1.2 曾把「无父类的根类」从分母剔除、并把已命中的类目从分子裁掉，方向是让数字好看，已废弃。alignment_rate 恒为 1.0（候选集来自本体自身，**非对齐证据**）。辅助口径 concept_hit_rate_leaves（仅叶类）供对照，**不作为主指标**。",
+        "data_items": 0,
+        "concepts_touched": 15,
+        "elapsed_sec": 0.0064,
+        "alignment_rate": 1.0
+      }
+    }
+  ],
+  "migration_analysis": {
+    "skeleton_changed": null,
+    "skeleton_verification": {
+      "changed": null,
+      "method": "AST 源码哈希 + 骨架函数体内领域词扫描（去除 docstring 后扫描，避免注释举例误报）",
+      "components": {
+        "DomainAdapter": {
+          "source_hash": "c6762a75ecace0ba",
+          "raw_source_hash": "7a70c919f7880329",
+          "lines": 50,
+          "methods": [
+            "__init__",
+            "_build_alias_index",
+            "normalize",
+            "split_clauses",
+            "extract_numeric"
+          ]
+        },
+        "PipelineRunner": {
+          "source_hash": "11fa65345b975e94",
+          "raw_source_hash": "65086fd76905fdf2",
+          "lines": 192,
+          "methods": [
+            "__init__",
+            "_split_main_caveat",
+            "_match_classes",
+            "run"
+          ]
+        },
+        "EvidenceBinder": {
+          "source_hash": "93663939656b133d",
+          "raw_source_hash": "f1e536ecc449b9be",
+          "lines": 16,
+          "methods": [
+            "__init__",
+            "bind"
+          ]
+        }
+      },
+      "domain_leaks": [],
+      "unchanged_components": [
+        "DomainAdapter",
+        "PipelineRunner",
+        "EvidenceBinder"
+      ],
+      "note": "本字段由代码计算得出，非硬编码。若有领域分支混入骨架，`domain_leaks` 会非空、`changed` 会变成 True。"
+    },
+    "changed_artifacts": [
+      "种子本体（classes/relations）",
+      "领域语料（corpus）",
+      "术语词表（term_aliases）",
+      "数值模式（numeric_patterns）"
+    ],
+    "unchanged_artifacts": [
+      "DomainAdapter",
+      "PipelineRunner",
+      "EvidenceBinder"
+    ],
+    "medical_alignment_rate": 1.0,
+    "finance_alignment_rate": 1.0,
+    "conclusion": "同一套工作流骨架在 **3 个领域**完成条款切分、受控抽取与本体对齐：肺结节规范处置（18 条）、固定资产贷款审查（61 条）、特种设备安全管理（102 条）。迁移成本 = 编写种子本体 + 准备语料（`DomainSpec` 是唯一领域参数入口）。"
+  }
+}

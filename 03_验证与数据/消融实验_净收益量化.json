@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "title": "消融实验的净收益量化 —— 双驱动的增量到底在哪里",
+  "purpose": "回应审阅：'消融只证明命中率相同，增量只有定性描述。现在这条证据读起来像「我们证明了双驱动没那么重要」'",
+  "design_note": "三配置的**条款命中率**：A 双驱动 100% vs C 仅图谱 100% —— **相同**。因此本项目**不声称**双驱动提高了准确率。但'答对条款'不等于'给出安全的建议'：临床决策还必须**主动提示禁忌与注意事项**。本文件量化这个增量。",
+  "advice_scenarios": [
+    "A001",
+    "A005",
+    "A009"
+  ],
+  "metrics": {
+    "advice_scenario_count": 3,
+    "contraindication_hits": {
+      "A_dual": 2,
+      "C_kg_only": 0,
+      "B_rag_only": 0
+    },
+    "caveat_hits": {
+      "A_dual": 2,
+      "C_kg_only": 0,
+      "B_rag_only": 2
+    },
+    "gave_advice_when_insufficient": {
+      "A_dual": 0,
+      "B_rag_only": 2,
+      "C_kg_only": 0
+    },
+    "hit_gold_rate": {
+      "A_dual": 1.0,
+      "B_rag_only": 0.6667,
+      "C_kg_only": 1.0
+    }
+  },
+  "conclusion": "三配置的**条款命中率完全相同**（A 100% vs C 100%），但**禁忌提示覆盖率**为 A **2/3** vs C **0/3** —— **仅图谱配置在 3 个建议场景中一个禁忌都没提示**。另有「信息不足仍给建议」：A 0 次 vs B 2 次。**即：双驱动的增量不在'答对哪一条'，而在'不遗漏必须提醒的那一条'。**",
+  "how_computed": "对 `消融实验_三配置对照.json` 的 advice 类场景，统计 `config_a/config_c` 的 `has_contraindications` 与 `has_caveat_text` 字段；B 配置无结构化字段，故对 `消融实验_RAG基线原始输出.json` 的原始回答文本做关键词判定（'不推荐'/'禁忌'/'不宜'）。"
+}

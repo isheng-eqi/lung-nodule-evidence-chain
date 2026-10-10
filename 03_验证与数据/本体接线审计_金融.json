@@ -1,0 +1,212 @@
+{
+  "domain_id": "finance-fixed-asset-loan",
+  "domain_name": "固定资产贷款审查",
+  "corpus_chars": 7554,
+  "vocab_size": 15,
+  "relation_count": 7,
+  "relations": [
+    {
+      "relation": "recommends",
+      "dom": "条款",
+      "rng": "审查审批",
+      "zh": "规定动作"
+    },
+    {
+      "relation": "appliesTo",
+      "dom": "条款",
+      "rng": "固定资产贷款",
+      "zh": "适用于"
+    },
+    {
+      "relation": "requiresExamination",
+      "dom": "条款",
+      "rng": "支付管理",
+      "zh": "需要执行"
+    },
+    {
+      "relation": "permitsUse",
+      "dom": "条款",
+      "rng": "贷款用途",
+      "zh": "允许用途"
+    },
+    {
+      "relation": "requiresGuarantee",
+      "dom": "条款",
+      "rng": "担保",
+      "zh": "需要担保"
+    },
+    {
+      "relation": "requiresPostLoan",
+      "dom": "条款",
+      "rng": "贷后管理",
+      "zh": "需要贷后动作"
+    },
+    {
+      "relation": "regulatedBy",
+      "dom": "条款",
+      "rng": "监管要求",
+      "zh": "受监管约束"
+    }
+  ],
+  "wiring_coverage": 1.0,
+  "wired_and_present": [
+    {
+      "class": "受托支付",
+      "parent": "支付管理",
+      "in_relation_branch": true,
+      "matched_names": [
+        "受托支付",
+        "受托支付方式",
+        "贷款人受托支付"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "固定资产投资",
+      "parent": "贷款用途",
+      "in_relation_branch": true,
+      "matched_names": [
+        "固定资产投资",
+        "固定资产建设",
+        "项目建设"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "尽职调查",
+      "parent": "审查审批",
+      "in_relation_branch": true,
+      "matched_names": [
+        "尽职调查",
+        "调查"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "提前收回",
+      "parent": "贷后管理",
+      "in_relation_branch": true,
+      "matched_names": [
+        "提前收回",
+        "提前收回贷款"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "法律责任",
+      "parent": "监管要求",
+      "in_relation_branch": true,
+      "matched_names": [
+        "法律责任",
+        "处罚",
+        "责任"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "流动资金",
+      "parent": "贷款用途",
+      "in_relation_branch": true,
+      "matched_names": [
+        "流动资金",
+        "流动资金贷款"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "自主支付",
+      "parent": "支付管理",
+      "in_relation_branch": true,
+      "matched_names": [
+        "自主支付",
+        "借款人自主支付"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "质押",
+      "parent": "担保",
+      "in_relation_branch": true,
+      "matched_names": [
+        "质押",
+        "质押担保"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "贷款发放",
+      "parent": "支付管理",
+      "in_relation_branch": true,
+      "matched_names": [
+        "贷款发放",
+        "发放贷款"
+      ],
+      "matched_by": "exact"
+    },
+    {
+      "class": "还款能力",
+      "parent": "审查审批",
+      "in_relation_branch": true,
+      "matched_names": [
+        "偿债能力"
+      ],
+      "matched_by": "alias:偿债能力"
+    },
+    {
+      "class": "风险评估",
+      "parent": "审查审批",
+      "in_relation_branch": true,
+      "matched_names": [
+        "风险评价"
+      ],
+      "matched_by": "alias:风险评价"
+    },
+    {
+      "class": "风险预警",
+      "parent": "贷后管理",
+      "in_relation_branch": true,
+      "matched_names": [
+        "风险预警",
+        "预警"
+      ],
+      "matched_by": "exact"
+    }
+  ],
+  "wired_but_absent": [
+    {
+      "class": "信息披露",
+      "parent": "监管要求",
+      "in_relation_branch": true,
+      "matched_names": [],
+      "matched_by": ""
+    },
+    {
+      "class": "抵押",
+      "parent": "担保",
+      "in_relation_branch": true,
+      "matched_names": [],
+      "matched_by": ""
+    },
+    {
+      "class": "资金监控",
+      "parent": "贷后管理",
+      "in_relation_branch": true,
+      "matched_names": [],
+      "matched_by": ""
+    }
+  ],
+  "unwired_but_present": [],
+  "unwired_and_absent": [],
+  "ontology_redundancy_candidates": [
+    "信息披露",
+    "抵押",
+    "资金监控"
+  ],
+  "findings": {
+    "unwired_but_present_count": 0,
+    "ontology_redundancy_count": 3,
+    "verdict": "0 个类目**在语料中出现但未接到抽取关系上** （这是覆盖率偏低的根因，代码不会报错）；3 个类目**在本份语料中完全不存在** （本体设计冗余候选）。"
+  },
+  "generated_at": "2026-10-10T15:14:37+08:00",
+  "purpose": "找出「本体定义了但抽取不到」的类目，区分「未接线」与「本体冗余」两种原因"
+}

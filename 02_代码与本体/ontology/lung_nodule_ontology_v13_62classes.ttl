@@ -1,0 +1,449 @@
+@prefix : <http://nexent.local/ontology/lung-nodule#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+
+<> a owl:Ontology ;
+    dcterms:title "肺结节诊治中国专家共识（2024年版）"@zh ;
+    dcterms:created "2026-10-10"^^xsd:date ;
+    dcterms:description "面向肺结节规范处置决策的领域本体，由指南条款半自动化构建，所有类与属性均可溯源至具体推荐意见。"@zh ;
+    rdfs:comment "自动生成，请勿手工修改；修改请更新种子本体或抽取规则。"@zh .
+
+# ====================================================================
+# 一、类层次结构
+# ====================================================================
+
+:肺结节 a owl:Class ;
+    skos:altLabel "结节 / 肺部结节"@zh ;
+    skos:closeMatch <https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/Lung-Rads> ;
+    skos:closeMatch <http://radlex.org/RID/RID3870> ;
+    skos:closeMatch <http://snomed.info/id/427359001> .
+
+:微小结节 a owl:Class ;
+    rdfs:subClassOf :肺结节 ;
+    skos:altLabel "微小肺结节"@zh ;
+    rdfs:comment "数值约束：diameter_mm ≤ 5"@zh .
+
+:小结节 a owl:Class ;
+    rdfs:subClassOf :肺结节 ;
+    skos:altLabel "小肺结节"@zh ;
+    rdfs:comment "数值约束：diameter_mm ≥ 5；diameter_mm ≤ 10"@zh .
+
+:较大结节 a owl:Class ;
+    rdfs:subClassOf :肺结节 ;
+    skos:altLabel "10~30mm结节"@zh ;
+    rdfs:comment "数值约束：diameter_mm ≥ 10；diameter_mm ≤ 30"@zh .
+
+:实性肺结节 a owl:Class ;
+    rdfs:subClassOf :肺结节 ;
+    skos:altLabel "实性结节 / solid nodule"@zh ;
+    skos:closeMatch <https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/Lung-Rads> .
+
+:亚实性肺结节 a owl:Class ;
+    rdfs:subClassOf :肺结节 ;
+    skos:altLabel "亚实性结节 / subsolid nodule"@zh ;
+    skos:closeMatch <https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/Lung-Rads> .
+
+:纯磨玻璃结节 a owl:Class ;
+    rdfs:subClassOf :亚实性肺结节 ;
+    skos:altLabel "pGGN / 纯磨玻璃影 / pure ground-glass nodule"@zh ;
+    skos:closeMatch <http://radlex.org/RID/RID3880> .
+
+:混杂性磨玻璃结节 a owl:Class ;
+    rdfs:subClassOf :亚实性肺结节 ;
+    skos:altLabel "mGGN / 部分实性结节 / 混杂性结节 / 混合磨玻璃结节 / mixed ground-glass nodule"@zh ;
+    skos:closeMatch <http://radlex.org/RID/RID3881> .
+
+:孤立性肺结节 a owl:Class ;
+    rdfs:subClassOf :肺结节 ;
+    skos:altLabel "孤立性结节 / 单发结节"@zh ;
+    skos:closeMatch <http://radlex.org/RID/RID3874> ;
+    skos:closeMatch <http://snomed.info/id/309515003> .
+
+:多发性肺结节 a owl:Class ;
+    rdfs:subClassOf :肺结节 ;
+    skos:altLabel "多发结节 / 多个结节"@zh .
+
+:难定性肺结节 a owl:Class ;
+    rdfs:subClassOf :肺结节 ;
+    skos:altLabel "难定性结节"@zh .
+
+:肺癌筛查 a owl:Class ;
+    skos:altLabel "筛查 / 低剂量CT筛查 / LDCT筛查 / 肺癌筛查指南"@zh .
+
+:基线筛查 a owl:Class ;
+    rdfs:subClassOf :肺癌筛查 ;
+    skos:altLabel "基线LDCT / 首次筛查 / 基线筛查阳性"@zh .
+
+:年度筛查 a owl:Class ;
+    rdfs:subClassOf :肺癌筛查 ;
+    skos:altLabel "年度LDCT / 每年筛查 / 年度复查筛查"@zh .
+
+:机会性筛查 a owl:Class ;
+    rdfs:subClassOf :肺癌筛查 ;
+    skos:altLabel "机会性LDCT / 非计划筛查"@zh .
+
+:评估工具 a owl:Class ;
+    skos:altLabel "评估方法 / 预测工具"@zh .
+
+:风险预测模型 a owl:Class ;
+    rdfs:subClassOf :评估工具 ;
+    skos:altLabel "癌风险预测模型 / 肺癌风险预测模型 / 风险预测 / 预测模型"@zh .
+
+:风险评估 a owl:Class ;
+    rdfs:subClassOf :评估工具 ;
+    skos:altLabel "个体化风险评估 / 风险评估模型"@zh .
+
+:患者 a owl:Class ;
+    skos:altLabel "病人 / 病例"@zh .
+
+:肺癌高危人群 a owl:Class ;
+    rdfs:subClassOf :患者 ;
+    skos:altLabel "高危人群"@zh ;
+    rdfs:comment "数值约束：age_years ≥ 40"@zh .
+
+:吸烟史 a owl:Class ;
+    rdfs:subClassOf :危险因素 ;
+    skos:altLabel "吸烟 / 抽烟史"@zh .
+
+:环境或高危职业暴露史 a owl:Class ;
+    rdfs:subClassOf :危险因素 ;
+    skos:altLabel "职业暴露 / 石棉接触 / 环境暴露"@zh .
+
+:慢性肺部疾病史 a owl:Class ;
+    rdfs:subClassOf :危险因素 ;
+    skos:altLabel "慢阻肺 / 肺纤维化 / 肺结核史 / 慢性肺病"@zh .
+
+:肿瘤史或家族史 a owl:Class ;
+    rdfs:subClassOf :危险因素 ;
+    skos:altLabel "恶性肿瘤史 / 肺癌家族史 / 肿瘤家族史"@zh .
+
+:危险因素 a owl:Class ;
+    skos:altLabel "高危因素"@zh .
+
+:影像学特征 a owl:Class ;
+    skos:altLabel "影像特征"@zh .
+
+:毛刺征 a owl:Class ;
+    rdfs:subClassOf :影像学特征 ;
+    skos:altLabel "毛刺 / 棘状突起"@zh .
+
+:分叶征 a owl:Class ;
+    rdfs:subClassOf :影像学特征 ;
+    skos:altLabel "分叶"@zh .
+
+:胸膜凹陷征 a owl:Class ;
+    rdfs:subClassOf :影像学特征 ;
+    skos:altLabel "胸膜凹陷"@zh .
+
+:血管集束征 a owl:Class ;
+    rdfs:subClassOf :影像学特征 ;
+    skos:altLabel "血管集束"@zh .
+
+:位于上叶 a owl:Class ;
+    rdfs:subClassOf :影像学特征 ;
+    skos:altLabel "上叶 / 上叶位置"@zh ;
+    skos:closeMatch <http://snomed.info/id/272693004> .
+
+:密度增加 a owl:Class ;
+    rdfs:subClassOf :影像学特征 ;
+    skos:altLabel "密度增高 / CT值增高"@zh .
+
+:实性成分增多 a owl:Class ;
+    rdfs:subClassOf :影像学特征 ;
+    skos:altLabel "实性成分增加 / 出现实性成分"@zh .
+
+:倍增时间 a owl:Class ;
+    rdfs:subClassOf :影像学特征 ;
+    skos:altLabel "体积倍增时间"@zh .
+
+:检查手段 a owl:Class ;
+    skos:altLabel "检查"@zh .
+
+:薄层CT a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "薄层高分辨CT / 薄层平扫 / 薄层CT扫描 / HRCT"@zh ;
+    skos:closeMatch <http://loinc.org/24604-1> .
+
+:低剂量CT a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "LDCT / 低剂量螺旋CT"@zh ;
+    skos:closeMatch <http://loinc.org/24604-1> .
+
+:PET-CT a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "PETCT / 正电子发射断层显像 / FDG-PET"@zh ;
+    skos:closeMatch <http://loinc.org/44141-4> .
+
+:胸部增强CT a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "增强CT / 强化CT"@zh ;
+    skos:closeMatch <http://loinc.org/24604-1> .
+
+:循环染色体异常细胞检测 a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "CAC / CAC检测 / 循环异常细胞"@zh .
+
+:肿瘤标志物组合 a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "ProGRP / CEA / SCC / Cyfra21-1 / LCBP"@zh .
+
+:非手术活检 a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "穿刺活检 / 经皮肺穿刺 / 支气管镜活检"@zh ;
+    skos:closeMatch <http://loinc.org/44141-4> .
+
+:经支气管肺活检 a owl:Class ;
+    rdfs:subClassOf :非手术活检 ;
+    skos:altLabel "TBLB / 经支气管镜肺活检 / 支气管镜下肺活检"@zh .
+
+:影像辅助诊断 a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "AI辅助诊断 / 人工智能辅助诊断 / 影像辅助诊断系统 / 辅助诊断系统 / 计算机辅助诊断 / AI辅助检测"@zh .
+
+:手术活检 a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "胸腔镜活检"@zh .
+
+:梅奥模型 a owl:Class ;
+    rdfs:subClassOf :检查手段 ;
+    skos:altLabel "Mayo模型 / ACCP模型"@zh .
+
+:处置动作 a owl:Class ;
+    skos:altLabel "处置 / 管理"@zh .
+
+:CT随访 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "随访 / 复查 / 定期复查"@zh .
+
+:常规年度随访 a owl:Class ;
+    rdfs:subClassOf :CT随访 ;
+    skos:altLabel "年度随访 / 每年复查"@zh .
+
+:外科手术根治性切除 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "手术切除 / 外科手术 / 根治性切除 / 手术"@zh .
+
+:立体定向放射治疗 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "SBRT"@zh .
+
+:消融治疗 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "射频消融 / 微波消融 / 冷冻消融"@zh .
+
+:经验性抗菌治疗 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "经验性抗生素治疗 / 抗菌治疗 / 抗生素治疗"@zh .
+
+:MDT多学科会诊 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "MDT / 人机MDT / 多学科会诊 / 多学科团队"@zh .
+
+:转诊 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "上转 / 转上级医院"@zh .
+
+:戒烟干预 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "戒烟"@zh .
+
+:复发监测 a owl:Class ;
+    rdfs:subClassOf :处置动作 ;
+    skos:altLabel "监测复发 / 术后随访 / 复发监测随访"@zh .
+
+:推荐意见 a owl:Class ;
+    skos:altLabel "推荐条款 / 条款 / 推荐"@zh .
+
+:医疗机构 a owl:Class ;
+    skos:altLabel "医院"@zh .
+
+:基层医院 a owl:Class ;
+    rdfs:subClassOf :医疗机构 ;
+    skos:altLabel "社区卫生服务中心 / 县医院"@zh .
+
+:肺结节诊治分中心 a owl:Class ;
+    rdfs:subClassOf :医疗机构 ;
+    skos:altLabel "分中心"@zh .
+
+:肺癌防治联盟 a owl:Class ;
+    rdfs:subClassOf :医疗机构 ;
+    skos:altLabel "联盟"@zh .
+
+
+# ====================================================================
+# 二、对象属性
+# ====================================================================
+
+:appliesTo a owl:ObjectProperty ;
+    rdfs:label "appliesTo"@zh .
+
+:recommends a owl:ObjectProperty ;
+    rdfs:label "recommends"@zh .
+
+:requiresExamination a owl:ObjectProperty ;
+    rdfs:label "requiresExamination"@zh .
+
+:hasStrength a owl:ObjectProperty ;
+    rdfs:label "hasStrength"@zh .
+
+:contraindicatedFor a owl:ObjectProperty ;
+    rdfs:label "contraindicatedFor"@zh .
+
+
+# ====================================================================
+# 三、数据属性
+# ====================================================================
+
+:diameter> a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "diameter>"@zh .
+
+:solidComponent≤ a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "solidComponent≤"@zh .
+
+:solidComponent> a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "solidComponent>"@zh .
+
+:followUpMonths a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "followUpMonths"@zh .
+
+:diameter≤ a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "diameter≤"@zh .
+
+
+# ====================================================================
+# 四、条款锚点实例（推荐意见）
+# ====================================================================
+
+:推荐意见1 a :推荐意见 ;
+    :clauseNumber 1 ;
+    :recommendationStrength "Ⅲ类推荐"@zh ;
+    rdfs:comment "【推荐意见1】“难定性肺结节”是指无法通过非手术活检明确诊断，且高度怀疑早期肺癌的肺结节。该类肺结节的诊断和处理推荐采用MDT工作模式和医患共同决策（Ⅲ类推荐）。 二、肺结节发现途径（一）肺癌高危人群定义和常规影像学筛查 2011年美国国家肺癌筛查试验（national lung screening trial，NLS"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见2 a :推荐意见 ;
+    :clauseNumber 2 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见2】将我国肺癌高危人群定义为年龄≥40岁（Ⅱ类推荐），且具有下述任一危险因素者：①吸烟指数≥400年支（或20包年）（ⅠA类推荐）；②环境或高危职业暴露史（如石棉、铍、铀、氡等接触者）（ⅠB类推荐）③合并慢阻肺、弥漫性肺纤维化或曾患肺结核者（ⅠB类推荐）；（4）曾患恶性肿瘤或有肺癌家族史者，尤其一级亲属家族史"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见3 a :推荐意见 ;
+    :clauseNumber 3 ;
+    :recommendationStrength "ⅠB类推荐"@zh ;
+    rdfs:comment "【推荐意见3】对于筛查或机会发现的肺结节，推荐对病灶处可行薄层CT扫描或薄层高分辨CT，以便更好地显示肺结节的特征（ⅠB类推荐），并和既往历史影像学资料进行对比（ⅠB类推荐）。"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见4 a :推荐意见 ;
+    :clauseNumber 4 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见4】AI辅助影像诊断有助于恶性肿瘤风险评估和临床决策。不推荐把单一肿瘤标志物作为亚厘米的小结节和微小结节筛查和评估的指标。组合标志物（ProGRP、SCC、CEA、Cyfra21-1）在随访中不断升高，或集体升高，以及与临床信息（结节直径、毛刺）等组成LCBP模型，其预测肺结节恶性风险优于ACCP模型（Ⅱ类推"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见5 a :推荐意见 ;
+    :clauseNumber 5 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见5】孤立性不明原因结节直径>8 mm者：建议通过定性使用临床判断和（或）定量地使用验证模型评估肺结节恶性概率（Ⅱ类推荐）。（1）恶性肿瘤的预测概率为低、中度（5%~65%）者：可考虑PET-CT，以便更好地描述结节的特征（Ⅱ类推荐）。（2）恶性肿瘤的预测概率为高度（>65%）者：对高度怀疑肿瘤者可直接考虑PE"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见6 a :推荐意见 ;
+    :clauseNumber 6 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见6】孤立性不明原因结节直径>8 mm者：推荐临床医生根据肺结节恶性概率提出肺结节管理策略（影像学随访、非手术活检或手术）的风险和益处，并考虑患者意愿而决定（Ⅱ类推荐）。"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见7 a :推荐意见 ;
+    :clauseNumber 7 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见7】孤立性不明原因结节直径>8 mm者，建议基于下列情况在3~6个月、9~12个月及18~24个月进行薄层CT扫描随访（Ⅱ类推荐）：（1）当临床恶性概率很低时（<5%）。（2）当临床恶性概率低（<30%~40%）且功能成像检测结果阴性（PET-CT显示病变代谢率不高，或动态增强CT扫描显示增强≤15 HU）。"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见8 a :推荐意见 ;
+    :clauseNumber 8 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见8】孤立性不明原因结节直径>8 mm者：建议在伴有下列情况时采取非手术活检（Ⅱ类推荐）：（1）临床预测概率与影像学检查结果不一致。（2）恶性肿瘤的概率为低、中度（10%~60%）。（3）疑诊为需行特定治疗的良性疾病。（4）患者在被充分告知后，仍希望在手术前证明是恶性肿瘤，尤其是当手术的并发症风险高时。"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见9 a :推荐意见 ;
+    :clauseNumber 9 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见9】孤立性不明原因结节直径>8 mm者：建议在下列情况下行手术活检诊断（Ⅱ类推荐）：（1）临床恶性肿瘤概率高（>65%）。（2）PET-CT显示结节高代谢或增强CT扫描为明显阳性时。（3）非手术活检为可疑恶性肿瘤。（4）患者在被充分告知后，愿意接受手术来明确诊断。 （二）≤8 mm的肺结节 可根据图2流程评估"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见10 a :推荐意见 ;
+    :clauseNumber 10 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见10】孤立性实性结节直径≤8 mm且无肺癌危险因素者，建议根据结节大小选择CT随访的频率与持续时间（Ⅱ类推荐）： （1）结节直径≤4 mm者应该接受有经验医生的建议随访，如果不随访，应告知患者不随访的潜在危害。 （2）结节直径4~6 mm者应常规年度随访。 （3）结节直径6~8 mm者在2年内应在6~12个月"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见11 a :推荐意见 ;
+    :clauseNumber 11 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见11】存在一项或更多肺癌危险因素的直径≤8 mm的孤立性实性结节者，建议根据结节的大小选择CT随访的频率和持续时间（Ⅱ类推荐）： （1）结节直径≤4 mm者应常规年度检查。 （2）结节直径4~6 mm者应在6~12个月随访，如果没有变化，则在18~24个月再次随访，其后转为常规年度随访。 （3）结节直径6~8"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见12 a :推荐意见 ;
+    :clauseNumber 12 ;
+    :recommendationStrength "Ⅱ类推荐"@zh ;
+    rdfs:comment "【推荐意见12】pGGN直径≤5 mm者：建议首次6个月随访胸部CT，随后行年度胸部CT随访（Ⅱ类推荐）。"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见13 a :推荐意见 ;
+    :clauseNumber 13 ;
+    :recommendationStrength "Ⅲ类推荐"@zh ;
+    rdfs:comment "【推荐意见13】pGGN直径5~10 mm者：建议首次3个月随访胸部CT，随后6个月行胸部CT随访，并建议应用AI和人机MDT评估，对要求个体化诊疗者，可辅以CAC评估，根据评估结果，推荐非手术活检和（或）手术切除（Ⅲ类推荐）。随访中需注意：①pGGN的CT随访应对结节处采用薄层平扫技术；②如果结节增大（尤其是直径>1"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见14 a :推荐意见 ;
+    :clauseNumber 14 ;
+    :recommendationStrength "Ⅲ类推荐"@zh ;
+    rdfs:comment "【推荐意见14】孤立性mGGN直径≤8 mm者：建议在3、6、12和24个月进行CT随访，并建议应用AI和人机MDT评估，对要求个体化诊疗者辅以CAC评估，无变化者随后转为常规年度随访（Ⅲ类推荐）。随访中需注意：①混杂性结节的CT随访检查应对结节处采用病灶薄层平扫技术；②如果混杂性结节增大或实性成分增多，通常提示为恶性"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见15 a :推荐意见 ;
+    :clauseNumber 15 ;
+    :recommendationStrength "Ⅲ类推荐"@zh ;
+    rdfs:comment "【推荐意见15】孤立性mGGN直径>8 mm者：建议在3个月重复胸部CT检查，适当考虑经验性抗生素治疗。若结节持续存在，建议应用AI和人机MDT评估，对要求个体化诊疗者辅以CAC或PET-CT评估，必要者考虑非手术活检和（或）手术切除进一步评估（Ⅲ类推荐）。随访中需注意：①PET-CT不推荐用于判断实性成分≤8 mm的"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见16 a :推荐意见 ;
+    :clauseNumber 16 ;
+    :recommendationStrength "Ⅲ类推荐"@zh ;
+    rdfs:comment "【推荐意见16】评估中发现有1个占主导地位的结节和（或）多个小结节者，建议单独评估每个结节，并建议应用AI和人机MDT评估，对要求个体化诊疗者辅以CAC或PET-CT评估，除非有组织病理学证实转移，否则不可否定根治性治疗（Ⅲ类推荐）。 随访中需注意：①对于多发性pGGN，至少1个病变直径>5 mm，但<10 8=\"\">"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见17 a :推荐意见 ;
+    :clauseNumber 17 ;
+    :recommendationStrength "ⅠA类推荐"@zh ;
+    rdfs:comment "【推荐意见17】肺癌的优选局部治疗方式为外科手术根治性切除（ⅠA类推荐）。对于心肺等生理功能不能耐受者，经MDT评估和医患共同决策，可以考虑SBRT或者消融治疗（Ⅱ类推荐）。 九、物联网技术辅助评估与管理 虽然在肺结节中发现早期肺癌（原位和ⅠA期肺癌）后手术治疗可以使10年生存率或治愈率达到92%，但目前各医院和医生之"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+:推荐意见18 a :推荐意见 ;
+    :clauseNumber 18 ;
+    :recommendationStrength "Ⅲ类推荐"@zh ;
+    rdfs:comment "【推荐意见18】基于物联网医学平台，端口开放质控，根据本共识评估肺结节恶性概率和各种替代管理的相关风险，由包括中国肺癌防治联盟肺结节（早期肺癌）诊治分中心在内的各级医院根据肺结节大小，按照分级诊疗的原则对肺结节患者进行管理（Ⅲ类推荐）：①基层医院：肺结节≤5 mm者在基层医院管理，或根据患者意愿管理；②肺结节诊治分中心"@zh ;
+    dcterms:source "肺结节诊治中国专家共识（2024年版）"@zh .
+
+
+# ====================================================================
+# 五、溯源说明
+# ====================================================================
+#
+# 本体的每个类与属性均可溯源至具体推荐意见条款。
+# 实例的三元组关系存放于知识图谱（由 kg_reasoning_service 加载），
+# 本文件只描述**概念层**（TBox），不含断言层（ABox）。
+#
+# 标准对齐来源：
+#   · ACR Lung-RADS  https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/Lung-Rads
+#   · RadLex         http://radlex.org/
+#   · SNOMED CT      http://snomed.info/sct
+#   · LOINC          http://loinc.org/
+#   · ICD-10         https://icd.who.int/

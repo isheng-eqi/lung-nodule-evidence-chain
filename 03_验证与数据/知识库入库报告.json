@@ -1,0 +1,42 @@
+{
+  "index_name": "4-1fd943cfa3c044419a587e642b005759",
+  "documents": [
+    {
+      "file": "筛查指南2025_全文.txt",
+      "title": "中国肺癌低剂量CT筛查指南（2025年版）",
+      "object_name": "attachments/86b52fc7-43d2-4725-8747-566644e43d7e/20261010071915_536d0add24df4b36a3a0a4283c35a709.txt",
+      "size_bytes": 25085,
+      "process_response": {
+        "message": "Files processing triggered successfully",
+        "process_tasks": {
+          "task_id": "6d59baaf-e66c-4a17-b03b-3b97d031224d"
+        }
+      }
+    },
+    {
+      "file": "筛查指南2023_结构化版.txt",
+      "title": "中国肺癌低剂量CT筛查指南（2023年版）",
+      "object_name": "attachments/86b52fc7-43d2-4725-8747-566644e43d7e/20261010071917_c21bb9288bdf46fa90048ff6302c6eed.txt",
+      "size_bytes": 21036,
+      "process_response": {
+        "message": "Files processing triggered successfully",
+        "process_tasks": {
+          "task_id": "5d0bf94c-039f-405b-8b84-31db317ccaaa"
+        }
+      }
+    },
+    {
+      "file": "共识2025_全文.txt",
+      "title": "肺癌筛查及肺结节健康管理专家共识（2025版）",
+      "object_name": "attachments/86b52fc7-43d2-4725-8747-566644e43d7e/20261010071919_4e2111bedbe3451abb9c7123b49b3628.txt",
+      "size_bytes": 306048,
+      "process_response": {
+        "message": "Files processing triggered successfully",
+        "process_tasks": {
+          "task_id": "beea48b5-7f89-460c-b278-e1f40a1cd175"
+        }
+      }
+    }
+  ],
+  "errors": []
+}

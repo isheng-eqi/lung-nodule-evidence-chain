@@ -1,0 +1,79 @@
+{
+  "domain_a": "name: lung-nodule-decision",
+  "domain_b": "name: credit-risk-decision",
+  "sections_total": 9,
+  "sections_identical": 1,
+  "sections_identical_ratio": 0.1111,
+  "sections_structurally_same": 9,
+  "lines_a": 139,
+  "lines_b": 139,
+  "lines_identical": 108,
+  "lines_identical_ratio": 0.777,
+  "section_detail": [
+    {
+      "section": "__preamble__",
+      "identical": false,
+      "len_a": 526,
+      "len_b": 510,
+      "shape_same": true
+    },
+    {
+      "section": "分层编排结构",
+      "identical": false,
+      "len_a": 328,
+      "len_b": 345,
+      "shape_same": true
+    },
+    {
+      "section": "工具选择规则",
+      "identical": false,
+      "len_a": 238,
+      "len_b": 245,
+      "shape_same": true
+    },
+    {
+      "section": "执行流程",
+      "identical": false,
+      "len_a": 775,
+      "len_b": 777,
+      "shape_same": true
+    },
+    {
+      "section": "拒答示例",
+      "identical": false,
+      "len_a": 41,
+      "len_b": 43,
+      "shape_same": true
+    },
+    {
+      "section": "硬性约束",
+      "identical": false,
+      "len_a": 248,
+      "len_b": 243,
+      "shape_same": true
+    },
+    {
+      "section": "示例",
+      "identical": false,
+      "len_a": 140,
+      "len_b": 110,
+      "shape_same": true
+    },
+    {
+      "section": "输出格式",
+      "identical": false,
+      "len_a": 221,
+      "len_b": 217,
+      "shape_same": true
+    },
+    {
+      "section": "错误处理",
+      "identical": true,
+      "len_a": 236,
+      "len_b": 236,
+      "shape_same": true
+    }
+  ],
+  "skeleton_unchanged": true,
+  "conclusion": "同一套 Skill 骨架渲染两个领域的技能定义；仅 DomainSpec 字段值不同，渲染逻辑未改动。"
+}

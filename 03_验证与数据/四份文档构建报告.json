@@ -1,0 +1,59 @@
+{
+  "documents": [
+    {
+      "name": "2024共识",
+      "doc_chars": 19109,
+      "clauses": 18,
+      "object_triples": 110,
+      "data_triples": 36,
+      "aligned": 110,
+      "alignment_rate": 1.0,
+      "human_review": 0,
+      "elapsed_sec": 0.003
+    },
+    {
+      "name": "2025共识",
+      "doc_chars": 12056,
+      "clauses": 13,
+      "object_triples": 37,
+      "data_triples": 5,
+      "aligned": 37,
+      "alignment_rate": 1.0,
+      "human_review": 0,
+      "elapsed_sec": 0.002
+    },
+    {
+      "name": "筛查2023",
+      "doc_chars": 8136,
+      "clauses": 5,
+      "object_triples": 16,
+      "data_triples": 14,
+      "aligned": 16,
+      "alignment_rate": 1.0,
+      "human_review": 0,
+      "elapsed_sec": 0.001
+    },
+    {
+      "name": "筛查2025",
+      "doc_chars": 9472,
+      "clauses": 6,
+      "object_triples": 23,
+      "data_triples": 17,
+      "aligned": 23,
+      "alignment_rate": 1.0,
+      "human_review": 0,
+      "elapsed_sec": 0.001
+    }
+  ],
+  "totals": {
+    "documents": 4,
+    "chars": 48773,
+    "clauses": 42,
+    "object_triples": 186,
+    "data_triples": 72,
+    "aligned": 186,
+    "alignment_rate": 1.0,
+    "human_intervention_rate": 0.0
+  },
+  "note": "v1.2：四份文档（2 份锚点式共识 + 2 份章节式筛查指南）统一流水线；2023/2025 为同一指南的两个版本，用于版本迁移验证。"
+}

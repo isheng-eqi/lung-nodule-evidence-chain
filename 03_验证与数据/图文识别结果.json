@@ -1,0 +1,159 @@
+{
+  "vlm_facts": {
+    "最大径_mm": 8,
+    "密度类型": "混杂性磨玻璃结节",
+    "实性成分_mm": 2,
+    "年龄": 55,
+    "性别": "男",
+    "吸烟年数": 30,
+    "影像特征": [
+      "毛刺征",
+      "位于上叶"
+    ],
+    "检查项目": "胸部低剂量CT（LDCT）"
+  },
+  "inference": {
+    "facts": {
+      "raw": "55岁，男性，8mm，混杂性磨玻璃结节，实性成分2mm，吸烟30年，毛刺征，位于上叶，该如何处理？",
+      "age": 55,
+      "diameter_mm": 8.0,
+      "solid_component_mm": 2.0,
+      "density_type": "混杂性磨玻璃结节",
+      "smoking_years": 30,
+      "risk_factors": [
+        "吸烟史"
+      ],
+      "imaging_features": [
+        "毛刺征",
+        "位于上叶"
+      ],
+      "is_solitary": true
+    },
+    "facts_summary": "直径8.0mm、混杂性磨玻璃结节、55岁、吸烟30年",
+    "coverage": "COVERED",
+    "traceable": true,
+    "conclusion": "直径8.0mm、混杂性磨玻璃结节、55岁、吸烟30年 → 适用【推荐意见14】mGGN ≤8mm 随访（Ⅲ类推荐）；处置：CT随访、MDT多学科会诊、检查：循环染色体异常细胞检测、检查：薄层CT；分级诊疗：建议转肺结节诊治分中心管理（推荐意见18②）。",
+    "clause": "推荐意见14",
+    "clause_title": "mGGN ≤8mm 随访",
+    "strength": "Ⅲ类推荐",
+    "recommendations": [
+      {
+        "type": "处置动作",
+        "action": "CT随访",
+        "clause": "推荐意见14",
+        "strength": "Ⅲ类推荐"
+      },
+      {
+        "type": "处置动作",
+        "action": "MDT多学科会诊",
+        "clause": "推荐意见14",
+        "strength": "Ⅲ类推荐"
+      },
+      {
+        "type": "检查建议",
+        "action": "检查：循环染色体异常细胞检测",
+        "clause": "推荐意见14",
+        "strength": "Ⅲ类推荐"
+      },
+      {
+        "type": "检查建议",
+        "action": "检查：薄层CT",
+        "clause": "推荐意见14",
+        "strength": "Ⅲ类推荐"
+      }
+    ],
+    "follow_up": "3、6、12 和 24 个月",
+    "next_step": [
+      "外科手术根治性切除",
+      "经验性抗菌治疗"
+    ],
+    "caveat": "若混杂性结节增大或实性成分增多，通常提示为恶性，需考虑切除，而不是非手术活检；若同时有症状或细菌感染征象，可考虑经验性抗菌治疗。",
+    "contraindications": [
+      {
+        "examination": "PET-CT",
+        "reason": "PET-CT 不推荐用于判断实性成分≤8mm 的混杂性病灶",
+        "clause": "推荐意见15"
+      }
+    ],
+    "referral": "建议转肺结节诊治分中心管理（推荐意见18②）",
+    "chain": [
+      {
+        "hop": 1,
+        "rule": "密度类型识别",
+        "from": "直径8.0mm、混杂性磨玻璃结节、55岁、吸烟30年",
+        "to": "混杂性磨玻璃结节",
+        "clause": "",
+        "evidence": "依据CT密度表现判定（共识定义章节（二）3）"
+      },
+      {
+        "hop": 2,
+        "rule": "大小分类（分级诊疗依据）",
+        "from": "直径8.0mm",
+        "to": "小结节",
+        "clause": "推荐意见18",
+        "evidence": "≤5mm为微小结节，5~10mm为小结节，10~30mm应尽早诊治"
+      },
+      {
+        "hop": 3,
+        "rule": "条款定位（实体对齐 → 条款匹配）",
+        "from": "混杂性磨玻璃结节 + 直径8.0mm",
+        "to": "【推荐意见14】mGGN ≤8mm 随访",
+        "clause": "推荐意见14",
+        "evidence": "该结节类型与尺寸落在推荐意见14的适用范围"
+      },
+      {
+        "hop": 4,
+        "rule": "展开条款处置动作",
+        "from": "【推荐意见14】mGGN ≤8mm 随访",
+        "to": "CT随访、MDT多学科会诊、检查：循环染色体异常细胞检测、检查：薄层CT",
+        "clause": "推荐意见14",
+        "evidence": "沿 recommends 关系从推荐意见14展开"
+      },
+      {
+        "hop": 5,
+        "rule": "读取随访间隔（数据属性）",
+        "from": "【推荐意见14】",
+        "to": "3、6、12 和 24 个月",
+        "clause": "推荐意见14",
+        "evidence": "沿 followUpMonths 数据属性取值"
+      },
+      {
+        "hop": 6,
+        "rule": "禁忌与边界判定",
+        "from": "直径8.0mm、混杂性磨玻璃结节、55岁、吸烟30年",
+        "to": "PET-CT 不推荐用于判断实性成分≤8mm 的混杂性病灶",
+        "clause": "推荐意见15",
+        "evidence": "命中禁忌规则"
+      },
+      {
+        "hop": 7,
+        "rule": "分级诊疗归属",
+        "from": "小结节",
+        "to": "建议转肺结节诊治分中心管理（推荐意见18②）",
+        "clause": "推荐意见18",
+        "evidence": "按结节大小与诊断明确程度决定管理机构层级"
+      }
+    ],
+    "disclaimer": "本结果仅供临床参考，不构成诊断结论，不替代医生判断，不包含用药与处方。"
+  },
+  "asset": {
+    "asset_id": "AST-B9620F6E",
+    "asset_name": "report_sample.png",
+    "modality": "image",
+    "file_format": "png",
+    "size_bytes": 144973,
+    "content_hash": "b9620f6e3b0cb65a",
+    "structure_type": "影像结构化报告（图像形态）",
+    "authority_level": "L4",
+    "compliance": "PUBLIC",
+    "contains_patient_data": false,
+    "concepts": [
+      "混杂性磨玻璃结节"
+    ],
+    "clauses": [
+      "推荐意见14"
+    ],
+    "processed_by": "imaging_pipeline + VLM",
+    "status": "ALIGNED"
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "model": "deepseek-ai/DeepSeek-V3",
+  "cases": [
+    {
+      "id": "C1",
+      "topic": "典型正例 mGGN ≤8mm",
+      "question": "一位55岁男性，8mm混合磨玻璃结节，实性成分2mm，吸烟30年，该怎么随访？",
+      "expected_clause": "推荐意见14",
+      "expected_followup": "3、6、12 和 24 个月",
+      "expected_contra": "PET-CT 不推荐",
+      "raw": {
+        "ok": true,
+        "text": "根据您描述的情况（55岁男性，8mm混合磨玻璃结节伴2mm实性成分，30年吸烟史），以下是专业的随访建议：\n\n1. **肺癌风险分层**：\n- 符合高危人群标准（年龄>55岁+吸烟史+混合性磨玻璃结节）\n- 需警惕恶性可能（实性成分存在增加风险）\n\n2. **推荐随访方案**：\n▶️ 首选低剂量CT（LDCT）随访：\n   - 3个月后首次复查（观察结节变化）\n   - 若稳定→每6个月复查持续2年\n   - 2年后仍稳定→每年复查至满5年\n\n3. **需警惕的恶性征象**：\n   ✓ 实性成分增大或比例增加\n   ✓ 结节总体直径增长≥2mm\n   ✓ 出现分叶、毛刺等恶性特征\n\n4. **手术干预指征**：\n   - 随访中出现上述进展表现\n   - 实性成分持续存在或增大\n   - 可考虑PET-CT或穿刺活检进一步评估\n\n5. **特别建议**：\n   • 必须严格戒烟（吸烟会显著增加恶变风险）\n   • 合并COPD者需加强肺功能监测\n   • 可检测肺癌七种自身抗体等血液标志物辅助监测\n\n注：具体随访间隔需结合CT影像特征（如血管穿行、空泡征等）动态调整，建议携带完整影像资料到胸外科或呼吸科专科随访。\n\n（随访过程中任何新发咳嗽、咯血等症状需及时就诊）",
+        "analysis": {
+          "length": 540,
+          "clauses_cited": [],
+          "clauses_cited_count": 0,
+          "has_clause_citation": false,
+          "cites_cn_guideline": false,
+          "cites_foreign_guideline": [],
+          "followup_intervals": [],
+          "mentions_pet": true,
+          "pet_appropriately_cautioned": false,
+          "has_disclaimer": false,
+          "asks_back": false,
+          "hit_expected_clause": false,
+          "hit_expected_followup": false,
+          "hit_expected_contra": false
+        },
+        "usage": {
+          "prompt_tokens": 43,
+          "completion_tokens": 332,
+          "total_tokens": 375,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 43
+        }
+      }
+    },
+    {
+      "id": "C2",
+      "topic": "mGGN >8mm",
+      "question": "男，62岁，15mm混杂性磨玻璃结节，吸烟40年，有毛刺征，该如何处理？",
+      "expected_clause": "推荐意见15",
+      "expected_followup": "3 个月",
+      "expected_contra": "PET-CT",
+      "raw": {
+        "ok": true,
+        "text": "根据您描述的情况（62岁男性，长期吸烟史，15mm混杂性磨玻璃结节伴毛刺征），需要高度重视恶性可能。以下是规范处理建议：\n\n1. **立即完善检查**：\n   - 胸部增强CT（评估结节血供及纵隔情况）\n   - PET-CT（若经济条件允许，SUV值有助于鉴别良恶性）\n   - 肺功能检查（为可能的手术做准备）\n\n2. **多学科会诊（MDT）**：\n   建议胸外科、呼吸科、影像科共同讨论，此类结节恶性概率可能超过60%，尤其是：\n   - 毛刺征（恶性特异性征象）\n   - 长期吸烟史（每年40包以上的吸烟量）\n   - 结节＞8mm且含实性成分\n\n3. **病理确诊方案**：\n   - 首选CT引导下肺穿刺活检（实性成分＞8mm时可行）\n   - 若位置靠近胸膜，可考虑胸腔镜活检\n   - 痰脱落细胞检查阳性率低，不推荐作为首选\n\n4. **手术评估**：\n   若无远处转移且心肺功能允许，建议胸腔镜手术切除（术中冰冻病理指导手术范围）\n\n5. **重要提醒**：\n   - 3个月内必须明确诊断，避免延误\n   - 即使暂时选择随访，也需严格3个月复查CT（不可延长间隔）\n   - 戒烟刻不容缓（继续吸烟会加速潜在肿瘤进展）\n\n建议尽快到胸外科门诊就诊，这类结节等待观察的风险大于过度治疗的风险。需要更详细的影像资料（如病灶位置、血管集束征等）才能制定最终方案。",
+        "analysis": {
+          "length": 593,
+          "clauses_cited": [],
+          "clauses_cited_count": 0,
+          "has_clause_citation": false,
+          "cites_cn_guideline": false,
+          "cites_foreign_guideline": [],
+          "followup_intervals": [],
+          "mentions_pet": true,
+          "pet_appropriately_cautioned": false,
+          "has_disclaimer": false,
+          "asks_back": false,
+          "hit_expected_clause": false,
+          "hit_expected_followup": true,
+          "hit_expected_contra": true
+        },
+        "usage": {
+          "prompt_tokens": 43,
+          "completion_tokens": 346,
+          "total_tokens": 389,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 43
+        }
+      }
+    },
+    {
+      "id": "C3",
+      "topic": "纯磨玻璃结节 6mm",
+      "question": "女，48岁，右肺上叶6mm纯磨玻璃结节，无吸烟史，该如何处理？",
+      "expected_clause": "推荐意见13",
+      "expected_followup": "6 个月",
+      "expected_contra": "",
+      "raw": {
+        "ok": true,
+        "text": "根据您的情况（48岁女性，右肺上叶6mm纯磨玻璃结节，无吸烟史），建议采取以下规范处理方案：\n\n1. 随访观察（首选方案）：\n- 建议6个月后复查低剂量胸部CT\n- 若无变化，之后每年复查一次，持续2-3年\n- 若结节增大或密度改变，需考虑进一步处理\n\n2. 危险因素评估：\n虽然您无吸烟史，但需注意：\n- 二手烟暴露史\n- 家族肺癌病史\n- 职业暴露史（如石棉、粉尘等）\n- 既往肺部疾病史\n\n3. 需要警惕的征象（随访时需特别注意）：\n- 结节直径增大（尤其达到8mm以上）\n- 出现实性成分\n- 边缘出现分叶、毛刺等改变\n\n4. 当前不建议：\n- 立即手术切除\n- PET-CT检查（对＜8mm的纯磨玻璃结节价值有限）\n- 抗生素治疗（纯磨玻璃结节通常与感染无关）\n\n5. 生活建议：\n- 避免吸烟及二手烟\n- 减少厨房油烟暴露\n- 保持规律作息和适度运动\n\n这类结节大多数为良性或惰性病变（如不典型腺瘤样增生），但需要规范随访以早期发现可能的恶变。请保持良好心态，按时复查即可。\n\n（注：具体随访方案可根据首次发现时的影像特征适当调整，建议携带CT图像找胸外科或呼吸科专家当面评估）",
+        "analysis": {
+          "length": 495,
+          "clauses_cited": [],
+          "clauses_cited_count": 0,
+          "has_clause_citation": false,
+          "cites_cn_guideline": false,
+          "cites_foreign_guideline": [],
+          "followup_intervals": [],
+          "mentions_pet": true,
+          "pet_appropriately_cautioned": false,
+          "has_disclaimer": false,
+          "asks_back": false,
+          "hit_expected_clause": false,
+          "hit_expected_followup": true,
+          "hit_expected_contra": null
+        },
+        "usage": {
+          "prompt_tokens": 41,
+          "completion_tokens": 319,
+          "total_tokens": 360,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 41
+        }
+      }
+    },
+    {
+      "id": "C4",
+      "topic": "实性结节 ≤8mm 无危险因素",
+      "question": "患者45岁，7mm实性结节，无吸烟史，无其他危险因素，怎么随访？",
+      "expected_clause": "推荐意见10",
+      "expected_followup": "12 个月",
+      "expected_contra": "",
+      "raw": {
+        "ok": true,
+        "text": "根据您的情况（45岁，7mm实性肺结节，无吸烟史及其他高危因素），以下是规范的随访建议：\n\n1. **首次随访时间**：\n- 推荐3-6个月后行低剂量胸部CT复查\n- 若结节稳定（未增大），可延长至6-12个月后再次复查\n\n2. **长期随访方案**：\n- 总随访时间建议持续2-3年\n- 随访间隔可逐步延长（如1年后→2年后）\n- 若连续2年无变化可终止随访\n\n3. **需警惕的变化**：\n- 结节直径增长≥2mm\n- 出现新发毛刺、分叶等恶性征象\n- 实性成分比例增加\n\n4. **特殊考虑**：\n- 建议在同一医疗机构进行CT检查以便对比\n- 可考虑使用AI辅助测量工具提高准确性\n- 若出现咳嗽/咯血等症状需及时复查\n\n5. **非必要措施**：\n- 目前不建议PET-CT检查（＜8mm结节假阴性率高）\n- 无需常规肿瘤标志物检测\n- 暂不需支气管镜或穿刺活检\n\n注：该方案参考了2022版中华医学会肺癌诊疗指南。若您有职业暴露史或家族肿瘤史，建议更密切随访。请保存好每次的CT影像资料以供对比。",
+        "analysis": {
+          "length": 454,
+          "clauses_cited": [],
+          "clauses_cited_count": 0,
+          "has_clause_citation": false,
+          "cites_cn_guideline": true,
+          "cites_foreign_guideline": [],
+          "followup_intervals": [
+            "3-6",
+            "6-12"
+          ],
+          "mentions_pet": true,
+          "pet_appropriately_cautioned": true,
+          "has_disclaimer": false,
+          "asks_back": false,
+          "hit_expected_clause": false,
+          "hit_expected_followup": true,
+          "hit_expected_contra": null
+        },
+        "usage": {
+          "prompt_tokens": 40,
+          "completion_tokens": 285,
+          "total_tokens": 325,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 40
+        }
+      }
+    },
+    {
+      "id": "C5",
+      "topic": "禁忌场景",
+      "question": "一位55岁男性，8mm混合磨玻璃结节，实性成分2mm，能否做PET-CT评估？",
+      "expected_clause": "推荐意见15",
+      "expected_followup": "",
+      "expected_contra": "不推荐",
+      "raw": {
+        "ok": true,
+        "text": "对于这位55岁患者发现的8mm混合磨玻璃结节（实性成分2mm），是否进行PET-CT评估需要综合考虑以下关键点：\n\n1. **当前指南建议**：\n   - 根据Fleischner Society指南，≤8mm的纯磨玻璃或亚实性结节通常不建议立即进行PET-CT检查\n   - 对于6-8mm的亚实性结节，建议3-6个月后复查CT，观察结节变化\n\n2. **PET-CT的局限性**：\n   - 对于<10mm的结节（特别是磨玻璃成分为主的），PET-CT的敏感性和特异性有限\n   - 2mm的实性成分可能难以被PET-CT准确评估代谢活性\n\n3. **临床决策建议**：\n   - 首选方案：建议3个月后复查薄层CT（1mm层厚），观察结节大小和实性成分的变化\n   - 高危因素评估：需结合患者吸烟史、家族肿瘤史、职业暴露史等\n   - 若随访中结节增大或实性成分增加，可考虑PET-CT或直接活检\n\n4. **替代方案**：\n   - 对于特别焦虑或高危患者，可考虑更早的CT随访（如1-2个月）\n   - 必要时可进行CT引导下穿刺活检（但8mm结节操作难度较大）\n\n总结：目前阶段不建议立即进行PET-CT，推荐3个月后复查CT作为更合理的随访策略。需要与患者充分沟通随访的重要性，并记录结节的基线特征以便比较。",
+        "analysis": {
+          "length": 562,
+          "clauses_cited": [],
+          "clauses_cited_count": 0,
+          "has_clause_citation": false,
+          "cites_cn_guideline": false,
+          "cites_foreign_guideline": [
+            "Fleischner"
+          ],
+          "followup_intervals": [
+            "3-6",
+            "1-2"
+          ],
+          "mentions_pet": true,
+          "pet_appropriately_cautioned": false,
+          "has_disclaimer": false,
+          "asks_back": false,
+          "hit_expected_clause": false,
+          "hit_expected_followup": false,
+          "hit_expected_contra": true
+        },
+        "usage": {
+          "prompt_tokens": 42,
+          "completion_tokens": 320,
+          "total_tokens": 362,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 42
+        }
+      }
+    },
+    {
+      "id": "C6",
+      "topic": "信息不足（应追问）",
+      "question": "我有肺结节，该怎么办？",
+      "expected_clause": "",
+      "expected_followup": "",
+      "expected_contra": "",
+      "raw": {
+        "ok": true,
+        "text": "作为呼吸科医生，我理解您对肺结节的担忧。以下是需要您了解的重要信息：\n\n1. 首先请保持冷静，肺结节很常见：\n- 约50%的胸部CT检查会发现肺结节\n- 其中绝大多数(90%以上)是良性的\n\n2. 需要评估的关键因素：\n- 结节大小：通常＜5mm的结节风险很低\n- 形态特征：边缘是否光滑，是否有毛刺等\n- 生长速度：需要定期复查对比\n- 您的个人风险因素：如吸烟史、家族史等\n\n3. 建议下一步措施：\n- 提供完整的影像资料给专科医生评估\n- 可能需要3-6个月后复查CT观察变化\n- 根据具体情况，医生可能建议：\n  * 继续定期观察\n  * 进一步检查(PET-CT或活检)\n  * 少数情况下需要手术\n\n4. 日常注意事项：\n- 戒烟并避免二手烟\n- 注意是否有咳嗽、咯血等症状变化\n- 保持规律作息和适度运动\n\n建议您携带所有检查资料到呼吸科或胸外科门诊就诊，医生会根据结节的具体特征为您制定个体化的随访或治疗计划。\n\n您是否有以下情况需要补充说明：\n- 结节的大小和具体描述？\n- 是否有吸烟史？\n- 最近是否有咳嗽、胸痛等症状？",
+        "analysis": {
+          "length": 471,
+          "clauses_cited": [],
+          "clauses_cited_count": 0,
+          "has_clause_citation": false,
+          "cites_cn_guideline": false,
+          "cites_foreign_guideline": [],
+          "followup_intervals": [
+            "3-6"
+          ],
+          "mentions_pet": true,
+          "pet_appropriately_cautioned": false,
+          "has_disclaimer": false,
+          "asks_back": true,
+          "hit_expected_clause": false,
+          "hit_expected_followup": false,
+          "hit_expected_contra": null
+        },
+        "usage": {
+          "prompt_tokens": 24,
+          "completion_tokens": 283,
+          "total_tokens": 307,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 24
+        }
+      }
+    }
+  ]
+}

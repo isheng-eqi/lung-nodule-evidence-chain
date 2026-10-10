@@ -1,0 +1,121 @@
+{
+  "config_b_rag_only": [
+    {
+      "id": "A001",
+      "question": "55岁男性，8mm混合磨玻璃结节，实性成分2mm，吸烟30年，该怎么随访？",
+      "gold_clause": "推荐意见14",
+      "case_type": "advice",
+      "ok": true,
+      "answer": "根据指南推荐，该患者为55岁男性，有长期吸烟史（肺癌危险因素），孤立性混合磨玻璃结节（mGGN）直径8 mm（实性成分≤8 mm），建议在3个月重复胸部CT检查（推荐意见15）。若结节持续存在，建议应用AI和人机MDT评估，必要时考虑非手术活检和（或）手术切除进一步评估（推荐意见15）。随访中需注意薄层平扫技术，若结节增大或实性成分增加，通常预示恶性转化，需考虑进一步干预（推荐意见13注意事项②）。",
+      "analysis": {
+        "answer_chars": 201,
+        "clauses_cited": [
+          "13",
+          "15"
+        ],
+        "citation_count": 2,
+        "has_clause_citation": true,
+        "hit_gold": false,
+        "self_declared_insufficient": false,
+        "gave_advice": true
+      }
+    },
+    {
+      "id": "A005",
+      "question": "62岁男性，15mm混杂性磨玻璃结节，实性成分6mm，有毛刺征，该如何处理？",
+      "gold_clause": "推荐意见15",
+      "case_type": "advice",
+      "ok": true,
+      "answer": "根据指南推荐，对于62岁男性患者，15mm混杂性磨玻璃结节（mGGN）且实性成分6mm、有毛刺征的处理建议如下：\n\n1. **直接考虑进一步行PET-CT评估、非手术活检和（或）手术切除**，因mGGN直径>15 mm（推荐意见15）；  \n2. 由于存在毛刺征（恶性风险因素），建议术前经资深专家和（或）MDT评估，若评估为恶性高风险，可考虑胸腔镜下病灶切除（片段3手术活检部分）；  \n3. 若选择非手术活检，需注意活检后仍不能明确诊断时不能排除恶性肿瘤（推荐意见15③）。  \n\n注：以上建议基于结节直径>15 mm的明确推荐，毛刺征进一步支持恶性可能，但具体决策需结合MDT评估和患者意愿（推荐意见6）。",
+      "analysis": {
+        "answer_chars": 306,
+        "clauses_cited": [
+          "6",
+          "15"
+        ],
+        "citation_count": 2,
+        "has_clause_citation": true,
+        "hit_gold": true,
+        "self_declared_insufficient": false,
+        "gave_advice": true
+      }
+    },
+    {
+      "id": "A009",
+      "question": "48岁女性，6mm纯磨玻璃结节，无吸烟史，该如何处理？",
+      "gold_clause": "推荐意见13",
+      "case_type": "advice",
+      "ok": true,
+      "answer": "根据指南推荐意见，对于48岁女性、6mm纯磨玻璃结节（pGGN）且无吸烟史的患者，处理建议如下：\n\n1. 首次建议在3个月后随访胸部CT（基于pGGN直径5~10 mm的管理原则）【推荐意见13】；\n2. 若3个月随访结节持续存在，应在6个月后再次行胸部CT随访【推荐意见13】；\n3. 随访中需采用薄层平扫技术，并建议应用AI和人机MDT评估（Ⅲ类推荐）【推荐意见13】；\n4. 如果随访期间结节增大（尤其直径>10 mm）或出现实性成分增加，需考虑非手术活检和（或）手术切除【推荐意见13】。\n\n注：该患者无吸烟史，但年龄接近50岁，需结合其他肺癌危险因素（如家族史等）综合评估，但原文片段未提供相关细节。",
+      "analysis": {
+        "answer_chars": 305,
+        "clauses_cited": [
+          "13"
+        ],
+        "citation_count": 1,
+        "has_clause_citation": true,
+        "hit_gold": true,
+        "self_declared_insufficient": false,
+        "gave_advice": true
+      }
+    },
+    {
+      "id": "C001",
+      "question": "我有肺结节，该怎么办？",
+      "gold_clause": null,
+      "case_type": "refusal",
+      "ok": true,
+      "answer": "根据指南，肺结节的处理需根据结节的大小、类型（实性或亚实性）及有无危险因素进行个体化管理：\n\n1. **孤立性实性结节≤8 mm**：  \n   - 若无肺癌危险因素，按结节直径选择随访间隔（如≤4 mm可酌情随访，4-6 mm年度随访，6-8 mm需6-12个月随访）（推荐意见10）。  \n   - 若存在危险因素，需更密切随访（如6-8 mm者需3-6个月首次随访）（推荐意见11）。  \n\n2. **孤立性亚实性结节（pGGN）**：  \n   - ≤5 mm者建议6个月后年度随访（推荐意见12）。  \n   - 5-10 mm者需3个月首次随访，后每6个月复查，并建议AI/MDT评估（推荐意见13）。  \n\n3. **孤立性混杂性结节（mGGN）>8 mm**：  \n   - 建议3个月复查CT，若持续存在需AI/MDT评估，必要时行PET-CT、活检或手术（推荐意见15）。  \n\n4. **多发性结节**：  \n   - 需单独评估每个结节，优先处理主要结节，结合AI/MDT辅助诊断（推荐意见16）。  \n\n5. **恶性可能时**：  \n   - 首选手术根治（推荐意见17），不耐受者可考虑放疗或消融治疗。  \n\n**随访注意事项**：  \n- 基层医院可管理≤5 mm结节，>10 mm或未确诊者需转诊至专科中心（推荐意见18）。  \n- 随访中若结节增大或实性成分增加，需进一步干预。  \n\n建议尽快携带详细影像资料至呼吸科或胸外科门诊，由医生根据上述原则制定具体方案。",
+      "analysis": {
+        "answer_chars": 650,
+        "clauses_cited": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "15",
+          "16",
+          "17",
+          "18"
+        ],
+        "citation_count": 8,
+        "has_clause_citation": true,
+        "hit_gold": null,
+        "self_declared_insufficient": false,
+        "gave_advice": true
+      }
+    },
+    {
+      "id": "C002",
+      "question": "发现肺部有个影子，需要处理吗？",
+      "gold_clause": null,
+      "case_type": "refusal",
+      "ok": true,
+      "answer": "依据提供的指南片段，对于发现肺部阴影（肺结节）的处理建议如下：\n\n1. **影像学评估优先**  \n   推荐进行薄层CT或高分辨CT扫描，明确结节的位置、大小、形态等特征，并与既往影像对比（片段5）。\n\n2. **根据结节大小和恶性概率分层管理**  \n   - 若结节直径**>8 mm**：需通过临床判断或验证模型评估恶性概率（片段1推荐意见5）。  \n     - 低-中度恶性概率（5%-65%）：可考虑PET-CT进一步评估（片段1推荐意见5.1）。  \n     - 高度恶性概率（>65%）：可直接行PET-CT或手术评估（片段1推荐意见5.2）。  \n   - 若为**混杂性磨玻璃结节（mGGN）>8 mm**：建议3个月后复查CT，必要时联合AI/MDT评估或进一步检查（片段3推荐意见15）。  \n\n3. **活检或手术指征**  \n   - 无法通过非手术活检明确诊断且恶性风险高时，经MDT评估后可考虑手术活检（片段1手术活检部分）。  \n   - 不推荐单纯为诊断目的对单个结节手术（片段1手术活检部分）。  \n\n4. **多发性结节**  \n   需单独评估每个结节，排除转移后可考虑根治性治疗（片段3推荐意见16）。  \n\n**结论**：需结合结节的具体影像特征（大小、密度等）和恶性概率评估结果决定后续处理（随访、活检或手术），并充分沟通风险和患者意愿（片段1推荐意见6）。若仅告知“有阴影”而无具体特征描述，则**依据不足**，建议完善CT检查后进一步评估。",
+      "analysis": {
+        "answer_chars": 648,
+        "clauses_cited": [
+          "5",
+          "6",
+          "15",
+          "16"
+        ],
+        "citation_count": 4,
+        "has_clause_citation": true,
+        "hit_gold": null,
+        "self_declared_insufficient": true,
+        "gave_advice": true
+      }
+    }
+  ],
+  "note": "B 配置模拟'把指南片段塞进上下文'的 RAG 方案：ES 向量检索 top-k 条文 → LLM 作答。这是多数参赛队伍会采用的做法，也是'直接问大模型'的加强版（给了真实条文）。",
+  "summary_b": {
+    "total": 5,
+    "advice_cases": 3,
+    "refusal_cases": 2,
+    "hit_gold_rate": 0.6667,
+    "citation_rate": 1.0,
+    "refusal_accuracy": 0.5,
+    "gave_advice_when_insufficient": 2
+  }
+}

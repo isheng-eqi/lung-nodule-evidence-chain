@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "title": "后果对照：漏掉禁忌提示会造成什么",
+  "purpose": "回应终审审计：'一等奖会给：仅图谱配置下 N/5 场景漏禁忌，并在禁忌相关的场景构造「若漏禁忌会导致什么」的对照。'",
+  "design": "取消融实验里的两个建议类场景，它们**都命中同一条禁忌**（PET-CT 不推荐用于实性成分 ≤8mm 的混杂性病灶，出自推荐意见15），但**实性成分尺寸不同**，因此形成天然对照：实性成分越小的病灶，PET-CT 的假阴性风险越高。",
+  "cases": [
+    {
+      "id": "A001",
+      "question": "55岁男性，8mm混合磨玻璃结节，实性成分2mm，吸烟30年，该怎么随访？",
+      "solid_component_mm": 2.0,
+      "gold_clause": "推荐意见14",
+      "clause_hit": {
+        "A_dual": "推荐意见14",
+        "C_kg_only": "推荐意见14"
+      },
+      "contraindication_present": {
+        "A_dual": true,
+        "C_kg_only": false
+      },
+      "the_contraindication": [
+        {
+          "examination": "PET-CT",
+          "reason": "PET-CT 不推荐用于判断实性成分≤8mm 的混杂性病灶",
+          "clause": "推荐意见15"
+        }
+      ],
+      "caveat_text": "若混杂性结节增大或实性成分增多，通常提示为恶性，需考虑切除，而不是非手术活检；若同时有症状或细菌感染征象，可考虑经验性抗菌治疗。",
+      "consequence_if_missed": "若只给出「适用【推荐意见14】mGGN ≤8mm 随访」而**不提 PET-CT 禁忌**，临床执行者可能按惯例安排 PET-CT 评估代谢活性。但本例实性成分仅 2.0 mm（≤8mm），指南明确**不推荐**用 PET-CT 判断此类病灶 —— 该检查在此适应证下**假阴性率高**，阴性结果可能造成**虚假安心**并延误随访。"
+    },
+    {
+      "id": "A005",
+      "question": "62岁男性，15mm混杂性磨玻璃结节，实性成分6mm，有毛刺征，该如何处理？",
+      "solid_component_mm": 6.0,
+      "gold_clause": "推荐意见15",
+      "clause_hit": {
+        "A_dual": "推荐意见15",
+        "C_kg_only": "推荐意见15"
+      },
+      "contraindication_present": {
+        "A_dual": true,
+        "C_kg_only": false
+      },
+      "the_contraindication": [
+        {
+          "examination": "PET-CT",
+          "reason": "PET-CT 不推荐用于判断实性成分≤8mm 的混杂性病灶",
+          "clause": "推荐意见15"
+        }
+      ],
+      "caveat_text": "PET-CT不推荐用于判断实性成分≤8mm的混杂性病灶；mGGN直径>15mm者可直接考虑PET-CT、非手术活检和（或）手术切除。",
+      "consequence_if_missed": "若只给出「适用【推荐意见14】mGGN ≤8mm 随访」而**不提 PET-CT 禁忌**，临床执行者可能按惯例安排 PET-CT 评估代谢活性。但本例实性成分仅 6.0 mm（≤8mm），指南明确**不推荐**用 PET-CT 判断此类病灶 —— 该检查在此适应证下**假阴性率高**，阴性结果可能造成**虚假安心**并延误随访。"
+    }
+  ],
+  "what_the_single_channel_loses": "仅图谱配置（C）**命中了相同的条款号**（A001 → 推荐意见14，A005 → 推荐意见15），但 `has_contraindications = False` —— **它把「用哪条」答对了，却把「不该做什么」整条丢了**。图谱三元组里没有 CAVEAT 段落，这层信息只能由检索通道取回原文。",
+  "how_computed": "A/C 的禁忌字段取自 `消融实验_三配置对照.json` 的逐场景结构化字段；禁忌原文与注意事项由引擎实跑取得（`kg_consult_decision`）。",
+  "same_contraindication_across_cases": true,
+  "contrast": "两案例的禁忌**同一条**（PET-CT / 推荐意见15），但实性成分分别为 2.0 mm 与 6.0 mm —— 对照说明**该禁忌的触发条件是「实性成分 ≤8mm」而非「结节大小」**，这正是本项目主张的**受约束推理**（条件来自条款原文，不来自模型猜测）。"
+}

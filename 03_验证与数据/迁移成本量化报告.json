@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-10T17:46:33+08:00",
+  "title": "多行业迁移成本量化（轻量化验证）",
+  "purpose": "把官方附加分①的『轻量化』从形容词变成可核验的数字",
+  "template_analysis": {
+    "file": "workflow_template.py",
+    "total_lines": 1135,
+    "classes": [
+      {
+        "name": "DomainSpec",
+        "lines": 32
+      },
+      {
+        "name": "DomainAdapter",
+        "lines": 50
+      },
+      {
+        "name": "PipelineResult",
+        "lines": 26
+      },
+      {
+        "name": "PipelineRunner",
+        "lines": 192
+      },
+      {
+        "name": "EvidenceBinder",
+        "lines": 16
+      }
+    ],
+    "skeleton_functions": [
+      {
+        "name": "validate_migration",
+        "lineno": 652,
+        "lines": 154,
+        "is_domain_spec": false
+      },
+      {
+        "name": "_normalized_class_hash",
+        "lineno": 832,
+        "lines": 23,
+        "is_domain_spec": false
+      },
+      {
+        "name": "_code_tokens_only",
+        "lineno": 856,
+        "lines": 80,
+        "is_domain_spec": false
+      },
+      {
+        "name": "_verify_skeleton_unchanged",
+        "lineno": 938,
+        "lines": 100,
+        "is_domain_spec": false
+      },
+      {
+        "name": "main",
+        "lineno": 1040,
+        "lines": 57,
+        "is_domain_spec": false
+      },
+      {
+        "name": "describe",
+        "lineno": 80,
+        "lines": 10,
+        "is_domain_spec": false
+      },
+      {
+        "name": "__init__",
+        "lineno": 95,
+        "lines": 3,
+        "is_domain_spec": false
+      },
+      {
+        "name": "_build_alias_index",
+        "lineno": 99,
+        "lines": 8,
+        "is_domain_spec": false
+      },
+      {
+        "name": "normalize",
+        "lineno": 108,
+        "lines": 12,
+        "is_domain_spec": false
+      },
+      {
+        "name": "split_clauses",
+        "lineno": 121,
+        "lines": 12,
+        "is_domain_spec": false
+      },
+      {
+        "name": "extract_numeric",
+        "lineno": 134,
+        "lines": 8,
+        "is_domain_spec": false
+      },
+      {
+        "name": "to_dict",
+        "lineno": 170,
+        "lines": 5,
+        "is_domain_spec": false
+      },
+      {
+        "name": "__init__",
+        "lineno": 183,
+        "lines": 5,
+        "is_domain_spec": false
+      },
+      {
+        "name": "_split_main_caveat",
+        "lineno": 189,
+        "lines": 7,
+        "is_domain_spec": false
+      },
+      {
+        "name": "_match_classes",
+        "lineno": 197,
+        "lines": 52,
+        "is_domain_spec": false
+      },
+      {
+        "name": "run",
+        "lineno": 250,
+        "lines": 119,
+        "is_domain_spec": false
+      },
+      {
+        "name": "__init__",
+        "lineno": 378,
+        "lines": 2,
+        "is_domain_spec": false
+      },
+      {
+        "name": "bind",
+        "lineno": 381,
+        "lines": 10,
+        "is_domain_spec": false
+      },
+      {
+        "name": "has_desc",
+        "lineno": 236,
+        "lines": 10,
+        "is_domain_spec": false
+      }
+    ],
+    "domain_spec_functions": [
+      {
+        "name": "build_medical_spec",
+        "lineno": 397,
+        "lines": 56,
+        "is_domain_spec": true
+      },
+      {
+        "name": "build_finance_spec",
+        "lineno": 455,
+        "lines": 99,
+        "is_domain_spec": true
+      },
+      {
+        "name": "build_manufacturing_spec",
+        "lineno": 556,
+        "lines": 83,
+        "is_domain_spec": true
+      }
+    ],
+    "skeleton_lines": 677,
+    "domain_spec_lines": 238,
+    "domain_spec_fields": [
+      "domain_id",
+      "domain_name",
+      "industry",
+      "classes",
+      "relations",
+      "clause_pattern",
+      "numeric_patterns",
+      "term_aliases",
+      "inference_rules"
+    ]
+  },
+  "domain_specs": {
+    "medical": {
+      "function": "build_medical_spec",
+      "lineno": 397,
+      "lines": 56,
+      "classes": 14,
+      "relations": 5,
+      "numeric_patterns": 2,
+      "alias_entries": 10,
+      "alias_items": 17
+    },
+    "finance": {
+      "function": "build_finance_spec",
+      "lineno": 455,
+      "lines": 99,
+      "classes": 25,
+      "relations": 7,
+      "numeric_patterns": 3,
+      "alias_entries": 25,
+      "alias_items": 41
+    },
+    "manufacturing": {
+      "function": "build_manufacturing_spec",
+      "lineno": 556,
+      "lines": 83,
+      "classes": 20,
+      "relations": 6,
+      "numeric_patterns": 3,
+      "alias_entries": 20,
+      "alias_items": 40
+    }
+  },
+  "migration_cost": {
+    "changed_files": [
+      {
+        "file": "kg-service/workflow_template.py",
+        "change": "新增/修改 build_<domain>_spec() —— 领域参数函数",
+        "skeleton_changed": null
+      }
+    ],
+    "changed_file_count": 1,
+    "skeleton_code_lines_changed": null,
+    "skeleton_verdict_source": "由 workflow_template._verify_skeleton_unchanged() 计算得出",
+    "domain_param_lines_added": 99,
+    "domain_spec_fields_to_fill": 9,
+    "domain_spec_field_names": [
+      "domain_id",
+      "domain_name",
+      "industry",
+      "classes",
+      "relations",
+      "clause_pattern",
+      "numeric_patterns",
+      "term_aliases",
+      "inference_rules"
+    ]
+  },
+  "hours_estimate": {
+    "medical": {
+      "unit_costs_minutes": {
+        "domain_spec_class": 25,
+        "domain_spec_relation": 10,
+        "numeric_pattern": 8,
+        "term_alias": 5,
+        "corpus_prepare_per_kchar": 3
+      },
+      "breakdown_minutes": {
+        "定义领域类目": 350,
+        "定义关系类型": 50,
+        "定义数值模式": 16,
+        "录入术语别名": 85,
+        "准备领域语料": 57.9
+      },
+      "total_minutes": 558.9,
+      "total_hours": 9.32,
+      "note": "工时按上表单价**估算**，非实测；单价可被质疑与调整。估算不含骨架代码学习成本（若骨架已熟悉则为 0）。"
+    },
+    "finance": {
+      "unit_costs_minutes": {
+        "domain_spec_class": 25,
+        "domain_spec_relation": 10,
+        "numeric_pattern": 8,
+        "term_alias": 5,
+        "corpus_prepare_per_kchar": 3
+      },
+      "breakdown_minutes": {
+        "定义领域类目": 625,
+        "定义关系类型": 70,
+        "定义数值模式": 24,
+        "录入术语别名": 205,
+        "准备领域语料": 22.7
+      },
+      "total_minutes": 946.7,
+      "total_hours": 15.78,
+      "note": "工时按上表单价**估算**，非实测；单价可被质疑与调整。估算不含骨架代码学习成本（若骨架已熟悉则为 0）。"
+    },
+    "manufacturing": {
+      "unit_costs_minutes": {
+        "domain_spec_class": 25,
+        "domain_spec_relation": 10,
+        "numeric_pattern": 8,
+        "term_alias": 5,
+        "corpus_prepare_per_kchar": 3
+      },
+      "breakdown_minutes": {
+        "定义领域类目": 500,
+        "定义关系类型": 60,
+        "定义数值模式": 24,
+        "录入术语别名": 200,
+        "准备领域语料": 51.5
+      },
+      "total_minutes": 835.5,
+      "total_hours": 13.93,
+      "note": "工时按上表单价**估算**，非实测；单价可被质疑与调整。估算不含骨架代码学习成本（若骨架已熟悉则为 0）。"
+    }
+  },
+  "skeleton_vs_params": {
+    "skeleton_lines": 677,
+    "domain_spec_lines_medical": 56,
+    "domain_spec_lines_finance": 99,
+    "skeleton_share_of_total": 0.5965
+  }
+}

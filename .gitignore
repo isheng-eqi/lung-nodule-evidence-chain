@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# 凭据 —— ★ 绝对不要提交
+.env
+.env.*
+*.key
+*.pem
+.ak
+*_token*
+*token*.txt
+credentials*.json
+secrets*.yml
+
+# 数据集与模型产物（体积大 / 有许可约束）
+*.h5
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 运行产物
+*.log
+/tmp/
+/out/
+*.tmp
+
+# 本项目的中间产物（可重新生成）
+/02_代码与本体/**/__pycache__/
+/02_代码与本体/**/*.pyc

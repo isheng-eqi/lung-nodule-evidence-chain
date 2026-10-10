@@ -1,0 +1,801 @@
+{
+  "name": "肺结节处置决策自测评测集",
+  "version": "1.1",
+  "gold_standard": "《肺结节诊治中国专家共识（2024年版）》18条推荐意见",
+  "data_source_note": "本评测集不使用真实患者数据。所有用例由共识条款的适用区间系统化生成，金标准为条款编号本身，可机器判定。",
+  "case_types_note": {
+    "A": "正例——在规则区间内做覆盖抽样（区间代表性取值）",
+    "B": "边界例——阈值附近取值，验证 ≤ / > 判定",
+    "C": "拒答例——信息不足，应追问而非给建议",
+    "D": "禁忌例——验证 contraindications 字段",
+    "E": "分级诊疗例——验证 referral 字段",
+    "F": "临床常见值例——CT 报告中常见的整数毫米与共识阈值"
+  },
+  "stats": {
+    "total": 58,
+    "positive": 41,
+    "boundary": 8,
+    "refusal": 4,
+    "contraindication": 2,
+    "referral": 3,
+    "clinical_value": 23,
+    "clauses_covered": [
+      "推荐意见10",
+      "推荐意见11",
+      "推荐意见12",
+      "推荐意见13",
+      "推荐意见14",
+      "推荐意见15",
+      "推荐意见18",
+      "推荐意见5"
+    ]
+  },
+  "cases": [
+    {
+      "id": "A001",
+      "type": "positive",
+      "question": "一位45岁男性，5mm混合磨玻璃结节，实性成分1.5mm，吸烟30年，该怎么处理？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "mGGN≤8mm 随访",
+      "gold_source": "共识 · 六（二）评估 mGGN 的细则",
+      "gold_quote": "孤立性mGGN直径≤8 mm者：建议在3、6、12和24个月进行CT随访",
+      "gold_boundary_note": "原文为「≤8 mm」，故 8.0 归本条、8.1 归推荐意见15",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 5.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A002",
+      "type": "positive",
+      "question": "女性，48岁，5mm混杂性磨玻璃结节，实性成分1.5mm，不吸烟，无其他危险因素，该怎么处理？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "mGGN≤8mm 随访",
+      "gold_source": "共识 · 六（二）评估 mGGN 的细则",
+      "gold_quote": "孤立性mGGN直径≤8 mm者：建议在3、6、12和24个月进行CT随访",
+      "gold_boundary_note": "原文为「≤8 mm」，故 8.0 归本条、8.1 归推荐意见15",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 5.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A003",
+      "type": "positive",
+      "question": "患者51岁，男性性，8mm混合磨玻璃结节，实性成分2.4mm，有石棉职业暴露史，该怎么处理？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "mGGN≤8mm 随访",
+      "gold_source": "共识 · 六（二）评估 mGGN 的细则",
+      "gold_quote": "孤立性mGGN直径≤8 mm者：建议在3、6、12和24个月进行CT随访",
+      "gold_boundary_note": "原文为「≤8 mm」，故 8.0 归本条、8.1 归推荐意见15",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 8.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A004",
+      "type": "positive",
+      "question": "一位54岁女性，8mm混杂性磨玻璃结节，实性成分2.4mm，无吸烟史，该怎么处理？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "mGGN≤8mm 随访",
+      "gold_source": "共识 · 六（二）评估 mGGN 的细则",
+      "gold_quote": "孤立性mGGN直径≤8 mm者：建议在3、6、12和24个月进行CT随访",
+      "gold_boundary_note": "原文为「≤8 mm」，故 8.0 归本条、8.1 归推荐意见15",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 8.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A005",
+      "type": "positive",
+      "question": "男性，57岁，19mm混合磨玻璃结节，实性成分5.7mm，有肺癌家族史，该怎么处理？",
+      "expected_clause": "推荐意见15",
+      "expected_topic": "mGGN>8mm 处置",
+      "gold_source": "共识 · 六（二）评估 mGGN 的细则",
+      "gold_quote": "孤立性mGGN直径>8 mm者：建议在3个月重复胸部CT检查",
+      "gold_boundary_note": "原文为「>8 mm」；8.0 不属于本条",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 19,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A006",
+      "type": "positive",
+      "question": "患者60岁，女性性，19mm混杂性磨玻璃结节，实性成分5.7mm，无职业暴露及家族史，该怎么处理？",
+      "expected_clause": "推荐意见15",
+      "expected_topic": "mGGN>8mm 处置",
+      "gold_source": "共识 · 六（二）评估 mGGN 的细则",
+      "gold_quote": "孤立性mGGN直径>8 mm者：建议在3个月重复胸部CT检查",
+      "gold_boundary_note": "原文为「>8 mm」；8.0 不属于本条",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 19,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A007",
+      "type": "positive",
+      "question": "一位63岁男性，3mm纯磨玻璃结节，吸烟指数500年支，该怎么处理？",
+      "expected_clause": "推荐意见12",
+      "expected_topic": "pGGN≤5mm 随访",
+      "gold_source": "共识 · 六（一）评估 pGGN 的细则",
+      "gold_quote": "pGGN直径≤5 mm者：建议首次6个月随访胸部CT，随后行年度胸部CT随访",
+      "gold_boundary_note": "原文为「≤5 mm」，故 5.0 归本条、5.1 归推荐意见13",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 3.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A008",
+      "type": "positive",
+      "question": "女性，66岁，3mm磨玻璃结节，不吸烟，无其他危险因素，该怎么处理？",
+      "expected_clause": "推荐意见12",
+      "expected_topic": "pGGN≤5mm 随访",
+      "gold_source": "共识 · 六（一）评估 pGGN 的细则",
+      "gold_quote": "pGGN直径≤5 mm者：建议首次6个月随访胸部CT，随后行年度胸部CT随访",
+      "gold_boundary_note": "原文为「≤5 mm」，故 5.0 归本条、5.1 归推荐意见13",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 3.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A009",
+      "type": "positive",
+      "question": "患者69岁，男性性，9mm纯磨玻璃结节，合并慢阻肺，该怎么处理？",
+      "expected_clause": "推荐意见13",
+      "expected_topic": "pGGN 5~10mm 随访",
+      "gold_source": "共识 · 六（一）评估 pGGN 的细则",
+      "gold_quote": "pGGN直径5~10 mm者：建议首次3个月随访胸部CT，随后6个月行胸部CT随访",
+      "gold_boundary_note": "原文为「5~10 mm」，5.0 不属于本条",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 9.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A010",
+      "type": "positive",
+      "question": "一位72岁女性，9mm磨玻璃结节，无吸烟史，该怎么处理？",
+      "expected_clause": "推荐意见13",
+      "expected_topic": "pGGN 5~10mm 随访",
+      "gold_source": "共识 · 六（一）评估 pGGN 的细则",
+      "gold_quote": "pGGN直径5~10 mm者：建议首次3个月随访胸部CT，随后6个月行胸部CT随访",
+      "gold_boundary_note": "原文为「5~10 mm」，5.0 不属于本条",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 9.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A011",
+      "type": "positive",
+      "question": "男性，45岁，10mm实性结节，吸烟30年，该怎么处理？",
+      "expected_clause": "推荐意见5",
+      "expected_topic": "实性结节>8mm 恶性概率评估",
+      "gold_source": "共识 · 五（三）孤立性实性结节",
+      "gold_quote": "孤立性不明原因结节直径>8 mm者：建议通过定性使用临床判断和（或）定量地使用验证模型评估肺结节恶性概率",
+      "gold_boundary_note": "原文为「>8 mm」；与推荐意见11（≤8mm）互补不重叠",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 10.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A012",
+      "type": "positive",
+      "question": "患者48岁，女性性，10mm实性肺结节，无职业暴露及家族史，该怎么处理？",
+      "expected_clause": "推荐意见5",
+      "expected_topic": "实性结节>8mm 恶性概率评估",
+      "gold_source": "共识 · 五（三）孤立性实性结节",
+      "gold_quote": "孤立性不明原因结节直径>8 mm者：建议通过定性使用临床判断和（或）定量地使用验证模型评估肺结节恶性概率",
+      "gold_boundary_note": "原文为「>8 mm」；与推荐意见11（≤8mm）互补不重叠",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 10.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A013",
+      "type": "positive",
+      "question": "一位51岁男性，20mm实性结节，有石棉职业暴露史，该怎么处理？",
+      "expected_clause": "推荐意见5",
+      "expected_topic": "实性结节>8mm 恶性概率评估",
+      "gold_source": "共识 · 五（三）孤立性实性结节",
+      "gold_quote": "孤立性不明原因结节直径>8 mm者：建议通过定性使用临床判断和（或）定量地使用验证模型评估肺结节恶性概率",
+      "gold_boundary_note": "原文为「>8 mm」；与推荐意见11（≤8mm）互补不重叠",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 20.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A014",
+      "type": "positive",
+      "question": "女性，54岁，20mm实性肺结节，不吸烟，无其他危险因素，该怎么处理？",
+      "expected_clause": "推荐意见5",
+      "expected_topic": "实性结节>8mm 恶性概率评估",
+      "gold_source": "共识 · 五（三）孤立性实性结节",
+      "gold_quote": "孤立性不明原因结节直径>8 mm者：建议通过定性使用临床判断和（或）定量地使用验证模型评估肺结节恶性概率",
+      "gold_boundary_note": "原文为「>8 mm」；与推荐意见11（≤8mm）互补不重叠",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 20.0,
+        "has_risk_factor": null
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A015",
+      "type": "positive",
+      "question": "患者57岁，男性性，4mm实性结节，有肺癌家族史，该怎么处理？",
+      "expected_clause": "推荐意见11",
+      "expected_topic": "实性结节≤8mm 有危险因素",
+      "gold_source": "共识 · 五（二）孤立性实性结节",
+      "gold_quote": "存在一项或更多肺癌危险因素的直径≤8 mm的孤立性实性结节者，建议根据结节的大小选择CT随访的频率和持续时间",
+      "gold_boundary_note": "原文为「≤8 mm」；须有危险因素",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 4,
+        "has_risk_factor": true
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A016",
+      "type": "positive",
+      "question": "一位60岁女性，4mm实性肺结节，吸烟30年，该怎么处理？",
+      "expected_clause": "推荐意见11",
+      "expected_topic": "实性结节≤8mm 有危险因素",
+      "gold_source": "共识 · 五（二）孤立性实性结节",
+      "gold_quote": "存在一项或更多肺癌危险因素的直径≤8 mm的孤立性实性结节者，建议根据结节的大小选择CT随访的频率和持续时间",
+      "gold_boundary_note": "原文为「≤8 mm」；须有危险因素",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 4,
+        "has_risk_factor": true
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A017",
+      "type": "positive",
+      "question": "男性，63岁，4mm实性结节，不吸烟，无其他危险因素，该怎么处理？",
+      "expected_clause": "推荐意见10",
+      "expected_topic": "实性结节≤8mm 无危险因素",
+      "gold_source": "共识 · 五（二）孤立性实性结节",
+      "gold_quote": "孤立性实性结节直径≤8 mm且无肺癌危险因素者，建议根据结节大小选择CT随访的频率与持续时间",
+      "gold_boundary_note": "原文为「≤8 mm」；须无危险因素",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 4,
+        "has_risk_factor": false
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "A018",
+      "type": "positive",
+      "question": "患者66岁，女性性，4mm实性肺结节，无职业暴露及家族史，该怎么处理？",
+      "expected_clause": "推荐意见10",
+      "expected_topic": "实性结节≤8mm 无危险因素",
+      "gold_source": "共识 · 五（二）孤立性实性结节",
+      "gold_quote": "孤立性实性结节直径≤8 mm且无肺癌危险因素者，建议根据结节大小选择CT随访的频率与持续时间",
+      "gold_boundary_note": "原文为「≤8 mm」；须无危险因素",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 4,
+        "has_risk_factor": false
+      },
+      "note": "正例：应命中指定条款"
+    },
+    {
+      "id": "B019",
+      "type": "boundary",
+      "question": "患者58岁，男性，7.9mm混合磨玻璃结节，实性成分2mm，无吸烟史，请问随访方案？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "mGGN 接近 8mm 下边界",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 7.9
+      },
+      "note": "边界例：验证阈值判定"
+    },
+    {
+      "id": "B020",
+      "type": "boundary",
+      "question": "患者58岁，男性，8.1mm混合磨玻璃结节，实性成分2mm，无吸烟史，请问随访方案？",
+      "expected_clause": "推荐意见15",
+      "expected_topic": "mGGN 刚过 8mm 阈值",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 8.1
+      },
+      "note": "边界例：验证阈值判定"
+    },
+    {
+      "id": "B021",
+      "type": "boundary",
+      "question": "患者58岁，男性，8mm混合磨玻璃结节，实性成分2mm，无吸烟史，请问随访方案？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "mGGN 恰在 8mm 阈值（取≤侧）",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 8.0
+      },
+      "note": "边界例：验证阈值判定"
+    },
+    {
+      "id": "B022",
+      "type": "boundary",
+      "question": "患者58岁，男性，5mm纯磨玻璃结节，无吸烟史，请问随访方案？",
+      "expected_clause": "推荐意见12",
+      "expected_topic": "pGGN 恰在 5mm 阈值（取≤侧）",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 5.0
+      },
+      "note": "边界例：验证阈值判定"
+    },
+    {
+      "id": "B023",
+      "type": "boundary",
+      "question": "患者58岁，男性，5.1mm纯磨玻璃结节，无吸烟史，请问随访方案？",
+      "expected_clause": "推荐意见13",
+      "expected_topic": "pGGN 刚过 5mm 阈值",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 5.1
+      },
+      "note": "边界例：验证阈值判定"
+    },
+    {
+      "id": "B024",
+      "type": "boundary",
+      "question": "患者58岁，男性，8mm实性结节，吸烟30年，请问随访方案？",
+      "expected_clause": "推荐意见11",
+      "expected_topic": "实性结节恰在 8mm（≤8 分支）",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 8.0
+      },
+      "note": "边界例：验证阈值判定"
+    },
+    {
+      "id": "B025",
+      "type": "boundary",
+      "question": "患者58岁，男性，8.1mm实性结节，无吸烟史，请问随访方案？",
+      "expected_clause": "推荐意见5",
+      "expected_topic": "实性结节刚过 8mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 8.1
+      },
+      "note": "边界例：验证阈值判定"
+    },
+    {
+      "id": "B026",
+      "type": "boundary",
+      "question": "患者58岁，男性，4mm实性结节，吸烟30年，请问随访方案？",
+      "expected_clause": "推荐意见11",
+      "expected_topic": "实性小结节恰在 4mm 分界",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 4.0
+      },
+      "note": "边界例：验证阈值判定"
+    },
+    {
+      "id": "C027",
+      "type": "refusal",
+      "question": "我有肺结节，该怎么办？",
+      "expected_clause": null,
+      "expected_topic": "拒答或追问缺失信息",
+      "facts": {},
+      "note": "拒答例：缺少结节直径，应追问而非给建议"
+    },
+    {
+      "id": "C028",
+      "type": "refusal",
+      "question": "体检发现肺部有个阴影，需要处理吗？",
+      "expected_clause": null,
+      "expected_topic": "拒答或追问缺失信息",
+      "facts": {},
+      "note": "拒答例：缺少结节直径，应追问而非给建议"
+    },
+    {
+      "id": "C029",
+      "type": "refusal",
+      "question": "报告上写着肺结节，严重吗？",
+      "expected_clause": null,
+      "expected_topic": "拒答或追问缺失信息",
+      "facts": {},
+      "note": "拒答例：缺少结节直径，应追问而非给建议"
+    },
+    {
+      "id": "C030",
+      "type": "refusal",
+      "question": "医生说我肺上有个小结节，要手术吗？",
+      "expected_clause": null,
+      "expected_topic": "拒答或追问缺失信息",
+      "facts": {},
+      "note": "拒答例：缺少结节直径，应追问而非给建议"
+    },
+    {
+      "id": "D031",
+      "type": "contraindication",
+      "question": "一位55岁男性，8mm混合磨玻璃结节，实性成分2mm，吸烟30年，能否做 PET-CT 评估？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "PET-CT 不适用于实性成分≤8mm 的混杂性病灶",
+      "expected_keyword": "PET-CT",
+      "facts": {},
+      "note": "禁忌例：验证 contraindications 是否给出 PET-CT 不适用提示"
+    },
+    {
+      "id": "D032",
+      "type": "contraindication",
+      "question": "女，50岁，9mm混杂性磨玻璃结节，实性成分3mm，能否做 PET-CT 评估？",
+      "expected_clause": "推荐意见15",
+      "expected_topic": "PET-CT 不适用判定",
+      "expected_keyword": "PET-CT",
+      "facts": {},
+      "note": "禁忌例：验证 contraindications 是否给出 PET-CT 不适用提示"
+    },
+    {
+      "id": "E033",
+      "type": "referral",
+      "question": "患者60岁，4mm实性结节，无危险因素，应该在什么级别的医院管理？",
+      "expected_clause": "推荐意见18",
+      "expected_topic": "基层医院随访管理",
+      "facts": {},
+      "note": "分级诊疗例：验证 referral 字段的机构归属"
+    },
+    {
+      "id": "E034",
+      "type": "referral",
+      "question": "患者52岁，7mm实性结节，吸烟20年，应该在什么级别的医院管理？",
+      "expected_clause": "推荐意见18",
+      "expected_topic": "转肺结节诊治分中心管理",
+      "facts": {},
+      "note": "分级诊疗例：验证 referral 字段的机构归属"
+    },
+    {
+      "id": "E035",
+      "type": "referral",
+      "question": "患者65岁，15mm混杂性磨玻璃结节，吸烟40年，应该在什么级别的医院管理？",
+      "expected_clause": "推荐意见18",
+      "expected_topic": "肺癌防治联盟",
+      "facts": {},
+      "note": "分级诊疗例：验证 referral 字段的机构归属"
+    },
+    {
+      "id": "F036",
+      "type": "positive",
+      "question": "患者48岁，女性性，4mm混合磨玻璃结节，实性成分1.2mm，吸烟30年，应该如何处理？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "临床常见值 4mm",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 4.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F037",
+      "type": "positive",
+      "question": "一位53岁男性，5mm混合磨玻璃结节，实性成分1.5mm，吸烟指数500年支，应该如何处理？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "临床常见值 5mm",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 5.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F038",
+      "type": "positive",
+      "question": "女性，58岁，6mm混合磨玻璃结节，实性成分1.8mm，有石棉职业暴露史，应该如何处理？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "临床常见值 6mm",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 6.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F039",
+      "type": "positive",
+      "question": "患者63岁，男性性，8mm混合磨玻璃结节，实性成分2.4mm，合并慢阻肺，应该如何处理？",
+      "expected_clause": "推荐意见14",
+      "expected_topic": "临床常见值 8mm",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 8.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F040",
+      "type": "positive",
+      "question": "一位68岁女性，9mm混合磨玻璃结节，实性成分2.7mm，有肺癌家族史，应该如何处理？",
+      "expected_clause": "推荐意见15",
+      "expected_topic": "临床常见值 9mm",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 9.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F041",
+      "type": "positive",
+      "question": "男性，48岁，10mm混合磨玻璃结节，实性成分3mm，吸烟30年，应该如何处理？",
+      "expected_clause": "推荐意见15",
+      "expected_topic": "临床常见值 10mm",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 10.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F042",
+      "type": "positive",
+      "question": "患者53岁，女性性，15mm混合磨玻璃结节，实性成分4.5mm，吸烟指数500年支，应该如何处理？",
+      "expected_clause": "推荐意见15",
+      "expected_topic": "临床常见值 15mm",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 15.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F043",
+      "type": "positive",
+      "question": "一位58岁男性，20mm混合磨玻璃结节，实性成分6mm，有石棉职业暴露史，应该如何处理？",
+      "expected_clause": "推荐意见15",
+      "expected_topic": "临床常见值 20mm",
+      "facts": {
+        "density": "混杂性磨玻璃结节",
+        "diameter_mm": 20.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F044",
+      "type": "positive",
+      "question": "女性，63岁，3mm纯磨玻璃结节，合并慢阻肺，应该如何处理？",
+      "expected_clause": "推荐意见12",
+      "expected_topic": "临床常见值 3mm",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 3.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F045",
+      "type": "positive",
+      "question": "患者68岁，男性性，4mm纯磨玻璃结节，有肺癌家族史，应该如何处理？",
+      "expected_clause": "推荐意见12",
+      "expected_topic": "临床常见值 4mm",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 4.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F046",
+      "type": "positive",
+      "question": "一位48岁女性，5mm纯磨玻璃结节，吸烟30年，应该如何处理？",
+      "expected_clause": "推荐意见12",
+      "expected_topic": "临床常见值 5mm",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 5.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F047",
+      "type": "positive",
+      "question": "男性，53岁，6mm纯磨玻璃结节，吸烟指数500年支，应该如何处理？",
+      "expected_clause": "推荐意见13",
+      "expected_topic": "临床常见值 6mm",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 6.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F048",
+      "type": "positive",
+      "question": "患者58岁，女性性，8mm纯磨玻璃结节，有石棉职业暴露史，应该如何处理？",
+      "expected_clause": "推荐意见13",
+      "expected_topic": "临床常见值 8mm",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 8.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F049",
+      "type": "positive",
+      "question": "一位63岁男性，10mm纯磨玻璃结节，合并慢阻肺，应该如何处理？",
+      "expected_clause": "推荐意见13",
+      "expected_topic": "临床常见值 10mm",
+      "facts": {
+        "density": "纯磨玻璃结节",
+        "diameter_mm": 10.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F050",
+      "type": "positive",
+      "question": "女性，68岁，4mm实性结节，有肺癌家族史，应该如何处理？",
+      "expected_clause": "推荐意见11",
+      "expected_topic": "临床常见值 4mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 4.0,
+        "has_risk_factor": true
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F051",
+      "type": "positive",
+      "question": "患者48岁，男性性，6mm实性结节，吸烟30年，应该如何处理？",
+      "expected_clause": "推荐意见11",
+      "expected_topic": "临床常见值 6mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 6.0,
+        "has_risk_factor": true
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F052",
+      "type": "positive",
+      "question": "一位53岁女性，8mm实性结节，吸烟指数500年支，应该如何处理？",
+      "expected_clause": "推荐意见11",
+      "expected_topic": "临床常见值 8mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 8.0,
+        "has_risk_factor": true
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F053",
+      "type": "positive",
+      "question": "男性，58岁，4mm实性结节，不吸烟，无其他危险因素，应该如何处理？",
+      "expected_clause": "推荐意见10",
+      "expected_topic": "临床常见值 4mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 4.0,
+        "has_risk_factor": false
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F054",
+      "type": "positive",
+      "question": "患者63岁，女性性，6mm实性结节，无职业暴露及家族史，应该如何处理？",
+      "expected_clause": "推荐意见10",
+      "expected_topic": "临床常见值 6mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 6.0,
+        "has_risk_factor": false
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F055",
+      "type": "positive",
+      "question": "一位68岁男性，8mm实性结节，无吸烟史，应该如何处理？",
+      "expected_clause": "推荐意见10",
+      "expected_topic": "临床常见值 8mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 8.0,
+        "has_risk_factor": false
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F056",
+      "type": "positive",
+      "question": "女性，48岁，10mm实性结节，吸烟30年，应该如何处理？",
+      "expected_clause": "推荐意见5",
+      "expected_topic": "临床常见值 10mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 10.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F057",
+      "type": "positive",
+      "question": "患者53岁，男性性，15mm实性结节，吸烟指数500年支，应该如何处理？",
+      "expected_clause": "推荐意见5",
+      "expected_topic": "临床常见值 15mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 15.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    },
+    {
+      "id": "F058",
+      "type": "positive",
+      "question": "一位58岁女性，20mm实性结节，有石棉职业暴露史，应该如何处理？",
+      "expected_clause": "推荐意见5",
+      "expected_topic": "临床常见值 20mm",
+      "facts": {
+        "density": "实性肺结节",
+        "diameter_mm": 20.0,
+        "has_risk_factor": null
+      },
+      "note": "临床常见值例：使用 CT 报告常见整数毫米，验证判定一致性"
+    }
+  ]
+}

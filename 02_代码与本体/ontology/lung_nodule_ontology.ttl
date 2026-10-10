@@ -1,0 +1,789 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix pno:  <https://nexent-ict.cn/ontology/lung-nodule#> .
+
+##############################################################################
+#  肺结节规范处置本体 (Pulmonary Nodule Management Ontology, PNMO)
+#  ---------------------------------------------------------------------------
+#  领域来源：《肺结节诊治中国专家共识（2024年版）》
+#            中华医学会呼吸病学分会 / 中国肺癌防治联盟专家组
+#            中华结核和呼吸杂志, 2024, 47(8): 716-729
+#            DOI: 10.3760/cma.j.cn112147-20231109-00300
+#
+#  构建方法：低资源场景下领域知识图谱本体半自动化构建
+#            种子本体（人工定义） → LLM 抽取并对齐 → 人工审核闭环
+#
+#  标准对齐：RadLex / SNOMED CT / ICD-10 / LOINC / ACR Lung-RADS / NCCN
+#
+#  版本：v1.0    构建日期：2026-10-10
+##############################################################################
+
+pno: a owl:Ontology ;
+    dct:title "肺结节规范处置本体"@zh , "Pulmonary Nodule Management Ontology"@en ;
+    dct:alternative "PNMO" ;
+    owl:versionInfo "1.0" ;
+    dct:source <https://www.rccrc.cn/article/1820> ;
+    dct:source "中华结核和呼吸杂志, 2024, 47(8): 716-729" ;
+    dct:created "2026-10-10"^^xsd:date ;
+    rdfs:comment """面向基层医疗机构肺结节规范处置决策支持的本体。
+所有类、属性、约束均可溯源至《肺结节诊治中国专家共识（2024年版）》的
+具体条款（以 【推荐意见N】 标注）。本体不产生新的医学主张。"""@zh .
+
+
+##############################################################################
+#  1. 顶层类
+##############################################################################
+
+pno:ClinicalEntity a owl:Class ;
+    rdfs:label "临床实体"@zh ;
+    rdfs:comment "本体内所有临床相关实体的顶层类。"@zh .
+
+pno:Patient a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "患者"@zh ;
+    rdfs:comment "接受肺结节评估的个体。"@zh .
+
+pno:Nodule a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "肺结节"@zh ;
+    rdfs:comment """影像学表现为最大径≤3 cm 的局灶性、类圆形、较肺实质密度增高的
+实性或亚实性阴影，可为孤立性或多发性，不伴肺不张、肺门淋巴结肿大和胸腔积液。
+【推荐意见1 / 定义章节】"""@zh .
+
+
+##############################################################################
+#  2. 结节分类体系（数量 / 大小 / 密度 / 早期诊断难易）
+##############################################################################
+
+# ---- 2.1 按数量 ----
+pno:SolitaryNodule a owl:Class ;
+    rdfs:subClassOf pno:Nodule ;
+    rdfs:label "孤立性肺结节"@zh ;
+    rdfs:comment "单个病灶。定义章节（二）分类 1。"@zh ;
+    skos:closeMatch <http://radlex.org/RID/RID3874> .
+
+pno:MultipleNodules a owl:Class ;
+    rdfs:subClassOf pno:Nodule ;
+    rdfs:label "多发性肺结节"@zh ;
+    rdfs:comment "2 个及以上的病灶。定义章节（二）分类 1。"@zh .
+
+pno:DiffuseNodules a owl:Class ;
+    rdfs:subClassOf pno:MultipleNodules ;
+    rdfs:label "弥漫性肺结节"@zh ;
+    rdfs:comment "一般认为 >10 个的弥漫性肺结节多为恶性肿瘤转移或良性病变所致。定义章节（一）。"@zh .
+
+# ---- 2.2 按大小（分级诊疗依据）----
+pno:MicroNodule a owl:Class ;
+    rdfs:subClassOf pno:Nodule ;
+    rdfs:label "微小结节"@zh ;
+    rdfs:comment """最大径 ≤5 mm。微小结节可在基层医院随访管理。
+【推荐意见18】①基层医院：肺结节≤5 mm 者在基层医院管理。"""@zh ;
+    skos:definition "最大径 ≤5 mm 的肺结节"@zh .
+
+pno:SmallNodule a owl:Class ;
+    rdfs:subClassOf pno:Nodule ;
+    rdfs:label "小结节"@zh ;
+    rdfs:comment """最大径 5~10 mm。小结节可在有诊治经验的医院（如中国肺癌防治联盟
+肺结节诊治分中心）管理。【推荐意见18】②肺结节 5~10 mm 且未明确诊断者建议转分中心管理。"""@zh .
+
+pno:LargeNodule a owl:Class ;
+    rdfs:subClassOf pno:Nodule ;
+    rdfs:label "较大结节（10~30mm）"@zh ;
+    rdfs:comment """最大径 10~30 mm 者应尽早诊治。
+【推荐意见18】③肺结节 >10 mm、分中心未明确诊断者，可由联盟协助指导管理。"""@zh .
+
+# ---- 2.3 按密度 ----
+pno:SolidNodule a owl:Class ;
+    rdfs:subClassOf pno:Nodule ;
+    rdfs:label "实性肺结节"@zh ;
+    rdfs:comment "肺内圆形或类圆形密度增高影，病变密度足以掩盖其中走行的血管和支气管影。定义章节（二）3①。"@zh ;
+    skos:closeMatch <http://radlex.org/RID/RID3870> .
+
+pno:SubsolidNodule a owl:Class ;
+    rdfs:subClassOf pno:Nodule ;
+    rdfs:label "亚实性肺结节"@zh ;
+    rdfs:comment "所有含磨玻璃密度的肺结节，病变密度不足以掩盖其中走行的血管和支气管影。定义章节（二）3②。"@zh .
+
+pno:PureGroundGlassNodule a owl:Class ;
+    rdfs:subClassOf pno:SubsolidNodule ;
+    rdfs:label "纯磨玻璃结节"@zh ;
+    rdfs:comment "磨玻璃病灶内不含有实性成分，简称 pGGN。定义章节（二）3②。"@zh ;
+    skos:altLabel "pGGN"@en , "pure ground-glass nodule"@en ;
+    skos:closeMatch <http://radlex.org/RID/RID3880> .
+
+pno:MixedGroundGlassNodule a owl:Class ;
+    rdfs:subClassOf pno:SubsolidNodule ;
+    rdfs:label "混杂性磨玻璃结节（部分实性结节）"@zh ;
+    rdfs:comment """磨玻璃密度和实性密度均有，简称 mGGN，也称部分实性结节。
+内部实性成分的比例对侵袭性判断比大小更重要，实性成分越多提示侵袭性越强。
+定义章节（二）3② / 六（二）。"""@zh ;
+    skos:altLabel "mGGN"@en , "mixed ground-glass nodule"@en , "part solid nodule"@en ;
+    skos:closeMatch <http://radlex.org/RID/RID3881> .
+
+# ---- 2.4 按早期诊断难易程度 ----
+pno:IndeterminateNodule a owl:Class ;
+    rdfs:subClassOf pno:Nodule ;
+    rdfs:label "难定性肺结节"@zh ;
+    rdfs:comment """无法通过非手术活检明确诊断，且高度怀疑早期肺癌的肺结节。
+该类肺结节的诊断和处理推荐采用 MDT 工作模式和医患共同决策。
+【推荐意见1】（Ⅲ类推荐）"""@zh .
+
+
+##############################################################################
+#  3. 患者特征与危险因素
+##############################################################################
+
+pno:RiskFactor a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "肺癌危险因素"@zh .
+
+pno:HighRiskPopulation a owl:Class ;
+    rdfs:subClassOf pno:Patient ;
+    rdfs:label "肺癌高危人群"@zh ;
+    rdfs:comment """年龄≥40 岁，且具有下述任一危险因素者：
+①吸烟指数≥400 年支（或20包年）；②环境或高危职业暴露史（石棉、铍、铀、氡等）；
+③合并慢阻肺、弥漫性肺纤维化或曾患肺结核；④曾患恶性肿瘤或有肺癌家族史（尤其一级亲属）。
+【推荐意见2】（Ⅱ类推荐）"""@zh .
+
+pno:SmokingHistory a owl:Class ;
+    rdfs:subClassOf pno:RiskFactor ;
+    rdfs:label "吸烟史"@zh ;
+    rdfs:comment "吸烟指数≥400 年支（或 20 包年）。【推荐意见2】①（ⅠA类推荐）"@zh .
+
+pno:OccupationalExposure a owl:Class ;
+    rdfs:subClassOf pno:RiskFactor ;
+    rdfs:label "环境或高危职业暴露史"@zh ;
+    rdfs:comment "石棉、铍、铀、氡等接触者。【推荐意见2】②（ⅠB类推荐）"@zh .
+
+pno:ChronicLungDisease a owl:Class ;
+    rdfs:subClassOf pno:RiskFactor ;
+    rdfs:label "慢性肺部疾病史"@zh ;
+    rdfs:comment "合并慢阻肺、弥漫性肺纤维化或曾患肺结核者。【推荐意见2】③（ⅠB类推荐）"@zh .
+
+pno:CancerHistory a owl:Class ;
+    rdfs:subClassOf pno:RiskFactor ;
+    rdfs:label "肿瘤史或肺癌家族史"@zh ;
+    rdfs:comment "曾患恶性肿瘤或有肺癌家族史者，尤其一级亲属家族史。【推荐意见2】④（ⅠB类推荐）"@zh .
+
+
+##############################################################################
+#  4. 影像学特征
+##############################################################################
+
+pno:ImagingFeature a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "影像学特征"@zh ;
+    rdfs:comment "用于判断肺结节良恶性的影像学表现。三（二）影像学评估。"@zh .
+
+pno:MalignantFeature a owl:Class ;
+    rdfs:subClassOf pno:ImagingFeature ;
+    rdfs:label "恶性倾向影像特征"@zh .
+
+pno:BenignFeature a owl:Class ;
+    rdfs:subClassOf pno:ImagingFeature ;
+    rdfs:label "良性倾向影像特征"@zh .
+
+pno:SpiculationSign a owl:Class ;
+    rdfs:subClassOf pno:MalignantFeature ;
+    rdfs:label "毛刺征"@zh ;
+    rdfs:comment "恶性肺结节多呈分叶状或有毛刺征。梅奥模型中毛刺征 OR=2.8。三（二）1（3）。"@zh ;
+    skos:altLabel "棘状突起"@zh .
+
+pno:LobulationSign a owl:Class ;
+    rdfs:subClassOf pno:MalignantFeature ;
+    rdfs:label "分叶征"@zh ;
+    rdfs:comment "恶性肺结节多呈分叶状。良性肺结节多数无分叶。三（二）1（3）。"@zh .
+
+pno:PleuralIndentation a owl:Class ;
+    rdfs:subClassOf pno:MalignantFeature ;
+    rdfs:label "胸膜凹陷征"@zh ;
+    rdfs:comment "胸膜凹陷征及血管集束征常提示恶性可能。三（二）1（3）。"@zh .
+
+pno:VascularConvergence a owl:Class ;
+    rdfs:subClassOf pno:MalignantFeature ;
+    rdfs:label "血管集束征"@zh ;
+    rdfs:comment "常提示恶性可能。三（二）1（3）。"@zh .
+
+pno:UpperLobeLocation a owl:Class ;
+    rdfs:subClassOf pno:ImagingFeature ;
+    rdfs:label "位于上叶"@zh ;
+    rdfs:comment """梅奥模型中位于上叶 OR=2.2。但 ACCP 指南中"位于上叶的肺结节恶性概率大"
+并不完全适合我国和大部分亚太地区，因为上叶尖后段也是肺结核的好发部位。四（一）。"""@zh .
+
+pno:DensityIncrease a owl:Class ;
+    rdfs:subClassOf pno:MalignantFeature ;
+    rdfs:label "密度增加"@zh ;
+    rdfs:comment "GGN 的平均 CT 值对鉴别诊断有重要参考价值，密度高则恶性概率大。三（二）2（1）。"@zh .
+
+pno:SolidComponentIncrease a owl:Class ;
+    rdfs:subClassOf pno:MalignantFeature ;
+    rdfs:label "实性成分增多"@zh ;
+    rdfs:comment """实性成分超过 50% 常提示恶性可能性大；混杂性结节实性成分增多通常提示为恶性。
+三（二）2（1） / 【推荐意见14】②。"""@zh .
+
+pno:DoublingTime a owl:Class ;
+    rdfs:subClassOf pno:ImagingFeature ;
+    rdfs:label "倍增时间"@zh ;
+    rdfs:comment """病灶迅速增大、倍增时间<15 d 多考虑良性；倍增时间符合肿瘤生长规律多考虑恶性。
+实性肺结节倍增周期约 20~400 d；亚实性结节倍增时间 400~800 d 或更长。三（二）3。"""@zh .
+
+
+##############################################################################
+#  5. 检查与评估手段
+##############################################################################
+
+pno:Examination a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "检查手段"@zh .
+
+pno:ThinSliceCT a owl:Class ;
+    rdfs:subClassOf pno:Examination ;
+    rdfs:label "薄层CT / 薄层高分辨CT"@zh ;
+    rdfs:comment "推荐对病灶处行薄层CT扫描，并和既往历史影像学资料进行对比。【推荐意见3】（ⅠB类推荐）"@zh ;
+    skos:closeMatch <http://loinc.org/24604-1> .
+
+pno:LDCT a owl:Class ;
+    rdfs:subClassOf pno:Examination ;
+    rdfs:label "低剂量CT（LDCT）"@zh ;
+    rdfs:comment "推荐每年采用胸部 LDCT 对肺癌高危人群进行筛查。【推荐意见2】（ⅠA类推荐）"@zh ;
+    skos:altLabel "low-dose computed tomography"@en .
+
+pno:PETCT a owl:Class ;
+    rdfs:subClassOf pno:Examination ;
+    rdfs:label "PET-CT"@zh ;
+    rdfs:comment """对于不能定性的直径>8 mm 的实性肺结节可考虑采用 PET-CT 区分良恶性。
+PET-CT 对 pGGN 及实性成分≤8 mm 肺结节的鉴别诊断无明显优势。
+三（二）2 / 【推荐意见15】①。"""@zh ;
+    skos:closeMatch <http://loinc.org/44141-4> .
+
+pno:ContrastCT a owl:Class ;
+    rdfs:subClassOf pno:Examination ;
+    rdfs:label "胸部增强CT"@zh ;
+    rdfs:comment "以增强阈值>15 HU，恶性肺部病变判定的敏感度、特异度和诊断准确率分别为 98%、58% 和 77%。四（二）1。"@zh .
+
+pno:CACTest a owl:Class ;
+    rdfs:subClassOf pno:Examination ;
+    rdfs:label "循环染色体异常细胞检测（CAC）"@zh ;
+    rdfs:comment """CAC 对≤10 mm 肺结节诊断的敏感度为 70.5%，特异度为 86.4%。
+【推荐意见5】（3）对要求个体化诊疗者，可推荐 CAC 辅助评估（Ⅲ类推荐）。"""@zh .
+
+pno:TumorMarkerPanel a owl:Class ;
+    rdfs:subClassOf pno:Examination ;
+    rdfs:label "肿瘤标志物组合"@zh ;
+    rdfs:comment """ProGRP、SCC、CEA、Cyfra21-1 组合。不推荐把单一肿瘤标志物作为亚厘米的
+小结节和微小结节筛查和评估的指标。【推荐意见4】（Ⅱ类推荐）"""@zh .
+
+pno:NonSurgicalBiopsy a owl:Class ;
+    rdfs:subClassOf pno:Examination ;
+    rdfs:label "非手术活检"@zh ;
+    rdfs:comment "【推荐意见8】建议在伴有下列情况时采取非手术活检（Ⅱ类推荐）。"@zh .
+
+pno:SurgicalBiopsy a owl:Class ;
+    rdfs:subClassOf pno:Examination ;
+    rdfs:label "手术活检"@zh ;
+    rdfs:comment """不推荐单纯为诊断目的而对单个肺结节进行手术活检。
+【推荐意见9】建议在下列情况下行手术活检诊断（Ⅱ类推荐）。"""@zh .
+
+
+##############################################################################
+#  6. 处置动作
+##############################################################################
+
+pno:ManagementAction a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "处置动作"@zh .
+
+pno:CTFollowUp a owl:Class ;
+    rdfs:subClassOf pno:ManagementAction ;
+    rdfs:label "CT 随访"@zh .
+
+pno:AnnualFollowUp a owl:Class ;
+    rdfs:subClassOf pno:CTFollowUp ;
+    rdfs:label "常规年度随访"@zh .
+
+pno:SurgicalResection a owl:Class ;
+    rdfs:subClassOf pno:ManagementAction ;
+    rdfs:label "外科手术根治性切除"@zh ;
+    rdfs:comment "肺癌的优选局部治疗方式。【推荐意见17】（ⅠA类推荐）"@zh .
+
+pno:SBRT a owl:Class ;
+    rdfs:subClassOf pno:ManagementAction ;
+    rdfs:label "立体定向放射治疗（SBRT）"@zh ;
+    rdfs:comment "对于心肺等生理功能不能耐受者，经 MDT 评估和医患共同决策可考虑。【推荐意见17】（Ⅱ类推荐）"@zh .
+
+pno:AblationTherapy a owl:Class ;
+    rdfs:subClassOf pno:ManagementAction ;
+    rdfs:label "消融治疗"@zh ;
+    rdfs:comment "射频消融、微波消融和冷冻消融。【推荐意见17】（Ⅱ类推荐）"@zh .
+
+pno:EmpiricalAntibiotics a owl:Class ;
+    rdfs:subClassOf pno:ManagementAction ;
+    rdfs:label "经验性抗菌治疗"@zh ;
+    rdfs:comment """如果发现结节的同时有症状或有细菌感染征象时可考虑。
+【推荐意见14】④ / 【推荐意见15】。"""@zh .
+
+pno:MDTDiscussion a owl:Class ;
+    rdfs:subClassOf pno:ManagementAction ;
+    rdfs:label "MDT 多学科会诊"@zh ;
+    rdfs:comment "人机 MDT（expert-robot MDT）由自然人专家与 AI 评估系统联袂互动。三（三）。"@zh .
+
+pno:Referral a owl:Class ;
+    rdfs:subClassOf pno:ManagementAction ;
+    rdfs:label "转诊"@zh ;
+    rdfs:comment "按分级诊疗原则转上级机构。【推荐意见18】（Ⅲ类推荐）"@zh .
+
+pno:SmokingCessation a owl:Class ;
+    rdfs:subClassOf pno:ManagementAction ;
+    rdfs:label "戒烟干预"@zh ;
+
+
+##############################################################################
+#  7. 证据体系（决策溯源的载体）
+##############################################################################
+
+pno:Recommendation a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "推荐意见"@zh ;
+    rdfs:comment "本共识共形成 18 条推荐意见。每条推荐意见是决策溯源的锚点。"@zh .
+
+pno:RecommendationStrength a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "推荐强度"@zh ;
+    rdfs:comment "ⅠA / ⅠB / Ⅱ / Ⅲ 类推荐。"@zh .
+
+pno:GradeIA a owl:Individual ;
+    rdf:type pno:RecommendationStrength ;
+    rdfs:label "ⅠA类推荐"@zh .
+
+pno:GradeIB a owl:Individual ;
+    rdf:type pno:RecommendationStrength ;
+    rdfs:label "ⅠB类推荐"@zh .
+
+pno:GradeII a owl:Individual ;
+    rdf:type pno:RecommendationStrength ;
+    rdfs:label "Ⅱ类推荐"@zh .
+
+pno:GradeIII a owl:Individual ;
+    rdf:type pno:RecommendationStrength ;
+    rdfs:label "Ⅲ类推荐"@zh .
+
+pno:MedicalInstitution a owl:Class ;
+    rdfs:subClassOf pno:ClinicalEntity ;
+    rdfs:label "医疗机构"@zh .
+
+pno:PrimaryHospital a owl:Class ;
+    rdfs:subClassOf pno:MedicalInstitution ;
+    rdfs:label "基层医院"@zh ;
+    rdfs:comment "肺结节≤5 mm 者在基层医院管理。【推荐意见18】①"@zh .
+
+pno:NoduleCenter a owl:Class ;
+    rdfs:subClassOf pno:MedicalInstitution ;
+    rdfs:label "肺结节诊治分中心"@zh ;
+    rdfs:comment "中国肺癌防治联盟肺结节诊治分中心。肺结节 5~10 mm 且未明确诊断者建议转此管理。【推荐意见18】②"@zh .
+
+pno:LungCancerAlliance a owl:Class ;
+    rdfs:subClassOf pno:MedicalInstitution ;
+    rdfs:label "肺癌防治联盟"@zh ;
+    rdfs:comment "肺结节>10 mm、分中心未明确诊断者，可由联盟协助指导管理。【推荐意见18】③"@zh .
+
+
+##############################################################################
+#  8. 对象属性（关系）
+##############################################################################
+
+pno:hasDensityType a owl:ObjectProperty ;
+    rdfs:label "密度类型"@zh ;
+    rdfs:domain pno:Nodule ;
+    rdfs:range pno:Nodule ;
+    rdfs:comment "结节 → 密度分类（实性/亚实性/pGGN/mGGN）。"@zh .
+
+pno:hasSizeCategory a owl:ObjectProperty ;
+    rdfs:label "大小分类"@zh ;
+    rdfs:domain pno:Nodule ;
+    rdfs:range pno:Nodule ;
+    rdfs:comment "结节 → 微小结节/小结节/较大结节。"@zh .
+
+pno:hasImagingFeature a owl:ObjectProperty ;
+    rdfs:label "具有影像特征"@zh ;
+    rdfs:domain pno:Nodule ;
+    rdfs:range pno:ImagingFeature .
+
+pno:hasRiskFactor a owl:ObjectProperty ;
+    rdfs:label "具有危险因素"@zh ;
+    rdfs:domain pno:Patient ;
+    rdfs:range pno:RiskFactor .
+
+pno:hasNodule a owl:ObjectProperty ;
+    rdfs:label "患有结节"@zh ;
+    rdfs:domain pno:Patient ;
+    rdfs:range pno:Nodule .
+
+# ---- 核心推理关系：条 --> 处置 ----
+pno:recommends a owl:ObjectProperty ;
+    rdfs:label "推荐处置"@zh ;
+    rdfs:domain pno:Recommendation ;
+    rdfs:range pno:ManagementAction ;
+    rdfs:comment "推荐意见 → 处置动作。这是'检索-推理'双驱动中推理链的核心边。"@zh .
+
+pno:appliesTo a owl:ObjectProperty ;
+    rdfs:label "适用于"@zh ;
+    rdfs:domain pno:Recommendation ;
+    rdfs:range pno:Nodule ;
+    rdfs:comment "推荐意见 → 适用结节类型。用于从患者事实匹配到条款。"@zh .
+
+pno:requiresExamination a owl:ObjectProperty ;
+    rdfs:label "需要检查"@zh ;
+    rdfs:domain pno:Recommendation ;
+    rdfs:range pno:Examination .
+
+pno:hasStrength a owl:ObjectProperty ;
+    rdfs:label "推荐强度"@zh ;
+    rdfs:domain pno:Recommendation ;
+    rdfs:range pno:RecommendationStrength .
+
+pno:managedAt a owl:ObjectProperty ;
+    rdfs:label "管理机构"@zh ;
+    rdfs:domain pno:Nodule ;
+    rdfs:range pno:MedicalInstitution ;
+    rdfs:comment "分级诊疗：结节大小 → 在哪一级机构管理。【推荐意见18】"@zh .
+
+pno:upgradesRisk a owl:ObjectProperty ;
+    rdfs:label "上调恶性风险"@zh ;
+    rdfs:domain pno:RiskFactor ;
+    rdfs:range pno:Nodule .
+
+pno:suggestsMalignancy a owl:ObjectProperty ;
+    rdfs:label "提示恶性"@zh ;
+    rdfs:domain pno:ImagingFeature ;
+    rdfs:range pno:Nodule .
+
+pno:hasNextStep a owl:ObjectProperty ;
+    rdfs:label "下一步"@zh ;
+    rdfs:domain pno:ManagementAction ;
+    rdfs:range pno:ManagementAction ;
+    rdfs:comment "处置链的后续动作（如：随访中增大 → 手术切除）。"@zh .
+
+pno:contraindicatedFor a owl:ObjectProperty ;
+    rdfs:label "不适用于"@zh ;
+    rdfs:domain pno:Examination ;
+    rdfs:range pno:Nodule ;
+    rdfs:comment "如：PET-CT 不推荐用于实性成分≤8 mm 的混杂性病灶。【推荐意见15】①"@zh .
+
+
+##############################################################################
+#  9. 数据属性（属性值）
+##############################################################################
+
+pno:diameterMm a owl:DatatypeProperty ;
+    rdfs:label "最大径(mm)"@zh ;
+    rdfs:domain pno:Nodule ;
+    rdfs:range xsd:decimal .
+
+pno:solidComponentMm a owl:DatatypeProperty ;
+    rdfs:label "实性成分(mm)"@zh ;
+    rdfs:domain pno:Nodule ;
+    rdfs:range xsd:decimal .
+
+pno:solidComponentRatio a owl:DatatypeProperty ;
+    rdfs:label "实性成分比例"@zh ;
+    rdfs:domain pno:Nodule ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "实性成分超过 50% 常提示恶性可能性大。三（二）2（1）。"@zh .
+
+pno:ageYears a owl:DatatypeProperty ;
+    rdfs:label "年龄(岁)"@zh ;
+    rdfs:domain pno:Patient ;
+    rdfs:range xsd:integer .
+
+pno:smokingIndex a owl:DatatypeProperty ;
+    rdfs:label "吸烟指数(年支)"@zh ;
+    rdfs:domain pno:Patient ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "吸烟指数≥400 年支（或20包年）为危险因素。【推荐意见2】①"@zh .
+
+pno:packYears a owl:DatatypeProperty ;
+    rdfs:label "包年"@zh ;
+    rdfs:domain pno:Patient ;
+    rdfs:range xsd:decimal .
+
+pno:followUpMonths a owl:DatatypeProperty ;
+    rdfs:label "随访间隔(月)"@zh ;
+    rdfs:domain pno:Recommendation ;
+    rdfs:range xsd:string ;
+    rdfs:comment "如 '3,6,12,24' 表示在 3、6、12、24 个月随访。"@zh .
+
+pno:malignancyProbability a owl:DatatypeProperty ;
+    rdfs:label "恶性概率"@zh ;
+    rdfs:domain pno:Patient ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment """可由梅奥模型计算：
+X = -6.8272 + 0.0391×年龄 + 0.7917×吸烟史 + 1.3388×恶性肿瘤史
+    + 0.1274×直径 + 1.0407×毛刺征 + 0.7838×位置
+恶性概率 = e^X / (1 + e^X)。四（一）方程式1、2。"""@zh .
+
+pno:clauseNumber a owl:DatatypeProperty ;
+    rdfs:label "条款编号"@zh ;
+    rdfs:domain pno:Recommendation ;
+    rdfs:range xsd:string ;
+    rdfs:comment "溯源锚点，如 '推荐意见14'。"@zh .
+
+
+##############################################################################
+#  10. 推荐意见条款实例（推荐意见 1 - 18）
+##############################################################################
+#  说明：此处实例化"条款级锚定"的 18 个锚点。
+#        每条建议输出时必须携带对应的条款编号，实现决策链路可溯源。
+##############################################################################
+
+pno:Recommendation1 a pno:Recommendation ;
+    rdfs:label "【推荐意见1】难定性肺结节"@zh ;
+    pno:clauseNumber "推荐意见1" ;
+    pno:hasStrength pno:GradeIII ;
+    pno:appliesTo pno:IndeterminateNodule ;
+    pno:recommends pno:MDTDiscussion ;
+    rdfs:comment "难定性肺结节推荐采用 MDT 工作模式和医患共同决策（Ⅲ类推荐）。"@zh .
+
+pno:Recommendation2 a pno:Recommendation ;
+    rdfs:label "【推荐意见2】肺癌高危人群定义"@zh ;
+    pno:clauseNumber "推荐意见2" ;
+    pno:hasStrength pno:GradeII ;
+    pno:appliesTo pno:HighRiskPopulation ;
+    pno:requiresExamination pno:LDCT ;
+    rdfs:comment "年龄≥40 岁且具有任一危险因素者定义为高危人群，推荐每年 LDCT 筛查（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation3 a pno:Recommendation ;
+    rdfs:label "【推荐意见3】薄层CT 与历史影像对比"@zh ;
+    pno:clauseNumber "推荐意见3" ;
+    pno:hasStrength pno:GradeIB ;
+    pno:requiresExamination pno:ThinSliceCT ;
+    rdfs:comment "推荐对病灶处行薄层CT或薄层高分辨CT，并与既往历史影像学资料对比（ⅠB类推荐）。"@zh .
+
+pno:Recommendation4 a pno:Recommendation ;
+    rdfs:label "【推荐意见4】AI 辅助诊断与肿瘤标志物"@zh ;
+    pno:clauseNumber "推荐意见4" ;
+    pno:hasStrength pno:GradeII ;
+    pno:requiresExamination pno:TumorMarkerPanel ;
+    rdfs:comment """AI 辅助影像诊断有助于风险评估和临床决策。不推荐单一肿瘤标志物用于
+亚厘米小结节和微小结节筛查评估（Ⅱ类推荐）。"""@zh .
+
+pno:Recommendation5 a pno:Recommendation ;
+    rdfs:label "【推荐意见5】>8mm 结节恶性概率评估"@zh ;
+    pno:clauseNumber "推荐意见5" ;
+    pno:hasStrength pno:GradeII ;
+    pno:appliesTo pno:SolidNodule ;
+    pno:requiresExamination pno:PETCT , pno:CACTest ;
+    rdfs:comment "直径>8 mm 者建议定性判断和（或）定量模型评估恶性概率；低中度（5%~65%）可考虑 PET-CT；高度（>65%）可直接考虑 PET-CT（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation6 a pno:Recommendation ;
+    rdfs:label "【推荐意见6】风险获益沟通"@zh ;
+    pno:clauseNumber "推荐意见6" ;
+    pno:hasStrength pno:GradeII ;
+    pno:recommends pno:MDTDiscussion ;
+    rdfs:comment "推荐医生提出管理策略的风险和益处，并考虑患者意愿而决定（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation7 a pno:Recommendation ;
+    rdfs:label "【推荐意见7】>8mm 结节随访间隔"@zh ;
+    pno:clauseNumber "推荐意见7" ;
+    pno:hasStrength pno:GradeII ;
+    pno:appliesTo pno:SolidNodule ;
+    pno:recommends pno:CTFollowUp ;
+    pno:requiresExamination pno:ThinSliceCT ;
+    pno:followUpMonths "3~6, 9~12, 18~24" ;
+    rdfs:comment "临床恶性概率很低（<5%）等情况建议在 3~6 个月、9~12 个月及 18~24 个月薄层CT随访（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation8 a pno:Recommendation ;
+    rdfs:label "【推荐意见8】非手术活检指征"@zh ;
+    pno:clauseNumber "推荐意见8" ;
+    pno:hasStrength pno:GradeII ;
+    pno:requiresExamination pno:NonSurgicalBiopsy ;
+    rdfs:comment "临床预测概率与影像不一致、恶性概率低中度（10%~60%）等情况建议非手术活检（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation9 a pno:Recommendation ;
+    rdfs:label "【推荐意见9】手术活检指征"@zh ;
+    pno:clauseNumber "推荐意见9" ;
+    pno:hasStrength pno:GradeII ;
+    pno:requiresExamination pno:SurgicalBiopsy ;
+    rdfs:comment "临床恶性概率高（>65%）、PET-CT 高代谢等情况建议手术活检（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation10 a pno:Recommendation ;
+    rdfs:label "【推荐意见10】≤8mm 实性结节无危险因素的随访"@zh ;
+    pno:clauseNumber "推荐意见10" ;
+    pno:hasStrength pno:GradeII ;
+    pno:appliesTo pno:SolidNodule ;
+    pno:recommends pno:CTFollowUp ;
+    pno:followUpMonths "≤4mm:遵医嘱或不随访; 4~6mm:年度; 6~8mm:6~12个月内,未变化转年度" ;
+    rdfs:comment "孤立性实性结节直径≤8 mm 且无危险因素者，按大小选随访频率（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation11 a pno:Recommendation ;
+    rdfs:label "【推荐意见11】≤8mm 实性结节有危险因素的随访"@zh ;
+    pno:clauseNumber "推荐意见11" ;
+    pno:hasStrength pno:GradeII ;
+    pno:appliesTo pno:SolidNodule ;
+    pno:recommends pno:CTFollowUp ;
+    pno:followUpMonths "≤4mm:年度; 4~6mm:6~12个月,未变化则18~24个月,后转年度; 6~8mm:3~6个月,9~12个月,其后每6个月,2年无变化转年度" ;
+    rdfs:comment "存在一项或更多危险因素的≤8 mm 实性结节，按大小选随访频率（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation12 a pno:Recommendation ;
+    rdfs:label "【推荐意见12】pGGN≤5mm 随访"@zh ;
+    pno:clauseNumber "推荐意见12" ;
+    pno:hasStrength pno:GradeII ;
+    pno:appliesTo pno:PureGroundGlassNodule ;
+    pno:recommends pno:CTFollowUp ;
+    pno:followUpMonths "首次6个月, 随后年度" ;
+    rdfs:comment "pGGN 直径≤5 mm 者：首次 6 个月随访胸部CT，随后年度随访（Ⅱ类推荐）。"@zh .
+
+pno:Recommendation13 a pno:Recommendation ;
+    rdfs:label "【推荐意见13】pGGN 5~10mm 随访"@zh ;
+    pno:clauseNumber "推荐意见13" ;
+    pno:hasStrength pno:GradeIII ;
+    pno:appliesTo pno:PureGroundGlassNodule ;
+    pno:recommends pno:CTFollowUp , pno:MDTDiscussion ;
+    pno:requiresExamination pno:CACTest , pno:ThinSliceCT ;
+    pno:followUpMonths "首次3个月, 随后6个月" ;
+    rdfs:comment """pGGN 直径 5~10 mm：首次 3 个月随访，随后 6 个月随访，建议应用 AI 和人机 MDT
+评估，可辅以 CAC 评估，据结果推荐非手术活检和（或）手术切除（Ⅲ类推荐）。"""@zh ;
+    pno:hasNextStep pno:NonSurgicalBiopsy .
+
+pno:Recommendation14 a pno:Recommendation ;
+    rdfs:label "【推荐意见14】mGGN≤8mm 随访"@zh ;
+    pno:clauseNumber "推荐意见14" ;
+    pno:hasStrength pno:GradeIII ;
+    pno:appliesTo pno:MixedGroundGlassNodule ;
+    pno:recommends pno:CTFollowUp , pno:MDTDiscussion ;
+    pno:requiresExamination pno:CACTest , pno:ThinSliceCT ;
+    pno:followUpMonths "3,6,12,24" ;
+    rdfs:comment """孤立性 mGGN 直径≤8 mm 者：建议在 3、6、12 和 24 个月进行 CT 随访，
+建议应用 AI 和人机 MDT 评估，无变化者随后转为常规年度随访（Ⅲ类推荐）。
+随访注意：②如果混杂性结节增大或实性成分增多，通常提示为恶性，需考虑切除，
+而不是非手术活检；④有症状或细菌感染征象时可考虑经验性抗菌治疗。"""@zh ;
+    pno:hasNextStep pno:SurgicalResection , pno:EmpiricalAntibiotics .
+
+pno:Recommendation15 a pno:Recommendation ;
+    rdfs:label "【推荐意见15】mGGN>8mm 处置"@zh ;
+    pno:clauseNumber "推荐意见15" ;
+    pno:hasStrength pno:GradeIII ;
+    pno:appliesTo pno:MixedGroundGlassNodule ;
+    pno:recommends pno:CTFollowUp , pno:EmpiricalAntibiotics , pno:MDTDiscussion ;
+    pno:requiresExamination pno:CACTest ;
+    pno:contraindicatedFor pno:MixedGroundGlassNodule ;
+    pno:followUpMonths "3" ;
+    rdfs:comment """孤立性 mGGN 直径>8 mm：建议 3 个月重复胸部CT，适当考虑经验性抗生素治疗。
+若结节持续存在，建议应用 AI 和人机 MDT 评估，可辅以 CAC 或 PET-CT 评估，
+必要者考虑非手术活检和（或）手术切除（Ⅲ类推荐）。
+注意：①PET-CT 不推荐用于判断实性成分≤8 mm 的混杂性病灶；
+④mGGN 直径>15 mm 者可直接考虑 PET-CT、非手术活检和（或）手术切除。"""@zh ;
+    pno:hasNextStep pno:NonSurgicalBiopsy , pno:SurgicalResection .
+
+pno:Recommendation16 a pno:Recommendation ;
+    rdfs:label "【推荐意见16】多发性肺结节评估"@zh ;
+    pno:clauseNumber "推荐意见16" ;
+    pno:hasStrength pno:GradeIII ;
+    pno:appliesTo pno:MultipleNodules ;
+    pno:recommends pno:MDTDiscussion ;
+    pno:requiresExamination pno:CACTest , pno:PETCT ;
+    rdfs:comment "建议单独评估每个结节，应用 AI 和人机 MDT 评估（Ⅲ类推荐）。"@zh .
+
+pno:Recommendation17 a pno:Recommendation ;
+    rdfs:label "【推荐意见17】肺癌局部治疗"@zh ;
+    pno:clauseNumber "推荐意见17" ;
+    pno:hasStrength pno:GradeIA ;
+    pno:recommends pno:SurgicalResection ;
+    rdfs:comment """肺癌的优选局部治疗方式为外科手术根治性切除（ⅠA类推荐）。
+心肺等生理功能不能耐受者，经 MDT 评估和医患共同决策可考虑 SBRT 或消融治疗（Ⅱ类推荐）。"""@zh ;
+    pno:hasNextStep pno:SBRT , pno:AblationTherapy .
+
+pno:Recommendation18 a pno:Recommendation ;
+    rdfs:label "【推荐意见18】分级诊疗管理"@zh ;
+    pno:clauseNumber "推荐意见18" ;
+    pno:hasStrength pno:GradeIII ;
+    pno:recommends pno:Referral ;
+    rdfs:comment """基于物联网医学平台，按分级诊疗原则管理（Ⅲ类推荐）：
+①基层医院：肺结节≤5 mm 者在基层医院管理；
+②肺结节诊治分中心：5~10 mm 且未明确诊断者转分中心管理；
+③肺癌防治联盟：>10 mm、分中心未明确诊断者，可由联盟协助指导管理。"""@zh ;
+    pno:hasNextStep pno:Referral .
+
+
+##############################################################################
+#  11. 分级诊疗规则（节点大小 → 管理机构）   【推荐意见18】
+##############################################################################
+
+pno:MicroNodule pno:managedAt pno:PrimaryHospital .
+pno:SmallNodule pno:managedAt pno:NoduleCenter .
+pno:LargeNodule pno:managedAt pno:LungCancerAlliance .
+
+
+##############################################################################
+#  12. 标准体系对齐（对应赛题"与行业规范、标准体系对齐"要求）
+##############################################################################
+#  本体的类与属性通过 skos:closeMatch / skos:exactMatch 对齐到国际与国内标准，
+#  使本体可与他院、他系统的数据互操作。
+##############################################################################
+
+# ---- 12.1 对齐到 ACR Lung-RADS（肺结节影像报告与数据系统）----
+pno:MicroNodule  skos:closeMatch <https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/Lung-Rads> .
+pno:SmallNodule  skos:closeMatch <https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/Lung-Rads> .
+pno:SolidNodule  skos:closeMatch <https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/Lung-Rads> .
+
+# ---- 12.2 对齐到 SNOMED CT ----
+pno:Nodule                    skos:closeMatch <http://snomed.info/id/427359001> .
+pno:SolitaryNodule            skos:closeMatch <http://snomed.info/id/309515003> .
+pno:UpperLobeLocation         skos:closeMatch <http://snomed.info/id/272693004> .
+
+# ---- 12.3 对齐到 ICD-10 ----
+pno:Nodule skos:closeMatch <http://id.who.int/icd/entity/1635437709> .
+
+# ---- 12.4 对齐到 LOINC（检查项目编码）----
+pno:LDCT       skos:closeMatch <http://loinc.org/24604-1> .
+pno:ThinSliceCT skos:closeMatch <http://loinc.org/24604-1> .
+pno:PETCT      skos:closeMatch <http://loinc.org/44141-4> .
+
+# ---- 12.5 对齐到国内规范 ----
+pno:LDCT skos:related <https://www.nhc.gov.cn/> ;
+    rdfs:comment "LDCT 扫描参数参照《中国肺癌低剂量CT筛查指南（2023年版）》。三（一）。"@zh .
+
+
+##############################################################################
+#  13. 语义约束（SHACL 风格，以 rdfs:comment 表述约束意图）
+##############################################################################
+#
+#  C1  sizeCategoryConstraint
+#      若 diameterMm ≤ 5        → 实例属于 pno:MicroNodule
+#      若 5 < diameterMm ≤ 10   → 实例属于 pno:SmallNodule
+#      若 10 < diameterMm ≤ 30  → 实例属于 pno:LargeNodule
+#      来源：定义章节（二）2 +【推荐意见18】
+#
+#  C2  mGGNFollowUpConstraint
+#      若 (hasDensityType = mGGN) 且 (diameterMm ≤ 8)
+#         → 推荐 pno:Recommendation14（3、6、12、24 个月）
+#      来源：【推荐意见14】
+#
+#  C3  pGGNFollowUpConstraint
+#      若 (hasDensityType = pGGN) 且 (diameterMm ≤ 5)  → 推荐 pno:Recommendation12
+#      若 (hasDensityType = pGGN) 且 (5 < diameterMm ≤ 10) → 推荐 pno:Recommendation13
+#
+#  C4  petCtContraindicationConstraint
+#      若 (hasDensityType = mGGN) 且 (solidComponentMm ≤ 8)
+#         → pno:PETCT contraindicated
+#      来源：【推荐意见15】①
+#
+#  C5  highRiskScreeningConstraint
+#      若 (ageYears ≥ 40) 且 (hasRiskFactor 至少一项)
+#         → 实例属于 pno:HighRiskPopulation，推荐年度 LDCT
+#      来源：【推荐意见2】
+#
+#  C6  traceabilityConstraint
+#      任一 pno:Recommendation 实例必须具有 pno:clauseNumber，
+#      且任一处置输出必须关联至少一个 pno:Recommendation 实例。
+#      来源：赛题"决策链路可溯源"要求
+##############################################################################
+
+pno:KnowledgeGraph a owl:Class ;
+    rdfs:label "肺结节知识图谱"@zh ;
+    rdfs:comment "由本本体实例化得到的三元组集合，供推理查询使用。"@zh .
+
+# ---- End of ontology ----
