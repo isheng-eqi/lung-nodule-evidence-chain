@@ -1,6 +1,9 @@
-import json, sys
+import json
+import os, sys
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-PKG = "/mnt/c/Users/HI/Desktop/ict2026/提交包_初赛/03_验证与数据"
+HERE = os.path.dirname(os.path.abspath(__file__))
+# 从 tools/ 向上两级到提交包根，再进 03_验证与数据
+PKG = os.path.join(os.path.dirname(HERE), "03_验证与数据")
 d = json.load(open(f"{PKG}/消融实验_三配置对照.json", encoding="utf-8"))
 b = json.load(open(f"{PKG}/消融实验_RAG基线原始输出.json", encoding="utf-8"))
 

@@ -20,7 +20,7 @@ v3.0 的核心原则
 
 用法
 ----
-    python3 consistency_scan.py --pkg 提交包_初赛 --out consistency_report.json
+    python3 consistency_scan.py --pkg .. --out consistency_report.json
 """
 
 from __future__ import annotations

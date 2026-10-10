@@ -1,52 +1,46 @@
-# Python
+# ---- 全局：Python 构建产物 ----
 __pycache__/
 *.py[cod]
-*$py.class
 *.so
 .Python
 build/
 dist/
 *.egg-info/
-.eggs/
 
-# 虚拟环境
+# ---- 虚拟环境 ----
 venv/
 .venv/
 env/
 
-# 凭据 —— ★ 绝对不要提交
+# ---- ★ 凭据：绝对不要提交 ----
 .env
 .env.*
 *.key
 *.pem
 .ak
-*_token*
 *token*.txt
+*_token*
 credentials*.json
 secrets*.yml
 
-# 数据集与模型产物（体积大 / 有许可约束）
+# ---- 数据集与模型产物 ----
 *.h5
 *.pt
 *.pth
 *.onnx
 *.safetensors
 
-# 编辑器
+# ---- 编辑器与系统 ----
 .vscode/
 .idea/
 *.swp
-
-# 系统
 .DS_Store
 Thumbs.db
 
-# 运行产物
-*.log
+# ---- 运行产物：队友在 work/ 里跑东西，中间文件不进仓库 ----
 /tmp/
-/out/
+*.log
 *.tmp
 
-# 本项目的中间产物（可重新生成）
-/02_代码与本体/**/__pycache__/
-/02_代码与本体/**/*.pyc
+# ---- 大文件：评测原始输出超过 1MB 时用摘要代替 ----
+# 若确实需要提交大文件，请先与队长确认
