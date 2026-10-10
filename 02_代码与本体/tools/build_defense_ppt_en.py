@@ -216,7 +216,7 @@ def build(out: str) -> str:
     d.text(s, 0.8, 4.65, 11.7, 1.5, [
         "Track 3: Building an Evolvable Decision Agent with Huawei ModelEngine Nexent",
         "11th Huawei ICT Competition · China National Final Defense",
-        "[University] · [Team Name]",
+        "太原理工大学 · WarrantedBelief",
     ], size=14, color=RGBColor(0xD6, 0xE3, 0xF0), align=PP_ALIGN.CENTER, spacing=9)
     s.notes_slide.notes_text_frame.text = (
         "Opening, 1.5 min. Start with the problem, not the technology.\n"
@@ -778,7 +778,7 @@ Executed code (PYTHON):
            size=44, color=C_WHITE, bold=True, align=PP_ALIGN.CENTER)
     d.text(s, 1.0, 4.1, 11.3, 1.6, [
         "We welcome your questions and comments",
-        "[University] · [Team Name]",
+        "太原理工大学 · WarrantedBelief",
     ], size=17, color=RGBColor(0xBF, 0xD4, 0xEA), align=PP_ALIGN.CENTER, spacing=14)
     s.notes_slide.notes_text_frame.text = (
         "Enter Q&A. See Section 4 of the defense framework for 10 prepared answers.\n"

@@ -5,8 +5,8 @@ relative_path,size_bytes,size_human,sha256,purpose
 01_开发设计文档/图文类资产处理验证记录.md,11292,11.0 KB,f7183ca4a83188bee816a2f23b158cc431ec13828b9dd123ae093ecfbc6990e4,VLM 识别链路验证（图文类资产）
 01_开发设计文档/外部复核指南.md,7656,7.5 KB,7e0883abcc1c97be8e69c7b106abe4a445bd6b614c91a0ef469fed910fcd1041,
 01_开发设计文档/对照实验_裸模型vs本系统.md,10449,10.2 KB,f6217dea36cf8d94711802a65d386b4343239ed620e728435342452e14e846ea,
-01_开发设计文档/开发设计文档_final.docx,1305366,1.2 MB,8afb91ddf9ed303106c68895856e4bd9e4bb8b236eb7cbff1a0054dea68e93e7,★ 初赛主文档（Word）
-01_开发设计文档/开发设计文档_源文件.md,170753,166.8 KB,0bfed5d7272625f9e0e10c3dc8453c831e289560fa129b500fc6b31c95de02c2,主文档的 Markdown 源文件（便于修改后重新生成）
+01_开发设计文档/开发设计文档_final.docx,1305441,1.2 MB,7dc7b18f541874a7df3a322cebb955898bf0f00385f4ca053671886bd0586e32,★ 初赛主文档（Word）
+01_开发设计文档/开发设计文档_源文件.md,170730,166.7 KB,b7f779eae0aebb24ffb51fefdd47337f50f620d14bfd2432df0b43ac5b1e17f5,主文档的 Markdown 源文件（便于修改后重新生成）
 01_开发设计文档/待排查_智能体未调用kg工具.md,6910,6.7 KB,e1ab00aaecf8f1ee4379da3079682d2e63132f8a60b6dfcbe6553281e63fc7ca,
 01_开发设计文档/拒答追问机制验证记录.md,9169,9.0 KB,84939bd092100d5e9d3594df249344435cd1b70d7f9c771716157b5aea544325,三层拒答机制的界面验证
 01_开发设计文档/本体完备性审计与成长实验.md,11846,11.6 KB,ccd44e6c9f8b1ffe9d1dc01567aef28d85f306b7338b1d4af1ac0982b791b7ff,
@@ -61,8 +61,8 @@ relative_path,size_bytes,size_human,sha256,purpose
 02_代码与本体/skill/lung-nodule-decision/config/schema.yaml,1821,1.8 KB,2a6c721f1d2afe864fdd0100c59ecb0a6b86dca75049b6d1ca8572f59b4e4000,Skill 参数配置（7 个参数）
 02_代码与本体/skill/skill_template.py,19774,19.3 KB,1d4f3c10353a9d4c2fdbf3739d65d3ab76c04b8628ee70999c5318c508b2bce4,
 02_代码与本体/tools/build_consequence.py,4208,4.1 KB,845d97f2d642ae46a414188f73f4608a42171f6f221961a12d09b07009bb72f4,
-02_代码与本体/tools/build_defense_ppt.py,41385,40.4 KB,a1bab91b45830379641e14841319ea88467d3fb51ba2001704c8a4cfd0609a00,中文答辩 PPT 生成器
-02_代码与本体/tools/build_defense_ppt_en.py,42535,41.5 KB,5d55d490002a228167184ab2809cad4a949eed1ddb7291e5ba76cfd595d55733,英文答辩 PPT 生成器
+02_代码与本体/tools/build_defense_ppt.py,41379,40.4 KB,78a07feca69b2b66c6a8b8e475d59b7ef7137401fd82f4c83f35e24395dcac60,中文答辩 PPT 生成器
+02_代码与本体/tools/build_defense_ppt_en.py,42555,41.6 KB,9837c48043c9049e48761a7d2a71788125b169922688d58d14760debcf244c3c,英文答辩 PPT 生成器
 02_代码与本体/tools/build_net_gain.py,4030,3.9 KB,9e2da6ea49850ca9f2fa83ef3446e61f200f9021c1cdfa7ecb29402397c87236,
 02_代码与本体/tools/check_package.py,9641,9.4 KB,fb7ac3972a6f9eb778b58254eec35e782cce7dbafad4dfc1c1ae1175aec01d48,提交包一致性检查器
 02_代码与本体/tools/consistency_scan.py,11420,11.2 KB,6b0c8a3058e13942a611fc5162f90ca2b1475a7322b7a6d4356c43ddfbd311dc,
@@ -123,7 +123,7 @@ relative_path,size_bytes,size_human,sha256,purpose
 05_答辩材料/DefenseDeck_EN.pptx,98169,95.9 KB,be540cbc4880f3581141a8cc062f27b07f3ca2ff696db7fb984dd45953e5033e,英文答辩 PPT（20 页）
 05_答辩材料/English_Defense_Speaking_Notes.md,23984,23.4 KB,8d8f44c54e7ba187f12e215de51ad42971a909680621bbdb8f2eeba032e956c3,英文口语稿 + 10 个预设问答
 05_答辩材料/国赛答辩PPT.pptx,101930,99.5 KB,2df0cbfeaf66e72077aceb656ce17ccbb40dbd3621582e973b70897b284fe1c8,中文答辩 PPT（20 页）
-05_答辩材料/国赛答辩框架.md,29067,28.4 KB,877045dca1e1a3a527b3d221a540bd9c0c6bf9cc5d9442f68c6f778fc08fca20,答辩框架 + 10 个预设问答
+05_答辩材料/国赛答辩框架.md,29064,28.4 KB,7c910636b784d5489459904550d3dcd23098892295dd96dd486675484622c963,答辩框架 + 10 个预设问答
 05_答辩材料/附加分调研_真实脱敏数据集.md,8351,8.2 KB,d742281761d167daabb7b82fc436fc7098f6394fcc24b32fac6ea1059c5db5ab,真实脱敏数据集调研结论
 LICENSE,11901,11.6 KB,7e97de26c7172936380deb3dcd3aa5a06fe5004ac3f9ceaddc62b0ea2bfb73d5,
 README.md,6082,5.9 KB,fe22d24c3c7b5589e07ede0102fc220b56913d7ff0f7e96e8f2d22d0dca7fa3d,
