@@ -1,15 +1,12 @@
 relative_path,size_bytes,size_human,sha256,purpose
 .gitignore,559,559 B,09c820a3098f252d6c9fed49f092d448eb15c2356ccc17d43beef61eb32087a7,
-00_提交包说明.md,21857,21.3 KB,373534a2c3ceb15620aadb9bea474481153cfe0cac87fe866d38c408da739382,提交包总说明：目录结构、官方要求对照、诚实声明
+00_提交包说明.md,22507,22.0 KB,cb62b8b4fd542bd0b6b7168c6fb86079ffb6685a260715077587b66c82d6b98b,提交包总说明：目录结构、官方要求对照、诚实声明
 01_开发设计文档/Skill骨架跨行业复用验证.md,9495,9.3 KB,e2f3ea902707bb9f73f5c898885b3d608b45ffea8cc85db9bf4b141d1f286321,
 01_开发设计文档/图文类资产处理验证记录.md,11292,11.0 KB,f7183ca4a83188bee816a2f23b158cc431ec13828b9dd123ae093ecfbc6990e4,VLM 识别链路验证（图文类资产）
-01_开发设计文档/外部复核指南.md,7656,7.5 KB,7e0883abcc1c97be8e69c7b106abe4a445bd6b614c91a0ef469fed910fcd1041,
 01_开发设计文档/对照实验_裸模型vs本系统.md,10449,10.2 KB,f6217dea36cf8d94711802a65d386b4343239ed620e728435342452e14e846ea,
 01_开发设计文档/开发设计文档_final.docx,1305441,1.2 MB,7dc7b18f541874a7df3a322cebb955898bf0f00385f4ca053671886bd0586e32,★ 初赛主文档（Word）
-01_开发设计文档/开发设计文档_源文件.md,170730,166.7 KB,b7f779eae0aebb24ffb51fefdd47337f50f620d14bfd2432df0b43ac5b1e17f5,主文档的 Markdown 源文件（便于修改后重新生成）
-01_开发设计文档/待排查_智能体未调用kg工具.md,6910,6.7 KB,e1ab00aaecf8f1ee4379da3079682d2e63132f8a60b6dfcbe6553281e63fc7ca,
+01_开发设计文档/开发设计文档_源文件.md,171024,167.0 KB,ece7d62f33d52e27ae37c5596e4b46b257f48c2f6bac9f25d9d7a3afc2b821e5,主文档的 Markdown 源文件（便于修改后重新生成）
 01_开发设计文档/拒答追问机制验证记录.md,9169,9.0 KB,84939bd092100d5e9d3594df249344435cd1b70d7f9c771716157b5aea544325,三层拒答机制的界面验证
-01_开发设计文档/本体完备性审计与成长实验.md,11846,11.6 KB,ccd44e6c9f8b1ffe9d1dc01567aef28d85f306b7338b1d4af1ac0982b791b7ff,
 01_开发设计文档/消融实验_检索与图谱的必要性.md,9971,9.7 KB,fa49a577f70ab5c7e022bf201f0697195f48391ac1a53be59eb10a11686ca953,
 01_开发设计文档/界面截图/01_智能体配置页.png,139559,136.3 KB,ad6f000df8c5786c52ea1c05481896b8e71053ed774e0fc9ffccedcc6d8de3d5,
 01_开发设计文档/界面截图/02_工具与技能_MCP挂载.png,104447,102.0 KB,9398e81a913e28b5a40915e3731b048cbf65ae0213d4398dfd8e15a652270716,
@@ -19,10 +16,8 @@ relative_path,size_bytes,size_human,sha256,purpose
 01_开发设计文档/界面截图/05_拒答追问_交互表单.png,203863,199.1 KB,bdf4517e6fd450f9d447fbd9b1ffe14da869d5104628c50caa1dcc8c61666fc3,
 01_开发设计文档/界面截图/06_拒答追问_填写表单.png,204103,199.3 KB,ad0245c5f2480b721c1f16fb3a523960f525498763c89c21f1e4124ea8243abd,
 01_开发设计文档/界面截图/07_补充信息后作答.png,243580,237.9 KB,11da96f5dc77b16f86bbb21998ac3e60c61923ad219b70e23ba225a615a7191f,
-01_开发设计文档/界面操作证据.md,8348,8.2 KB,cc02fc505636f0f9447c245498be4d50b4e99abd89e88079fca2fdab0ce54122,8 张界面截图的清单与逐张说明
 01_开发设计文档/真实脱敏数据集评测.md,8177,8.0 KB,5388cbdecec806e901da81eeaa4e400a2d5f469126216109f98f23d12c0a70e6,
 01_开发设计文档/端到端运行验证记录.md,10639,10.4 KB,5844165cc5dfa064d80ae2eca631ee15eec5223236c0dd7f7e4c535f1e8b1766,检索-推理双驱动的完整证据（工具调用序列）
-01_开发设计文档/评测集金标准核对表.md,10826,10.6 KB,3675ad3a9e448308d143cf993642024ba82366cf028f2b4ec8af4776186fbf28,
 01_开发设计文档/调用关系图.json,974,974 B,9e34ce11b4280fd38942cac6f34b23e7b7755cff69fc8079a2edea78c70249d9,平台导出的调用关系原始数据
 01_开发设计文档/调用关系图.md,11162,10.9 KB,c3a4878b246ad28729136ae08bdd2b934a8dbeddd1014aade78b3222b613bde3,★ 官方要求的调用关系图
 01_开发设计文档/跨文档推理的实现与验证.md,9321,9.1 KB,e75af3b8266bc093e69e2221e89aa48d3c7893b7832f8160fd8985d1280ef18c,
@@ -60,12 +55,10 @@ relative_path,size_bytes,size_human,sha256,purpose
 02_代码与本体/skill/lung-nodule-decision/SKILL.md,7509,7.3 KB,bf72ff729e9a2924d208f18b860731546e1defd4946a922aaf867d95731cd5aa,★ Skill 定义（三层编排）
 02_代码与本体/skill/lung-nodule-decision/config/schema.yaml,1821,1.8 KB,2a6c721f1d2afe864fdd0100c59ecb0a6b86dca75049b6d1ca8572f59b4e4000,Skill 参数配置（7 个参数）
 02_代码与本体/skill/skill_template.py,19774,19.3 KB,1d4f3c10353a9d4c2fdbf3739d65d3ab76c04b8628ee70999c5318c508b2bce4,
-02_代码与本体/tools/build_consequence.py,4208,4.1 KB,845d97f2d642ae46a414188f73f4608a42171f6f221961a12d09b07009bb72f4,
-02_代码与本体/tools/build_defense_ppt.py,41379,40.4 KB,78a07feca69b2b66c6a8b8e475d59b7ef7137401fd82f4c83f35e24395dcac60,中文答辩 PPT 生成器
-02_代码与本体/tools/build_defense_ppt_en.py,42555,41.6 KB,9837c48043c9049e48761a7d2a71788125b169922688d58d14760debcf244c3c,英文答辩 PPT 生成器
-02_代码与本体/tools/build_net_gain.py,4030,3.9 KB,9e2da6ea49850ca9f2fa83ef3446e61f200f9021c1cdfa7ecb29402397c87236,
+02_代码与本体/tools/build_consequence.py,4410,4.3 KB,a36c2a11ace9815ac64797ae56d3f0cfb25f3337f78135521e278d65de2a256d,
+02_代码与本体/tools/build_net_gain.py,4232,4.1 KB,dacf093e5af271b0ead8c2991c460c83949affb4c8f5ae6807fa3d5aeb103070,
 02_代码与本体/tools/check_package.py,9641,9.4 KB,fb7ac3972a6f9eb778b58254eec35e782cce7dbafad4dfc1c1ae1175aec01d48,提交包一致性检查器
-02_代码与本体/tools/consistency_scan.py,11420,11.2 KB,6b0c8a3058e13942a611fc5162f90ca2b1475a7322b7a6d4356c43ddfbd311dc,
+02_代码与本体/tools/consistency_scan.py,11406,11.1 KB,25863f894118990de1fe1b5fc39fa24413d0d114fcdd03d42a7aea3ded5a07ee,
 02_代码与本体/tools/ingest_knowledge_base.py,7007,6.8 KB,a4c0096cbf51ec0620d849227d5c79c1bffeefb876299aa6dc3027691e8d2e05,
 02_代码与本体/tools/inject_metrics.py,8910,8.7 KB,4289faef46adc39cc67257ce62a6e786570744035addfef5ad1e72f10ce89f9a,
 02_代码与本体/tools/md2docx.py,10366,10.1 KB,15831de2b5a4a01e32aa2313fe7e4c418641a832a14c962fa7e4b1e2581fa015,Markdown → Word 转换器
@@ -79,6 +72,7 @@ relative_path,size_bytes,size_human,sha256,purpose
 03_验证与数据/skill_migration_report.json,1736,1.7 KB,673cdd67722e99b1517e75f3857316fb502a3c22cff487989a382daf53fbe7fd,
 03_验证与数据/四份文档构建报告.json,1383,1.4 KB,ebffea081e5e1522456924b9d5a85bf32588a27c3b24b524eb54b7a8444838cc,
 03_验证与数据/图文识别结果.json,5535,5.4 KB,6c2b58ba22df45fa6febc4895f4e85c7e8b93f8135647392102fd347a9e3bcb2,VLM 识别 + 推理 + 资产标识的完整结果
+03_验证与数据/外部复核指南.md,7634,7.5 KB,668368feed5702dbaab3adc79393729d5e9d0088fe1267f845dd0d1959f29962,
 03_验证与数据/多行业迁移验证报告.json,7683,7.5 KB,ca9c00f575a4bb9c9201e1c9ec04b2dd9ea9d675ba61214491913e3c3288c337,★ 多行业迁移验证（医疗 + 金融）
 03_验证与数据/对照实验_裸模型原始输出.json,15087,14.7 KB,7361dca11be58e194ff0385caa4cbdce7d90a7b87c1077672dd646d12c55459a,
 03_验证与数据/影像报告样例.png,144973,141.6 KB,b9620f6e3b0cb65afa5691943239b918e20510a49bdcddd5c8bc452336176f09,图文类资产样例（按标准格式构造）
@@ -110,22 +104,11 @@ relative_path,size_bytes,size_human,sha256,purpose
 03_验证与数据/资产标识注册表.json,13284,13.0 KB,3631f96b6832876f604ca82305f8f9156e3e84a8a5d42fac7a963e9bfe931591,三种模态的数据资产清单
 03_验证与数据/资产激活路径台账.json,17532,17.1 KB,2848cf4980e84f9f28203636218f6d798604fd906b4ba8c51c3cf9c110064e87,
 03_验证与数据/迁移成本量化报告.json,7414,7.2 KB,5933fddb68607e417f8d1061b2ede48e5507b15d5a4d950f0dc1ea6e2ed54752,
-04_参考资料/原文_2024共识_全文.txt,49899,48.7 KB,398d44017edb2f46b600de59c44e15b21ea54208fd6d949160261c1db5fd7493,
 04_参考资料/原文_固定资产贷款管理办法2024_清洗后.txt,21810,21.3 KB,ab5cfb4f03b9b73f1ea4397525453973df217c3a4df12e8f2dc9d36a107e9f77,
 04_参考资料/原文_特种设备安全法_清洗后.txt,48327,47.2 KB,b80abbcc4cf4b34bedc2db1a257e385be13ed3eb61163247e1cc47b10207d1f4,
 04_参考资料/参考资料清单.md,3847,3.8 KB,f1b47dc58a4484ca0387c726e695ca74645ffa7f7438d9aea630d3777aa17bdf,
-04_参考资料/筛查指南2023_结构化版.txt,21036,20.5 KB,6a605999a08e56f5aa9cf5bdb5d7b5e434fb7673b3e9d0fecf4c0e4d32eaaed4,
-04_参考资料/筛查指南2025_全文.txt,25085,24.5 KB,5218b24686a60abe92f77dd364e49a3c0f33469d93e17f622aceb625583db917,
-04_参考资料/语料_2024共识_清洗后.txt,49640,48.5 KB,7b66aa3719ea71595f3d7467607b33f71d988a71dd5d2c80c438a729d8ae7a92,
-04_参考资料/语料_2025共识_清洗后.txt,31624,30.9 KB,ab16d801f389a1862f4a4b9666c912ca0cbafbf27e3297fa69183956a69dac85,
-04_参考资料/语料_筛查指南2023_清洗后.txt,21019,20.5 KB,8b793dc90108750b95cabaa59e5a9099f418f6f20ec898e1582d9fd4db47237b,
-04_参考资料/语料_筛查指南2025_清洗后.txt,24978,24.4 KB,c74d49e7d69e8be1f1d3cbe88a5e631e3c5527b5913de7b6fdf90bc99091b800,
-05_答辩材料/DefenseDeck_EN.pptx,98169,95.9 KB,be540cbc4880f3581141a8cc062f27b07f3ca2ff696db7fb984dd45953e5033e,英文答辩 PPT（20 页）
-05_答辩材料/English_Defense_Speaking_Notes.md,23984,23.4 KB,8d8f44c54e7ba187f12e215de51ad42971a909680621bbdb8f2eeba032e956c3,英文口语稿 + 10 个预设问答
-05_答辩材料/国赛答辩PPT.pptx,101930,99.5 KB,2df0cbfeaf66e72077aceb656ce17ccbb40dbd3621582e973b70897b284fe1c8,中文答辩 PPT（20 页）
-05_答辩材料/国赛答辩框架.md,29064,28.4 KB,7c910636b784d5489459904550d3dcd23098892295dd96dd486675484622c963,答辩框架 + 10 个预设问答
-05_答辩材料/附加分调研_真实脱敏数据集.md,8351,8.2 KB,d742281761d167daabb7b82fc436fc7098f6394fcc24b32fac6ea1059c5db5ab,真实脱敏数据集调研结论
+04_参考资料/获取方式.md,2933,2.9 KB,9673063d45f5e3b23137f0f576c63f50137c924a2ba64c01b25e5e98074fb6c6,
 LICENSE,11901,11.6 KB,7e97de26c7172936380deb3dcd3aa5a06fe5004ac3f9ceaddc62b0ea2bfb73d5,
-README.md,6082,5.9 KB,fe22d24c3c7b5589e07ede0102fc220b56913d7ff0f7e96e8f2d22d0dca7fa3d,
-THIRD_PARTY_NOTICES.md,5134,5.0 KB,0774ec6eb819712574bf75d49fb1e0ca2cfbcc76e44c80d2f422bb05b81344d6,
+README.md,6021,5.9 KB,20a23ad709406c2d0c4b493b4d207ec46f1a6ba16cd2074b3c027e3bdffca3dc,
+THIRD_PARTY_NOTICES.md,5980,5.8 KB,7641dadf2105060aca81ed49cfa0ac0d53f144361bb90d2242395b65c40034ed,
 一键复现指南.md,9287,9.1 KB,e570d4e971cbbce4c43c7fc06a12003b118a89821351a210611eefe46f3f1c17,
