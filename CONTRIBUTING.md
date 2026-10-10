@@ -34,7 +34,7 @@ work/
 
 **任务详情见 GitHub Issues**（每个任务一个 Issue，做完留言、队长关闭）。
 
-### 3. `main` 有分支保护，必须走 PR
+### 3. `main` **请**走 PR（这是**约定**，不是技术强制）
 
 ```
 git checkout -b work/<你的名字>-<任务>
@@ -45,6 +45,22 @@ git push -u origin work/<你的名字>-<任务>
 ```
 
 **然后到 GitHub 开 Pull Request → 等队长审 → 合并。**
+
+> **⚠️ 如实说明：这条规则目前是"纪律"，技术上没有强制。**
+>
+> GitHub 的**分支保护**（禁止直接 push main）是**付费功能** ——
+> 本仓库是**私有 + Free 计划**，试过了，返回：
+>
+> ```
+> 403: Upgrade to GitHub Pro or make this repository public
+> to enable this feature.
+> ```
+>
+> 所以**你确实能直接 push 到 main，请别这么做。**
+>
+> 两个让它变成技术强制的办法（**暂不做**）：
+> ① 升级 GitHub Pro
+> ② 仓库改公开 —— 但赛题要求"**入围总决赛后**才开源"，现在不合时机
 
 ---
 
